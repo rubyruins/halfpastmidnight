@@ -5,25 +5,25 @@ import Content from '../../components/content'
 import Sidebar from '../../components/sidebar'
 import Header from '../../components/header'
 
-const BlogPage = ({ data }) => {
+const AllReviewsPage = ({ data }) => {
   return (
 	<Layout pageTitle="All Reviews">
 		<Header/>
 		<div class="container">
 			<div class="row">
 				<Content>
-				{
-					data.allMdx.nodes.map(node => (
-					<article key={node.id}>
-						<h2>
-						<Link to={`/reviews/${node.slug}`}>
-							{node.frontmatter.title}
-						</Link>
-						</h2>
-						<p>Posted: {node.frontmatter.date}</p>
-					</article>
-					))
-				}
+					{
+						data.allMdx.nodes.map(node => (
+						<article key={node.id}>
+							<h2>
+							<Link to={`/reviews/${node.slug}`}>
+								{node.frontmatter.title}
+							</Link>
+							</h2>
+							<p>Posted: {node.frontmatter.date}</p>
+						</article>
+						))
+					}
 				</Content>
 				<Sidebar/>
 			</div>
@@ -47,4 +47,4 @@ export const query = graphql`
   }
 `
 
-export default BlogPage
+export default AllReviewsPage
