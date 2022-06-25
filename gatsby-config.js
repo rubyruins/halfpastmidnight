@@ -15,8 +15,8 @@ module.exports = {
         path: `${__dirname}/reviews`,
       }
     },
-    "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
-    "gatsby-transformer-remark"
+    "gatsby-transformer-remark",
+    "gatsby-plugin-sitemap"
   ],
 }

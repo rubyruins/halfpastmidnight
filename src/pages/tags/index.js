@@ -10,13 +10,13 @@ const AllTagsPage = ({ data }) => {
   return (
 	<Layout pageTitle="All Tags">
 		<Header/>
-		<div class="container">
-			<div class="row">
+		<div className="container">
+			<div className="row">
 				<Content>
 				{
 					data.allMarkdownRemark.group.map(node => (
 					<article key={node.id}>
-						<Link to={`/tags/${node.tag}`}>Posted: {node.tag} ({node.totalCount})</Link>
+						<Link to={`/tags/${node.tag}`}>{node.tag} ({node.totalCount})</Link>
 					</article>
 					))
 				}

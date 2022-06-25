@@ -9,9 +9,7 @@ tags: [value1,value2,value3,value4,value5]
 slug: "/reviews/my-first-post"
 ---
 
-This is my first blog post! Isn't it *great*?
-
-Some of my **favorite** things are:
+This is my first blog post! Isn't it *great*? This is my first blog post! Isn't it *great*? This is my first blog post! Isn't it *great*? This is my first blog post! Isn't it *great*? This is my first blog post! Isn't it *great*? This is my first blog post! Isn't it *great*? This is my first blog post! Isn't it *great*? This is my first blog post! Isn't it *great*? This is my first blog post! Isn't it *great*? This is my first blog post! Isn't it *great*? Some of my **favorite** things are:
 
 * Petting dogs
 * Singing

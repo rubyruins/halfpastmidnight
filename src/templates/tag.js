@@ -13,10 +13,10 @@ const Tags = ({ pageContext, data }) => {
   } tagged with "${tag}"`
 
   return (
-	<Layout pageTitle="All Tags">
+	<Layout pageTitle={`${tag}`}>
 		<Header/>
-		<div class="container">
-			<div class="row">
+		<div className="container">
+			<div className="row">
 				<Content>
 					<h1>{tagHeader}</h1>
 					<ul>

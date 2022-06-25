@@ -8,8 +8,8 @@ const AboutPage = () => {
 	return (
 		<Layout pageTitle="About">
 			<Header/>
-				<div class="container">
-					<div class="row">
+				<div className="container">
+					<div className="row">
 						<Content>
 							<p>Hi there! I'm the proud creator of this site, which I built with Gatsby.</p>
 						</Content>

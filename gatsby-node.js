@@ -1,7 +1,7 @@
 exports.createPages = ({ actions, graphql }) => {
 	const { createPage } = actions
-	const blogPostTemplate = require.resolve(`./src/templates/blogTemplate.js`)
-	const tagTemplate = require.resolve("./src/templates/tags.js")
+	const reviewTemplate = require.resolve(`./src/templates/review.js`)
+	const tagTemplate = require.resolve("./src/templates/tag.js")
 
 	return graphql(`
 		{
@@ -33,7 +33,7 @@ exports.createPages = ({ actions, graphql }) => {
 		posts.forEach(({ node }) => {
 			createPage({
 			path: node.frontmatter.slug,
-			component: blogPostTemplate,
+			component: reviewTemplate,
 			context: {
 				slug: node.frontmatter.slug,
 			}})

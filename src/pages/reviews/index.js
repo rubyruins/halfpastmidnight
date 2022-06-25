@@ -9,8 +9,8 @@ const AllReviewsPage = ({ data }) => {
   return (
 	<Layout pageTitle="All Reviews">
 		<Header/>
-		<div class="container">
-			<div class="row">
+		<div className="container">
+			<div className="row">
 				<Content>
 				{
 					data.allMarkdownRemark.nodes.map(node => (
