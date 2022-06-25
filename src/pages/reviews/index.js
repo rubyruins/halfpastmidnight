@@ -12,18 +12,18 @@ const AllReviewsPage = ({ data }) => {
 		<div class="container">
 			<div class="row">
 				<Content>
-					{
-						data.allMdx.nodes.map(node => (
-						<article key={node.id}>
-							<h2>
-							<Link to={`/reviews/${node.slug}`}>
-								{node.frontmatter.title}
-							</Link>
-							</h2>
-							<p>Posted: {node.frontmatter.date}</p>
-						</article>
-						))
-					}
+				{
+					data.allMarkdownRemark.nodes.map(node => (
+					<article key={node.id}>
+						<h2>
+						<Link to={node.frontmatter.slug}>
+							{node.frontmatter.title}
+						</Link>
+						</h2>
+						<p>Posted: {node.frontmatter.date}</p>
+					</article>
+					))
+				}
 				</Content>
 				<Sidebar/>
 			</div>
@@ -33,18 +33,18 @@ const AllReviewsPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query {
-	allMdx(sort: {fields: frontmatter___date, order: DESC}) {
-	  nodes {
-		frontmatter {
-		  date(formatString: "MMMM D, YYYY")
-		  title
+query {
+	allMarkdownRemark {
+		nodes {
+			frontmatter {
+				slug
+				title
+				date
+			}
+			id
 		}
-		id
-		slug
-	  }
 	}
-  }
-`
+}
+`  
 
 export default AllReviewsPage

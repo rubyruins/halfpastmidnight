@@ -12,6 +12,8 @@ const IndexPage = () => {
 			<div class="container">
 				<div class="row">
 					<Content>
+						<h1>Hi people</h1>
+						<p>Welcome to your new Gatsby blog with Markdown pages.</p>
 						<Featured/>
 					</Content>
 					<Sidebar/>

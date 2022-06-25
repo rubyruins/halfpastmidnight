@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Half Past Midnight`,
+    description: `Science Fiction and Fantasy reviews`,
+    author: `@rubyruins`,
     siteUrl: `https://halfpastmidnight.me/`,
   },
   plugins: [
@@ -9,11 +11,12 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
+        name: `reviews`,
+        path: `${__dirname}/reviews`,
       }
     },
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
+    "gatsby-transformer-remark"
   ],
 }
