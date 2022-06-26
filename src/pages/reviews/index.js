@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
+import kebabCase from "lodash/kebabCase"
 import Layout from '../../components/layout'
 import Content from '../../components/content'
 import Sidebar from '../../components/sidebar'
@@ -16,7 +17,7 @@ const AllReviewsPage = ({ data }) => {
 					data.allMarkdownRemark.nodes.map(node => (
 					<article key={node.id}>
 						<h2>
-						<Link to={node.frontmatter.slug}>
+						<Link to={`/reviews/${kebabCase(node.frontmatter.title)}`}>
 							{node.frontmatter.title}
 						</Link>
 						</h2>
@@ -37,7 +38,6 @@ query {
 	allMarkdownRemark {
 		nodes {
 			frontmatter {
-				slug
 				title
 				date
 			}

@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import kebabCase from "lodash/kebabCase"
 import Layout from '../components/layout'
 import Header from '../components/header'
 import Content from '../components/content'
@@ -23,7 +24,7 @@ const Tags = ({ pageContext, data }) => {
 						{
 							edges.map(node  => 
 							<li>
-								<Link to={node.node.frontmatter.slug}>{node.node.frontmatter.title}</Link>
+							<Link to={`/reviews/${kebabCase(node.node.frontmatter.title)}`}>{node.node.frontmatter.title}</Link>
 							</li>
 							)
 						}
@@ -49,7 +50,6 @@ export const pageQuery = graphql`
 			node {
 				frontmatter {
 					title
-					slug
 				}
 			}
 		}

@@ -1,3 +1,5 @@
+const _ = require("lodash")
+
 exports.createPages = ({ actions, graphql }) => {
 	const { createPage } = actions
 	const reviewTemplate = require.resolve(`./src/templates/review.js`)
@@ -12,8 +14,8 @@ exports.createPages = ({ actions, graphql }) => {
 				edges {
 					node {
 						frontmatter {
-							slug
 							tags
+							title
 						}
 					}
 				}
@@ -32,17 +34,17 @@ exports.createPages = ({ actions, graphql }) => {
 		const posts = result.data.postsRemark.edges
 		posts.forEach(({ node }) => {
 			createPage({
-			path: node.frontmatter.slug,
+			path: `/reviews/${_.kebabCase(node.frontmatter.title)}/`,
 			component: reviewTemplate,
 			context: {
-				slug: node.frontmatter.slug,
+				title: node.frontmatter.title,
 			}})
   		})
 
 		const tags = result.data.tagsGroup.group
 		tags.forEach(tag => {
 		createPage({
-			path: `/tags/${tag.fieldValue}/`,
+			path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
 			component: tagTemplate,
 			context: {
 				tag: tag.fieldValue,
@@ -51,3 +53,4 @@ exports.createPages = ({ actions, graphql }) => {
 		})
 	})
 }
+

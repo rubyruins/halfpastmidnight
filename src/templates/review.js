@@ -1,8 +1,9 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from '../components/layout'
 import Content from '../components/content'
 import Sidebar from '../components/sidebar'
+import TagGroup from "../components/taggroup"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 export default function Template({data}) {
@@ -20,19 +21,14 @@ export default function Template({data}) {
 					<h1>{frontmatter.title}</h1>
 					<h2>{frontmatter.date}</h2>
 					<h3>{timeToRead} minute read</h3>
-					{
-					frontmatter.tags.map(tag => (
-						<li>
-							<Link to={`/tags/${tag}`}>{tag}</Link>
-						</li>
-						))
-					}
 					<div
 						className="blog-post-content"
 						dangerouslySetInnerHTML={{ __html: html }}
 					/>
 				</Content>
-				<Sidebar/>
+				<Sidebar>
+					<TagGroup tags={frontmatter.tags}/>
+				</Sidebar>
 			</div>
 		</div>
 	</Layout>
@@ -40,13 +36,12 @@ export default function Template({data}) {
 }
 
 export const pageQuery = graphql`
-query($slug: String!) {
-	markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+query($title: String!) {
+	markdownRemark(frontmatter: { title: { eq: $title } }) {
 		html
 		timeToRead
 		frontmatter {
 			date(formatString: "MMMM DD, YYYY")
-			slug
 			tags
 			title
 			cover_image {

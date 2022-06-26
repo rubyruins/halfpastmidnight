@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { getImage } from 'gatsby-plugin-image'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Content from '../components/content'
@@ -19,7 +18,7 @@ const IndexPage = ({data}) => {
 						<p>Welcome to your new Gatsby blog with Markdown pages.</p>
 						{
 							data.allMarkdownRemark.nodes.map(node => (
-							<Featured title={node.frontmatter.title} date={node.frontmatter.date} slug={node.frontmatter.slug} excerpt={node.excerpt} image={getImage(node.frontmatter.cover_image)}/>
+							<Featured node={node} />
 							))
 						}
 					</Content>
@@ -35,7 +34,6 @@ query {
 	allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, limit: 5) {
 		nodes {
 			frontmatter {
-				slug
 				title
 				date
 				tags

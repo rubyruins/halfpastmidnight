@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
+import kebabCase from "lodash/kebabCase"
 import Layout from '../../components/layout'
 import Content from '../../components/content'
 import Sidebar from '../../components/sidebar'
@@ -16,7 +17,7 @@ const AllTagsPage = ({ data }) => {
 				{
 					data.allMarkdownRemark.group.map(node => (
 					<article key={node.id}>
-						<Link to={`/tags/${node.tag}`}>{node.tag} ({node.totalCount})</Link>
+						<Link to={`/tags/${kebabCase(node.tag)}`}>{node.tag} ({node.totalCount})</Link>
 					</article>
 					))
 				}
