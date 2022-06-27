@@ -4,8 +4,6 @@ exports.createPages = ({ actions, graphql }) => {
 	const { createPage } = actions
 	const reviewTemplate = require.resolve(`./src/templates/review.js`)
 	const tagTemplate = require.resolve("./src/templates/tag.js")
-	const seriesTemplate = require.resolve("./src/templates/series.js")
-	const authorTemplate = require.resolve("./src/templates/author.js")
 
 	return graphql(`
 		{
@@ -24,16 +22,6 @@ exports.createPages = ({ actions, graphql }) => {
 			}
 			allTags: allMarkdownRemark(limit: 2000) {
 				group(field: frontmatter___tags) {
-					fieldValue
-				}
-			}
-			allSeries: allMarkdownRemark(limit: 2000) {
-				group(field: frontmatter___series) {
-					fieldValue
-				}
-			}
-			allAuthors: allMarkdownRemark(limit: 2000) {
-				group(field: frontmatter___author) {
 					fieldValue
 				}
 			}
@@ -63,29 +51,6 @@ exports.createPages = ({ actions, graphql }) => {
 			},
 			})
 		})
-
-		const allSeries = result.data.allSeries.group
-		allSeries.forEach(series => {
-		createPage({
-			path: `/series/${_.kebabCase(series.fieldValue)}/`,
-			component: seriesTemplate,
-			context: {
-				series: series.fieldValue,
-			},
-			})
-		})
-
-		const allAuthors = result.data.allAuthors.group
-		allAuthors.forEach(author => {
-		createPage({
-			path: `/author/${_.kebabCase(author.fieldValue)}/`,
-			component: authorTemplate,
-			context: {
-				series: author.fieldValue,
-			},
-			})
-		})
-
 	})
 }
 
