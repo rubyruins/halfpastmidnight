@@ -35,6 +35,8 @@ query {
 		nodes {
 			frontmatter {
 				title
+				series
+				part
 				date
 				tags
 				cover_image {

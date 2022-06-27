@@ -6,6 +6,15 @@ import Sidebar from '../components/sidebar'
 import TagGroup from "../components/taggroup"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
+function renderSeries(frontmatter) {
+
+	if (frontmatter.part) {
+		return (
+			<p>{frontmatter.series} part {frontmatter.part}</p>
+		)
+	}
+}
+
 export default function Template({data}) {
 
   const { markdownRemark } = data 
@@ -25,6 +34,7 @@ export default function Template({data}) {
 						className="blog-post-content"
 						dangerouslySetInnerHTML={{ __html: html }}
 					/>
+					{renderSeries(frontmatter)}
 				</Content>
 				<Sidebar>
 					<TagGroup tags={frontmatter.tags}/>
@@ -43,6 +53,8 @@ query($title: String!) {
 		frontmatter {
 			date(formatString: "MMMM DD, YYYY")
 			tags
+			series
+			part
 			title
 			cover_image {
 				childImageSharp {

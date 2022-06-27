@@ -2,6 +2,7 @@
 title: "My First Post"
 author: "Author author1"
 series: "Series1"
+part: 1
 rating: 5
 date: "2021-07-23"
 cover_image: "./1.jpg"

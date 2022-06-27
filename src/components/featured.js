@@ -3,6 +3,14 @@ import { Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
 // import { getImage } from 'gatsby-plugin-image'
 
+function renderSeries(node) {
+
+	if (node.frontmatter.part) {
+		return (
+			<p>{node.frontmatter.series} part {node.frontmatter.part}</p>
+		)
+	}
+}
 
 const Featured = ({node}) => {
 
@@ -28,7 +36,8 @@ const Featured = ({node}) => {
 								</Link>
 							))
 						}
-						<Link to={node.frontmatter.slug}><h3 className="mb-0">{node.frontmatter.title}</h3></Link>
+						{renderSeries(node)}
+						<Link to={`/reviews/${kebabCase(node.frontmatter.title)}/`}><h3 className="mb-0">{node.frontmatter.title}</h3></Link>
 						<div className="mb-1 text-muted">{node.frontmatter.date}</div>
 						<p className="card-text mb-auto">{node.excerpt}.</p>
 					</div>

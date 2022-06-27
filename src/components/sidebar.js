@@ -1,14 +1,13 @@
 import * as React from 'react'
 import SearchBar from './searchbar'
-import MailList from './maillist'
-
+import MailingList from './mailinglist'
 
 const Sidebar = ({children}) => {
 
 	return (
 		<div className="col-lg-4">
 			<SearchBar/>
-			<MailList/>
+			<MailingList/>
 			{children}
 		</div>
 	)

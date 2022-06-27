@@ -2,6 +2,7 @@
 title: "Another Post"
 author: "Author author2"
 series: "Series1"
+part: 2
 rating: 4
 date: "2021-07-24"
 cover_image: "./2.jpg"
