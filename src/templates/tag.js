@@ -23,9 +23,9 @@ const Tags = ({ pageContext, data }) => {
 					<ul>
 						{
 							edges.map(node  => 
-							<li>
-							{/* <Link to={`/reviews/${kebabCase(node.node.frontmatter.title)}`}>{node.node.frontmatter.title}</Link> */}
-							<PostListing node={node.node}/>
+							<li key={node.node.title}>
+								{/* <Link to={`/reviews/${kebabCase(node.node.frontmatter.title)}`}>{node.node.frontmatter.title}</Link> */}
+								<PostListing node={node.node}/>
 							</li>
 							)
 						}

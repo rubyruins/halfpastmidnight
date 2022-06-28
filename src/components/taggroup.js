@@ -12,7 +12,7 @@ const TagGroup = ({tags}) => {
 					<ul className="list-unstyled mb-0">
 						{
 						tags.map(tag => (
-							<li>
+							<li key={tag}>
 								<Link to={`/tags/${tag}`}>{tag}</Link>
 							</li>
 							))

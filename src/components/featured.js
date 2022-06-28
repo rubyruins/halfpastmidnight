@@ -29,22 +29,23 @@ const Featured = ({node}) => {
 						</svg>
 					</div>
 					<div className="col p-4 d-flex flex-column position-static">
-						{
-							node.frontmatter.tags.map(tag => (
-								<Link to={`/tags/${kebabCase(tag)}/`}>
-									<span className="d-inline-block mb-2 text-primary">{tag}</span>
-								</Link>
-							))
-						}
-						{renderSeries(node)}
-						<Link to={`/reviews/${kebabCase(node.frontmatter.title)}/`}><h3 className="mb-0">{node.frontmatter.title}</h3></Link>
-						<div className="mb-1 text-muted">{node.frontmatter.date}</div>
-						<p className="card-text mb-auto">{node.excerpt}.</p>
-					</div>
+					{
+						node.frontmatter.tags.map(tag => (
+							<Link to={`/tags/${kebabCase(tag)}/`}>
+								<span className="d-inline-block mb-2 text-primary">{tag}</span>
+							</Link>
+						))
+					}
+					{renderSeries(node)}
+					<Link to={`/reviews/${kebabCase(node.frontmatter.title)}/`}>
+						<h3 className="mb-0">{node.frontmatter.title}</h3>
+					</Link>
+					<div className="mb-1 text-muted">{node.frontmatter.date}</div>
+					<p className="card-text mb-auto">{node.excerpt}.</p>
 				</div>
 			</div>
 		</div>
-	)
-}
+	</div>	
+)}
 
 export default Featured

@@ -1,0 +1,3 @@
+Sitemap: https://halfpastmidnight.me/sitemap/sitemap-0.xml
+User-agent: *
+Disallow:

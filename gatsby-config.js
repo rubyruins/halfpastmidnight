@@ -8,6 +8,9 @@ module.exports = {
 	plugins: [
 		"gatsby-plugin-image",
 		"gatsby-plugin-sharp",
+		"gatsby-transformer-sharp",
+		"gatsby-transformer-remark",
+		"gatsby-plugin-react-helmet",
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {
@@ -22,8 +25,9 @@ module.exports = {
 				path: `${__dirname}/data/headers`,
 			}
 		},
-		"gatsby-transformer-sharp",
-		"gatsby-transformer-remark",
-		"gatsby-plugin-sitemap"
+		{
+			resolve: "gatsby-plugin-sitemap",
+
+		}
 	],
 }
