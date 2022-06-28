@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import PostListing from '../../components/postlisting'
 import Layout from '../../components/layout'
 import Content from '../../components/content'
@@ -28,7 +28,9 @@ const AllReviewsPage = ({ data }) => {
 
 export const query = graphql`
 query {
-	allMarkdownRemark {
+	allMarkdownRemark (
+		filter: {fields: {collection: {eq: "reviews"}}}
+	) {
 		nodes {
 			frontmatter {
 				title

@@ -1,5 +1,16 @@
 const _ = require("lodash")
 
+exports.onCreateNode = ({ node, actions, getNode }) => {
+	const { createNodeField } = actions
+	if (node.internal.type === `MarkdownRemark` || node.internal.type === `Mdx`) {
+	createNodeField({
+		name: `collection`,
+		node,
+		value: getNode(node.parent).sourceInstanceName
+	});
+	}
+};
+
 exports.createPages = ({ actions, graphql }) => {
 	const { createPage } = actions
 	const reviewTemplate = require.resolve(`./src/templates/review.js`)
@@ -8,6 +19,7 @@ exports.createPages = ({ actions, graphql }) => {
 	return graphql(`
 		{
 			allPosts: allMarkdownRemark(
+				filter: {fields: {collection: {eq: "reviews"}}}
 				sort: { order: DESC, fields: [frontmatter___date] }
 				limit: 1000
 			) {
@@ -20,7 +32,10 @@ exports.createPages = ({ actions, graphql }) => {
 					}
 				}
 			}
-			allTags: allMarkdownRemark(limit: 2000) {
+			allTags: allMarkdownRemark(
+				limit: 2000
+				filter: {fields: {collection: {eq: "reviews"}}}
+				) {
 				group(field: frontmatter___tags) {
 					fieldValue
 				}

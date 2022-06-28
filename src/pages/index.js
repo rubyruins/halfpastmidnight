@@ -7,7 +7,6 @@ import Header from '../components/header'
 import Featured from '../components/featured'
 
 const IndexPage = ({data}) => {
-	console.log(data)
 	return (
 		<Layout pageTitle="Home">
 			<Header/>
@@ -31,7 +30,10 @@ const IndexPage = ({data}) => {
 
 export const query = graphql`
 query {
-	allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, limit: 5) {
+	allMarkdownRemark(
+		sort: {fields: frontmatter___date, order: DESC}, limit: 5
+		filter: {fields: {collection: {eq: "reviews"}}}
+		) {
 		nodes {
 			frontmatter {
 				title

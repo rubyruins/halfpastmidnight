@@ -1,0 +1,58 @@
+import * as React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+// import {randomHeader} from '../styles/styles.css'
+// import Background from '../images/header/1.jpg'
+// const totalImages = 3;
+// var randomImageIndex = Math.floor(Math.random() * totalImages) + 1;
+// var randomImagePath = '../images/header/' + randomImageIndex + '.jpg';
+
+const Header = () => {
+
+	const data = useStaticQuery(graphql`
+		query {
+			allMarkdownRemark (
+				filter: {fields: {collection: {eq: "headers"}}}
+			) {
+				nodes {
+					frontmatter {
+						name
+						contributor
+						cover_image {
+							childImageSharp {
+								gatsbyImageData
+							}
+						}
+					}
+				}
+			}
+		}
+	`)
+
+	var totalImages = data.allMarkdownRemark.nodes.length;
+	var randomImageIndex = Math.floor(Math.random() * totalImages);
+	var randomImage = data.allMarkdownRemark.nodes[randomImageIndex].frontmatter.cover_image;
+	console.log(randomImage);
+	const renderedImage = getImage(randomImage);
+	// console.log(data.allMarkdownRemark.nodes[randomImageIndex]);
+	
+	// const style = {backgroundImage: 'url(../images/header' + randomImageIndex +  '.jpg)'}
+	// const style = {backgroundImage: Background}
+	// console.log(style)
+
+// 	return (
+// 		<header>
+// 			{/* <img src={`./header/${randomImageIndex}.jpg`} className="randomHeader"/> */}
+// 			{/* <img src={`../images/header/${randomImageIndex}.jpg`} className="randomHeader"/> */}
+// 			{/* <img src={Background} className="randomHeader"/> */}
+// 			<GatsbyImage image={randomImage}/>
+// 			<p>Header here</p>
+// 		</header>
+//   )
+
+return (
+		<GatsbyImage image={renderedImage}/>
+	)
+}
+
+export default Header

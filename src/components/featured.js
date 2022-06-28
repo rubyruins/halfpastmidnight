@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
-// import { getImage } from 'gatsby-plugin-image'
+// import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
 function renderSeries(node) {
 

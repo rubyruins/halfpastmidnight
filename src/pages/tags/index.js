@@ -31,7 +31,9 @@ const AllTagsPage = ({ data }) => {
 
 export const query = graphql`
 query {
-	allMarkdownRemark {
+	allMarkdownRemark (
+		filter: {fields: {collection: {eq: "reviews"}}}
+	) {
 	  group(field: frontmatter___tags) {
 		tag: fieldValue
 		totalCount
@@ -41,6 +43,3 @@ query {
 `
 
 export default AllTagsPage
-
-// # TODO: Add count as well. Example: Royalty (10)
-// # TODO: Add seperate page for each tag and display titles there instead of everything in one place

@@ -47,7 +47,9 @@ export default function Template({data}) {
 
 export const pageQuery = graphql`
 query($title: String!) {
-	markdownRemark(frontmatter: { title: { eq: $title } }) {
+	markdownRemark(
+			frontmatter: { title: { eq: $title } }
+		) {
 		html
 		timeToRead
 		frontmatter {
