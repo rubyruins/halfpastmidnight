@@ -28,6 +28,8 @@ exports.createPages = ({ actions, graphql }) => {
 						frontmatter {
 							tags
 							title
+							author
+							series
 						}
 					}
 				}
@@ -53,6 +55,8 @@ exports.createPages = ({ actions, graphql }) => {
 			component: reviewTemplate,
 			context: {
 				title: node.frontmatter.title,
+				author: node.frontmatter.author,
+				series: node.frontmatter.series,
 			}})
   		})
 

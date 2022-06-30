@@ -1,7 +1,7 @@
 ---
-title: "My First Post"
-author: "Author author1"
-series: "Series1"
+title: "Six of Crows"
+author: "Leigh Bardugo"
+series: "Six of Crows"
 part: 1
 rating: 5
 date: "2021-07-23"

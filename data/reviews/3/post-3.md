@@ -1,6 +1,6 @@
 ---
-title: "Yet Another Post"
-author: "Author author3"
+title: "King of Scars"
+author: "Leigh Bardugo"
 series: "Standalone"
 rating: 10
 date: "2021-07-25"
