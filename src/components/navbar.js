@@ -5,9 +5,9 @@ import {
 	navLinkItem,
 	navLinkText,
 } from '../styles/layout.module.css'
+import Toggler from './toggler'
 
 const Navbar = () => {
-
 
 	return (
 		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -18,16 +18,14 @@ const Navbar = () => {
 					<ul className={`${navLinks} navbar-nav ms-auto mb-2 mb-lg-0`}>
 						<li className={`${navLinkItem} nav-item`}>
 							<Link to="/about" className={`${navLinkText} nav-link`}>About</Link>
-							{/* <a className="nav-link" href="/about">About</a> */}
 						</li>
 						<li className={`${navLinkItem} nav-item`}>
-							{/* <a className="nav-link" href="/blog">Blog</a> */}
 							<Link to="/reviews" className={`${navLinkText} nav-link`}>Reviews</Link>
 						</li>
 						<li className={`${navLinkItem} nav-item`}>
-							{/* <a className="nav-link" href="/blog">Blog</a> */}
 							<Link to="/tags" className={`${navLinkText} nav-link`}>Tags</Link>
 						</li>
+						<Toggler/>
 					</ul>
 				</div>
 			</div>
