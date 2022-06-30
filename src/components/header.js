@@ -7,17 +7,18 @@ function getRandomImage(data) {
 	var allImages = data.allMarkdownRemark.nodes
 	var totalImages = allImages.length;
 	var randomImageIndex = Math.floor(Math.random() * totalImages);
+	console.log(randomImageIndex);
 	var randomImage = allImages[randomImageIndex];
 	return randomImage;
 }
 
-const Header = () => {
-
+const Header = React.memo(() => {
+		
 	const data = useStaticQuery(graphql`
 		query {
 			allMarkdownRemark (
 				filter: {fields: {collection: {eq: "headers"}}}
-			) {
+				) {
 				nodes {
 					frontmatter {
 						name
@@ -31,17 +32,17 @@ const Header = () => {
 				}
 			}
 		}
-	`)
-
-	var selectedImage = getRandomImage(data);
-	var renderedImage = getImage(selectedImage.frontmatter.cover_image);
-	var imageInfo = selectedImage.frontmatter.name + "\n" + selectedImage.frontmatter.contributor + " on Unsplash";
+		`)
+		
+		var selectedImage = getRandomImage(data);
+		var renderedImage = getImage(selectedImage.frontmatter.cover_image);
+		var imageInfo = selectedImage.frontmatter.name + "\n" + selectedImage.frontmatter.contributor + " on Unsplash";
 
 	return (
 		<div>
 			<GatsbyImage image={renderedImage} className="randomHeader" alt={imageInfo} title={imageInfo}/>
 		</div>
 	)
-}
+})
 
 export default Header
