@@ -3,7 +3,7 @@ title: "Crooked Kingdom"
 author: "Leigh Bardugo"
 series: "Six of Crows"
 part: 2
-rating: 4
+rating: "04.0"
 date: "2021-07-24"
 cover_image: "./2.jpg"
 tags: [value2,value3,value4,value5,value6]

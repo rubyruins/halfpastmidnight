@@ -5,6 +5,7 @@ import Layout from '../../components/layout'
 import Content from '../../components/content'
 import Sidebar from '../../components/sidebar'
 import Header from '../../components/header'
+import SortButton from '../../components/sortbutton'
 
 const AllReviewsPage = ({ data }) => {
   return (
@@ -13,11 +14,14 @@ const AllReviewsPage = ({ data }) => {
 		<div className="container">
 			<div className="row">
 				<Content>
-				{
-					data.allMarkdownRemark.nodes.map(node => (
-					<PostListing node={node} />
-					))
-				}
+					<SortButton/>
+					<div className="sort-container">
+					{
+						data.allMarkdownRemark.nodes.map(node => (
+						<PostListing node={node} />
+						))
+					}
+					</div>
 				</Content>
 				<Sidebar/>
 			</div>
@@ -30,6 +34,7 @@ export const query = graphql`
 query {
 	allMarkdownRemark (
 		filter: {fields: {collection: {eq: "reviews"}}}
+		sort: {fields: frontmatter___title, order: ASC}
 	) {
 		nodes {
 			frontmatter {
@@ -38,6 +43,7 @@ query {
 				series
 				part
 				author
+				rating
 			}
 			id
 		}

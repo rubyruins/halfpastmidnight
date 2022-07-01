@@ -3,7 +3,7 @@ title: "Six of Crows"
 author: "Leigh Bardugo"
 series: "Six of Crows"
 part: 1
-rating: 5
+rating: "05.0"
 date: "2021-07-23"
 cover_image: "./1.jpg"
 tags: [value1,value2,value3,value4,value5]

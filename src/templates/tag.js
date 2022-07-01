@@ -1,10 +1,11 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import PostListing from "../components/postlisting"
 import Layout from '../components/layout'
 import Header from '../components/header'
 import Content from '../components/content'
 import Sidebar from '../components/sidebar'
+import SortButton from "../components/sortbutton"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -19,17 +20,15 @@ const Tags = ({ pageContext, data }) => {
 		<div className="container">
 			<div className="row">
 				<Content>
+					<SortButton/>
 					<h1>{tagHeader}</h1>
-					<ul>
-						{
-							edges.map(node  => 
-							<li key={node.node.title}>
-								{/* <Link to={`/reviews/${kebabCase(node.node.frontmatter.title)}`}>{node.node.frontmatter.title}</Link> */}
-								<PostListing node={node.node}/>
-							</li>
-							)
-						}
-					</ul>
+					<div className="sort-container">
+					{
+						edges.map(node => (
+						<PostListing node={node.node} />
+						))
+					}
+					</div>
 				</Content>
 				<Sidebar/>
 			</div>
@@ -45,6 +44,7 @@ export const pageQuery = graphql`
 	allMarkdownRemark(
 		limit: 2000
 		filter: { frontmatter: { tags: { in: [$tag] } } }
+		sort: {fields: frontmatter___title, order: ASC}
 	) {
 		totalCount
 		edges {

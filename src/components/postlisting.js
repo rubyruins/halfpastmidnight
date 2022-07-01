@@ -15,15 +15,16 @@ const PostListing = ({node}) => {
 
 	return (
 		<div>
-			<article key={node.id}>
-				<h2>
+			<article key={node.id} className="element-item">
+				<h2 className='title'>
 				<Link to={`/reviews/${kebabCase(node.frontmatter.title)}`}>
 					{node.frontmatter.title}
 				</Link>
 				</h2>
 				{renderSeries(node)}
-				<p>Posted: {node.frontmatter.date}</p>
-				<p>By: {node.frontmatter.author}</p>
+				<p className='date'>Posted: {node.frontmatter.date}</p>
+				<p className='author'>By: {node.frontmatter.author}</p>
+				<p className='rating'>Rating: {node.frontmatter.rating}</p>
 			</article>
 		</div>
 	)
