@@ -1,8 +1,7 @@
 ---
 title: "Rule of Wolves"
 author: "Leigh Bardugo"
-series: "King of Scars"
-part: 2
+series: "Standalone"
 rating: "10.0"
 date: "2021-07-25"
 cover_image: "./4.jpg"

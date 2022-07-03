@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-import PostListing from "../components/postlisting"
+import PostListing from "../components/middle/postlisting"
 import Layout from '../components/layout'
-import Header from '../components/header'
-import Content from '../components/content'
-import Sidebar from '../components/sidebar'
-import SortButton from "../components/sortbutton"
+import Header from '../components/top/header'
+import Content from '../components/middle/content'
+import Sidebar from '../components/side/sidebar'
+import SortButton from "../components/middle/sortbutton"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext

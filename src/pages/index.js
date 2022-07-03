@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import Content from '../components/content'
-import Sidebar from '../components/sidebar'
-import Header from '../components/header'
-import Featured from '../components/featured'
+import Content from '../components/middle/content'
+import Sidebar from '../components/side/sidebar'
+import Header from '../components/top/header'
+import FeaturedPost from '../components/middle/featuredpost'
 
 const IndexPage = ({data}) => {
 	return (
@@ -17,7 +17,7 @@ const IndexPage = ({data}) => {
 						<p>Welcome to your new Gatsby blog with Markdown pages.</p>
 						{
 							data.allMarkdownRemark.nodes.map(node => (
-							<Featured node={node} />
+							<FeaturedPost node={node} />
 							))
 						}
 					</Content>

@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from 'gatsby'
-import Navbar from './navbar'
-import Footer from './footer'
-import "../styles/styles.css"
+import Navbar from '../components/top/navbar'
+import Footer from '../components/bottom/footer'
 
 const Layout = ({pageTitle, children}) => {
 
@@ -29,7 +28,6 @@ const Layout = ({pageTitle, children}) => {
 			<meta name="description" content={data.site.siteMetadata.siteUrl} />
 			<meta name="author" content={data.site.siteMetadata.author} />
 			{/* <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> */}
-			{/* <link href="../styles/styles.css" rel="stylesheet" /> */}
         </Helmet>
 		<main>
 			<Navbar/>

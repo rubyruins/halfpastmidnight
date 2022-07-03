@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import PostListing from '../../components/postlisting'
+import PostListing from '../../components/middle/postlisting'
 import Layout from '../../components/layout'
-import Content from '../../components/content'
-import Sidebar from '../../components/sidebar'
-import Header from '../../components/header'
-import SortButton from '../../components/sortbutton'
+import Content from '../../components/middle/content'
+import Sidebar from '../../components/side/sidebar'
+import Header from '../../components/top/header'
+import SortButton from '../../components/middle/sortbutton'
 
 const AllReviewsPage = ({ data }) => {
   return (

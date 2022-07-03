@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from '../components/layout'
-import Content from '../components/content'
-import Sidebar from '../components/sidebar'
-import TagGroup from "../components/taggroup"
-import Recommendations from "../components/recommendations"
+import Content from '../components/middle/content'
+import Sidebar from '../components/side/sidebar'
+import TagGroup from "../components/side/taggroup"
+import SuggestedReads from "../components/side/suggestedreads"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 function renderSeries(frontmatter) {
@@ -38,18 +38,13 @@ export default function Template({data}) {
 				</Content>
 				<Sidebar>
 					<TagGroup tags={frontmatter.tags}/>
-					<Recommendations seriesBooks={data.seriesBooks.edges} authorBooks={data.authorBooks.edges} bookTitle={frontmatter.title}></Recommendations>
+					<SuggestedReads booksInSeries={data.booksInSeries.edges} booksByAuthor={data.booksByAuthor.edges} bookTitle={frontmatter.title}></SuggestedReads>
 				</Sidebar>
 			</div>
 		</div>
 	</Layout>
   )
 }
-
-// Find intersection of all books by the author and in the series
-// For series, this returns books in other series
-// For standalones, this returns other standalones
-// Filter out the book in the post from this list
 
 export const pageQuery = graphql`
 query($title: String!, $author: String!, $series: String!) {
@@ -71,7 +66,7 @@ query($title: String!, $author: String!, $series: String!) {
 			}
 		}
 	}
-	seriesBooks: allMarkdownRemark(
+	booksInSeries: allMarkdownRemark(
 		filter: {
 			frontmatter: {
 				series: {
@@ -90,7 +85,7 @@ query($title: String!, $author: String!, $series: String!) {
 			}
 		}
 	}
-	authorBooks: allMarkdownRemark(
+	booksByAuthor: allMarkdownRemark(
 		filter: {
 			frontmatter: {
 				author: {

@@ -2,9 +2,9 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
 import Layout from '../../components/layout'
-import Content from '../../components/content'
-import Sidebar from '../../components/sidebar'
-import Header from '../../components/header'
+import Content from '../../components/middle/content'
+import Sidebar from '../../components/side/sidebar'
+import Header from '../../components/top/header'
 
 const AllTagsPage = ({ data }) => {
 	
