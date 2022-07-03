@@ -45,6 +45,9 @@ query {
 				author
 				rating
 			}
+			fields {
+				articleTitle
+			}
 			id
 		}
 	}

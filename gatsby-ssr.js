@@ -29,6 +29,6 @@ exports.onRenderBody = ({ setHeadComponents }) => {
 			setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
 			})();`,
 		}}
-	/>,
+	/>
 	]);
 };

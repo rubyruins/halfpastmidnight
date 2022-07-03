@@ -65,6 +65,9 @@ query($title: String!, $author: String!, $series: String!) {
 				}
 			}
 		}
+		fields {
+			articleTitle
+		}
 	}
 	booksInSeries: allMarkdownRemark(
 		filter: {
@@ -81,6 +84,9 @@ query($title: String!, $author: String!, $series: String!) {
 					title
 					series
 					part
+				}
+				fields {
+					articleTitle
 				}
 			}
 		}
@@ -100,6 +106,9 @@ query($title: String!, $author: String!, $series: String!) {
 					title
 					series
 					part
+				}
+				fields {
+					articleTitle
 				}
 			}
 		}

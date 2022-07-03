@@ -56,6 +56,10 @@ export const pageQuery = graphql`
 					part
 					author
 					date
+					rating
+				}
+				fields {
+					articleTitle
 				}
 			}
 		}

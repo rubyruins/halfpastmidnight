@@ -3,15 +3,6 @@ import { Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
 // import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
-function makeTitle(node) {
-
-	if (node.frontmatter.part) {
-		return `${node.frontmatter.title} (${node.frontmatter.series}, #${node.frontmatter.part})`
-	} else {
-		return `${node.frontmatter.title}`
-	}
-}
-
 const FeaturedPost = ({node}) => {
 
 	// const image=getImage(node.frontmatter.cover_image)
@@ -37,7 +28,7 @@ const FeaturedPost = ({node}) => {
 						))
 					}
 					<Link to={`/reviews/${kebabCase(node.frontmatter.title)}/`}>
-						<h3 className="mb-0">{makeTitle(node)}</h3>
+						<h3 className="mb-0">{node.fields.articleTitle}</h3>
 					</Link>
 					<div className="mb-1 text-muted">{node.frontmatter.date}</div>
 					<p className="card-text mb-auto">{node.excerpt}.</p>

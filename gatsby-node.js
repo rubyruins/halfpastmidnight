@@ -1,13 +1,29 @@
 const _ = require("lodash")
 
+function makeTitle(node) {
+
+	if (node.frontmatter.part) {
+		return `${node.frontmatter.title} (${node.frontmatter.series}, #${node.frontmatter.part})`
+	} else {
+		return `${node.frontmatter.title}`
+	}
+}
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
 	const { createNodeField } = actions
 	if (node.internal.type === `MarkdownRemark` || node.internal.type === `Mdx`) {
-	createNodeField({
-		name: `collection`,
-		node,
-		value: getNode(node.parent).sourceInstanceName
-	});
+		createNodeField({
+			name: `collection`,
+			node,
+			value: getNode(node.parent).sourceInstanceName
+		});
+		if (node.fields.collection === 'reviews') {
+			createNodeField({
+				name: `articleTitle`,
+				node,
+				value: makeTitle(node)
+			});
+		}
 	}
 };
 

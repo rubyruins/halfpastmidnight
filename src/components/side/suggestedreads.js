@@ -30,20 +30,12 @@ function renderSuggestions(booksInSeries, booksByAuthor, bookTitle) {
 			{
 				suggestions.map(suggestion => (
 				<li key={suggestion}>
-					<Link to={`/reviews/${kebabCase(suggestion.node.frontmatter.title)}`}>{makeTitle(suggestion.node)}</Link>
+					<Link to={`/reviews/${kebabCase(suggestion.node.frontmatter.title)}`}>{suggestion.node.fields.articleTitle}</Link>
 				</li>
 				))
 			}
 			</Card>
 		)
-	}
-}
-
-function makeTitle(node) {
-	if (node.frontmatter.part) {
-		return `${node.frontmatter.title} (${node.frontmatter.series}, #${node.frontmatter.part})`
-	} else {
-		return `${node.frontmatter.title}`
 	}
 }
 
