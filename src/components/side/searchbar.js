@@ -1,14 +1,21 @@
 import * as React from 'react'
 import Card from './card'
+import { useStaticQuery, graphql } from 'gatsby'
+import SearchIndexer from '../side/searchindexer'
 
 const SearchBar = () => {
 
+	const data = useStaticQuery(graphql`
+		query SearchIndexQuery {
+			siteSearchIndex {
+				index
+			}
+		}
+	`)
+
 	return (
 		<Card title="Search for anything">
-			<div className="input-group">
-				<input className="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-				<button className="btn btn-primary" id="button-search" type="button">Go!</button>
-			</div>
+			<SearchIndexer searchIndex={data.siteSearchIndex.index}/>
 		</Card>
 	)
 }

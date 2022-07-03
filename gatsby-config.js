@@ -28,6 +28,20 @@ module.exports = {
 		{
 			resolve: "gatsby-plugin-sitemap",
 
-		}
+		},
+		{
+			resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+			options: {
+				fields: ['title', 'author', 'series', 'articleTitle'],
+				resolvers: {
+					MarkdownRemark: {
+						title: node => node.frontmatter.title,
+						series: node => node.frontmatter.series,
+						author: node => node.frontmatter.author,
+						articleTitle: node => node.fields.articleTitle,
+					},
+				},
+			},
+		},
 	],
 }
