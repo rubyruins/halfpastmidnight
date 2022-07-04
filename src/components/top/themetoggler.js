@@ -20,13 +20,13 @@ const ThemeToggler = () => {
 	};
 
 	return (
-		<li className={`button navLinkItem nav-item`} onClick={ThemeToggle} onKeyDown={ThemeToggle} role="presentation" aria-label="theme-toggler">
+		<button className="btn nav-item ml-auto theme-toggler" onClick={ThemeToggle} onKeyDown={ThemeToggle}>
 			{theme === 'dark' ? (
-				<FontAwesomeIcon icon={faSun} size="1x" className="navLinkText nav-link"/>
+				<FontAwesomeIcon icon={faSun} size="2x" className="nav-link align-middle"/>
 			) : (
-				<FontAwesomeIcon icon={faMoon} size="1x" className="navLinkText nav-link"/>
+				<FontAwesomeIcon icon={faMoon} size="2x" className="nav-link align-middle"/>
 			)}
-		</li>
+		</button>
 	);
 };
 

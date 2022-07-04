@@ -1,49 +1,143 @@
 :root {
-	--color-background: white;
-	--color-text: #222;
-	--color-primary: #164BC5;
+	--background-primary: #ffffff;
+	--background-secondary: #c9c9c9;
+	--background-tertiary:#F2F2F2;
+	--font-primary:#181818;
+	--font-secondary: #555555;
+	--color-one: #6814ce;
+
+	--headings-font: 'Poppins', sans-serif;
+	--paragraph-font: 'Roboto', sans-serif;
 }
 
 :root.dark {
-	--color-background: black;
-	--color-text: #DDD;
-	--color-primary: #0F9640;
+	--background-primary: #1c1c1c;
+	--background-secondary:#000000;
+	--background-tertiary: #000925;
+	--font-primary: #e0e8ff;
+	--font-secondary: #C5D4FF;
+	--color-one: #be0085;
 }
 
 body {
-	background-color: var(--color-background);
-	color: var(--color-text);
+	background-color: var(--background-primary);
+	font-family: var(--paragraph-font) !important;
+	color: var(--font-primary);
 }
 
 .container {
 	margin: auto;
-	/* max-width: 500px; */
-	/* font-family: sans-serif; */
 }
 
-.nav-links {
-	display: flex;
-	list-style: none;
-	padding-left: 0;
+nav {
+	background-color: var(--background-primary) !important;
+	z-index: 100;
 }
 
-.nav-link-item {
-	padding-right: 2rem;
+/* Navbar */
+
+.navbar-brand, .nav-link {
+	color: var(--font-primary) !important;
+	font-family: var(--headings-font) !important;
+	font-size: 0.8rem;
 }
 
-.nav-link-text {
-	color: black;
+.navbar-brand {
+	padding-left: 2rem;
+	text-transform: uppercase;
 }
 
-.site-title {
-	font-size: 3rem;
-	color: gray;
-	font-weight: 700;
-	margin: 3rem 0;
+.nav-link:hover {
+	cursor: pointer;
+}
+
+.navbar-toggler-icon-custom {
+	color: var(--font-primary);
+}
+
+.theme-toggler {
+	padding-right: 1rem;
+}
+
+
+@media screen and (max-width: 768px) {
+	
+	.navbar-collapse {
+		position: absolute;
+		top: 40px;
+		left: -100%;
+		width: 25%;
+		transition: all 0.1s ease;
+		display: block;
+		height: 100vh;
+		background-color: var(--background-primary);
+		padding: 2rem;
+	}
+
+	.navbar-brand {
+		position: absolute;
+		transform: translateX(-47.5%);
+		left: 47.5%;
+	}
+	
+	.navbar-collapse.collapsing {
+		height: 100vh;
+		left: -100%;
+		margin-left: 1px;
+		transition: all 0.2s ease;
+	}
+	
+	.navbar-collapse.show {
+		margin-left: 100%;
+		transition: all 0.2s ease;
+	}
+	
+	.navbar-toggler {
+		padding-left: 2rem;
+	}
 }
 
 .randomHeader {
 	background-size: cover;
 	width: 100%;
 	height: auto;
+}
+
+/* Lists */
+
+li {
+	list-style: none;
+	margin-bottom: 5px !important;
+}
+
+/* Links and buttons */
+
+a, a:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+*:focus {
+	outline: none !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--background-primary);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-one);
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--color-one);
 }
