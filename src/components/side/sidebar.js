@@ -6,9 +6,9 @@ const Sidebar = ({children}) => {
 
 	return (
 		<div className="col-lg-4 py-5">
+			{children}
 			<SearchBar/>
 			<MailingList/>
-			{children}
 		</div>
 	)
 }

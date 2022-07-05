@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
+import TagGroup from './taggroup'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
 const FeaturedPost = ({node}) => {
@@ -24,11 +25,7 @@ const FeaturedPost = ({node}) => {
 						</Link>
 						<ul className='flex flex-row tags-list'>
 						{
-							node.frontmatter.tags.map(tag => (
-								<Link to={`/tags/${kebabCase(tag)}/`} className="tag">
-									<span className="d-inline-block text-primary">{tag}</span>
-								</Link>
-							))
+							<TagGroup tags={node.frontmatter.tags}/>
 						}
 						</ul>
 						<p className="card-text mb-auto">{node.excerpt}.</p>

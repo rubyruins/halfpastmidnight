@@ -118,9 +118,9 @@ a, a:hover {
 }
 
 *:focus {
-	outline: none !important;
+	/* outline: none !important;
 	border: none !important;
-	box-shadow: none !important;
+	box-shadow: none !important; */
 }
 
 /* Scrollbar */
@@ -185,6 +185,29 @@ a, a:hover {
 
 .tag span:hover {
 	color: var(--color-one) !important;
+}
+
+.card {
+	background-color: var(--background-primary) !important;
+	border: none !important;
+}
+
+.search-container {
+	border: 2px var(--font-primary) !important;
+}
+
+.search-bar {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+.search-bar:focus {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	outline: none !important;
+	box-shadow: none !important;
 }
 
 /* Headings */

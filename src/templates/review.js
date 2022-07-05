@@ -3,9 +3,9 @@ import { graphql } from "gatsby"
 import Layout from '../components/layout'
 import Content from '../components/middle/content'
 import Sidebar from '../components/side/sidebar'
-import TagGroup from "../components/side/taggroup"
+import TagGroup from "../components/middle/taggroup"
 import SuggestedReads from "../components/side/suggestedreads"
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import CoverImage from "../components/side/coverimage"
 
 function renderSeries(frontmatter) {
 
@@ -19,17 +19,16 @@ function renderSeries(frontmatter) {
 export default function Template({data}) {
 
 	const { frontmatter, html, timeToRead } = data.bookData 
-	const image = getImage(frontmatter.cover_image)
 
 	return (
 	<Layout pageTitle={frontmatter.title}>
 		<div className="container">
 			<div className="row">
 				<Content>
-					<GatsbyImage image={image}/>
 					<h1>{frontmatter.title}</h1>
 					<h2>{frontmatter.date}</h2>
 					<h3>{timeToRead} minute read</h3>
+					<TagGroup tags={frontmatter.tags}/>
 					<div
 						className="blog-post-content"
 						dangerouslySetInnerHTML={{ __html: html }}
@@ -37,7 +36,7 @@ export default function Template({data}) {
 					{renderSeries(frontmatter)}
 				</Content>
 				<Sidebar>
-					<TagGroup tags={frontmatter.tags}/>
+					<CoverImage frontmatter={frontmatter}/>
 					<SuggestedReads booksInSeries={data.booksInSeries.edges} booksByAuthor={data.booksByAuthor.edges} bookTitle={frontmatter.title}></SuggestedReads>
 				</Sidebar>
 			</div>

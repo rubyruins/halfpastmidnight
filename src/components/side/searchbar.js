@@ -14,7 +14,7 @@ const SearchBar = () => {
 	`)
 
 	return (
-		<Card title="Search for anything">
+		<Card>
 			<SearchIndexer searchIndex={data.siteSearchIndex.index}/>
 		</Card>
 	)
