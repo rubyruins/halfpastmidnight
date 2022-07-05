@@ -3,9 +3,9 @@ const _ = require("lodash")
 function makeTitle(node) {
 
 	if (node.frontmatter.part) {
-		return `${node.frontmatter.title} (${node.frontmatter.series}, #${node.frontmatter.part})`
+		return `${node.frontmatter.author}: ${node.frontmatter.title} (${node.frontmatter.series}, #${node.frontmatter.part})`
 	} else {
-		return `${node.frontmatter.title}`
+		return `${node.frontmatter.author}: ${node.frontmatter.title}`
 	}
 }
 

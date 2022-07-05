@@ -13,7 +13,7 @@ const IndexPage = ({data}) => {
 			<div className="container">
 				<div className="row">
 					<Content>
-						<h1>Hi people</h1>
+						<h1 className='heading'>Hi people</h1>
 						<p>Welcome to your new Gatsby blog with Markdown pages.</p>
 						{
 							data.allMarkdownRemark.nodes.map(node => (
@@ -35,6 +35,7 @@ query {
 		filter: {fields: {collection: {eq: "reviews"}}}
 		) {
 		nodes {
+			timeToRead
 			frontmatter {
 				title
 				series

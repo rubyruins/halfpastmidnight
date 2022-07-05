@@ -1,41 +1,41 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
-// import { getImage, GatsbyImage } from 'gatsby-plugin-image'
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
 const FeaturedPost = ({node}) => {
 
-	// const image=getImage(node.frontmatter.cover_image)
+	const image=getImage(node.frontmatter.cover_image)
 
 	return (
 		<div className="row mb-2">
+			<hr/>
 			<div className="col-md-12 col-lg-12">
-				<div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+				<div className="row g-0 rounded overflow-hidden flex-md-row h-md-250 position-relative">
 					<div className="col-auto d-none d-lg-block">
-						{/* <GatsbyImage image={image} /> */}
-						<svg className="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-							<title>Placeholder</title>
-							<rect width="100%" height="100%" fill="#55595c"/>
-							<text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-						</svg>
+						<div class="featured-img-container">
+							<GatsbyImage image={image} alt="" className="featured-img"/>
+						</div>
 					</div>
 					<div className="col p-4 d-flex flex-column position-static">
-					{
-						node.frontmatter.tags.map(tag => (
-							<Link to={`/tags/${kebabCase(tag)}/`}>
-								<span className="d-inline-block mb-2 text-primary">{tag}</span>
-							</Link>
-						))
-					}
-					<Link to={`/reviews/${kebabCase(node.frontmatter.title)}/`}>
-						<h3 className="mb-0">{node.fields.articleTitle}</h3>
-					</Link>
-					<div className="mb-1 text-muted">{node.frontmatter.date}</div>
-					<p className="card-text mb-auto">{node.excerpt}.</p>
+						<div className="mb-1 text-muted">{node.frontmatter.date} • {node.timeToRead} minute read</div>
+						<Link to={`/reviews/${kebabCase(node.frontmatter.title)}/`}>
+							<h3 className="mb-0 section-heading">{node.fields.articleTitle}</h3>
+						</Link>
+						<ul className='flex flex-row tags-list'>
+						{
+							node.frontmatter.tags.map(tag => (
+								<Link to={`/tags/${kebabCase(tag)}/`} className="tag">
+									<span className="d-inline-block text-primary">{tag}</span>
+								</Link>
+							))
+						}
+						</ul>
+						<p className="card-text mb-auto">{node.excerpt}.</p>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>	
+		</div>	
 )}
 
 export default FeaturedPost
