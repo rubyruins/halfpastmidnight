@@ -2,6 +2,7 @@ import * as React from 'react'
 import kebabCase from "lodash/kebabCase"
 import { Link } from 'gatsby'
 import Card from './card';
+import SuggestedRead from './suggestedread';
 
 // Find intersection of all books by the author and in the series
 // If the original book is in a series, this returns books in other series
@@ -30,9 +31,7 @@ function renderSuggestions(booksInSeries, booksByAuthor, bookTitle) {
 			<h4>Suggested Reads</h4>
 			{
 				suggestions.map(suggestion => (
-				<li key={suggestion}>
-					<Link to={`/reviews/${kebabCase(suggestion.node.frontmatter.title)}`}>{suggestion.node.fields.articleTitle}</Link>
-				</li>
+					<SuggestedRead suggestion={suggestion}/>
 				))
 			}
 			</Card>
@@ -40,7 +39,7 @@ function renderSuggestions(booksInSeries, booksByAuthor, bookTitle) {
 	}
 }
 
-const SuggestedReads = ({booksInSeries, booksByAuthor, bookTitle}) => {
+const SuggestedReadsList = ({booksInSeries, booksByAuthor, bookTitle}) => {
 	return (
 		<>
 			{renderSuggestions(booksInSeries, booksByAuthor, bookTitle)}
@@ -48,4 +47,4 @@ const SuggestedReads = ({booksInSeries, booksByAuthor, bookTitle}) => {
 	)
 }
 
-export default SuggestedReads
+export default SuggestedReadsList

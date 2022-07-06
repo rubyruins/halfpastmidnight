@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import Content from '../components/middle/content'
 import Sidebar from '../components/side/sidebar'
 import TagGroup from "../components/middle/taggroup"
-import SuggestedReads from "../components/side/suggestedreads"
+import SuggestedReads from "../components/side/suggestedreadslist"
 import CoverImage from "../components/side/coverimage"
 
 function renderSeries(frontmatter) {
@@ -37,7 +37,7 @@ export default function Template({data}) {
 				</Content>
 				<Sidebar>
 					<CoverImage frontmatter={frontmatter}/>
-					<SuggestedReads booksInSeries={data.booksInSeries.edges} booksByAuthor={data.booksByAuthor.edges} bookTitle={frontmatter.title}></SuggestedReads>
+					<SuggestedReads booksInSeries={data.booksInSeries.edges} booksByAuthor={data.booksByAuthor.edges} bookTitle={frontmatter.title} bookCover={frontmatter.cover_image}></SuggestedReads>
 				</Sidebar>
 			</div>
 		</div>
@@ -81,8 +81,14 @@ query($title: String!, $author: String!, $series: String!) {
 			node {
 				frontmatter {
 					title
+					author
 					series
 					part
+					cover_image {
+						childImageSharp {
+							gatsbyImageData
+						}
+					}
 				}
 				fields {
 					articleTitle
@@ -103,8 +109,14 @@ query($title: String!, $author: String!, $series: String!) {
 			node {
 				frontmatter {
 					title
+					author
 					series
 					part
+					cover_image {
+						childImageSharp {
+							gatsbyImageData
+						}
+					}
 				}
 				fields {
 					articleTitle
