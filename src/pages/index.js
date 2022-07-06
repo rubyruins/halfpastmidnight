@@ -38,6 +38,7 @@ query {
 			timeToRead
 			frontmatter {
 				title
+				author
 				series
 				part
 				date

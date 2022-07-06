@@ -156,8 +156,9 @@ a, a:hover {
     min-width: 100%;
     min-height: 100%;
 	object-fit: cover;
-	width: 125px;
-	height: 200px;
+	width: 150px;
+	height: auto;
+	/* height: 200px; */
 }
 
 /* Global Components */
@@ -193,21 +194,25 @@ a, a:hover {
 }
 
 .search-container {
-	border: 2px var(--font-primary) !important;
+	border: 2.5px solid var(--font-primary) !important;
+	border-radius: 20px;
 }
 
 .search-bar {
-	border-top: none;
-	border-left: none;
-	border-right: none;
+	border: none;
+	background-color: var(--background-primary);
+	caret-color: var(--font-primary);
+	color: var(--font-primary);
 }
 
 .search-bar:focus {
 	border-top: none;
 	border-left: none;
 	border-right: none;
-	outline: none !important;
-	box-shadow: none !important;
+	outline: none;
+	box-shadow: none;
+	caret-color: var(--font-primary);
+	color: var(--font-primary);
 }
 
 /* Headings */
@@ -228,4 +233,9 @@ a, a:hover {
 
 .main-content {
 	color: var(--font-primary);
+}
+
+.review-img {
+	max-width:100% !important;
+	height: auto !important;
 }

@@ -8,7 +8,7 @@ const CoverImage = ({frontmatter}) => {
 
 	return (
 		<Card>
-			<GatsbyImage image={image}/>
+			<GatsbyImage image={image} className="review-img"/>
 		</Card>
 	)
 }

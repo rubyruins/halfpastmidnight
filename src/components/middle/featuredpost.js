@@ -23,6 +23,9 @@ const FeaturedPost = ({node}) => {
 						<Link to={`/reviews/${kebabCase(node.frontmatter.title)}/`}>
 							<h3 className="mb-0 section-heading">{node.fields.articleTitle}</h3>
 						</Link>
+						<p className='text-muted'>
+							{node.frontmatter.author}
+						</p>
 						<ul className='flex flex-row tags-list'>
 						{
 							<TagGroup tags={node.frontmatter.tags}/>

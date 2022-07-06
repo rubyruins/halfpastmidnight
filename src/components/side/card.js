@@ -4,11 +4,9 @@ import * as React from 'react'
 const Card = ({children, title}) => {
 
 	return (
-		<div className="card mb-4">
-			<div className="card-body">
-				<div className="row">
-					{children}
-				</div>
+		<div className="card mb-4 px-0 mx-0">
+			<div className="card-body px-0 mx-0">
+				{children}
 			</div>
 		</div>
 	)

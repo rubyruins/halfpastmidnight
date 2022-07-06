@@ -1,7 +1,6 @@
 import React, { Component } from "react"
+import SearchResult from "./searchresult"
 import { Index } from "elasticlunr"
-import { Link } from "gatsby"
-import { kebabCase } from "lodash"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,13 +17,9 @@ class SearchIndexer extends Component {
 				<FontAwesomeIcon icon={faSearch} size="1x" className="px-2"/>
 				<input type="text" value={this.state.query} onChange={this.search} placeholder={`Search for something...`}className="search-bar"/>
 			</div>
-			<ul>
 			{this.state.results.map(page => (
-				<li key={page.id}>
-				<Link to={"/reviews/" + kebabCase(page.title)}>{page.articleTitle}</Link>
-				</li>
+				<SearchResult page={page} />
 			))}
-			</ul>
 		</div>
 		)
 	}
