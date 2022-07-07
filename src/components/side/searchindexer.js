@@ -3,6 +3,28 @@ import SearchResult from "./searchresult"
 import { Index } from "elasticlunr"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+
+config.autoAddCss = false
+
+function showSuggestions(results) {
+	if (!results.length) {
+		return <></>;
+	} else {
+		return (
+			// <select size="13">
+			<>
+			{
+				results.map(page => (
+					<SearchResult page={page} />
+				))
+			}
+			</>
+			// </select>
+		)
+	}
+}
 
 class SearchIndexer extends Component {
 	state = {
@@ -15,11 +37,9 @@ class SearchIndexer extends Component {
 		<div>
 			<div className="search-container">
 				<FontAwesomeIcon icon={faSearch} size="1x" className="px-2"/>
-				<input type="text" value={this.state.query} onChange={this.search} placeholder={`Search for something...`}className="search-bar"/>
+				<input type="text" value={this.state.query} onChange={this.search} placeholder='Search for something' className="search-bar"/>
 			</div>
-			{this.state.results.map(page => (
-				<SearchResult page={page} />
-			))}
+			{showSuggestions(this.state.results)}
 		</div>
 		)
 	}

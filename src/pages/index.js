@@ -10,14 +10,14 @@ const IndexPage = ({data}) => {
 	return (
 		<Layout pageTitle="Home">
 			<Header/>
-			<div className="container">
+			<div className="content">
 				<div className="row">
 					<Content>
-						<h1 className='heading'>Hi people</h1>
+						<h1>Hi people</h1>
 						<p>Welcome to your new Gatsby blog with Markdown pages.</p>
 						{
 							data.allMarkdownRemark.nodes.map(node => (
-							<FeaturedPost node={node} />
+							<FeaturedPost node={node}/>
 							))
 						}
 					</Content>
@@ -52,7 +52,7 @@ query {
 			fields {
 				articleTitle
 			}
-			excerpt(format: PLAIN, pruneLength: 100, truncate: false)
+			excerpt(format: PLAIN, pruneLength: 150, truncate: false)
 		}
 	}
 }

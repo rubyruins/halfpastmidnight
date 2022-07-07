@@ -29,14 +29,11 @@ const SortButton = () => {
 	const handleSortKeyChange = key => () => setSortKey(key)
   
 	return (
-	  <>
 		<ul>
 			<button onClick={handleSortKeyChange('title')} title="Sort by title" aria-label="Sort by title">Title</button>
 			<button onClick={handleSortKeyChange('date')} title="Sort by date" aria-label="Sort by date">Date</button>
 			<button onClick={handleSortKeyChange('rating')} title="Sort by rating" aria-label="Sort by rating">Rating</button>
 		</ul>
-		<hr />
-	</>
 	)
 }
 

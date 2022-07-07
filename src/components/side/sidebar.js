@@ -5,7 +5,7 @@ import MailingList from './mailinglist'
 const Sidebar = ({children}) => {
 
 	return (
-		<div className="col-lg-4 py-5">
+		<div className="col-lg-3 py-5">
 			{children}
 			<SearchBar/>
 			{/* <MailingList/> */}

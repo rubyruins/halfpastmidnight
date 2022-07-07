@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+
+config.autoAddCss = false
 
 const ThemeToggler = () => {
 	let websiteTheme;
@@ -22,9 +26,9 @@ const ThemeToggler = () => {
 	return (
 		<button className="btn nav-item ml-auto theme-toggler" onClick={ThemeToggle} onKeyDown={ThemeToggle}>
 			{theme === 'dark' ? (
-				<FontAwesomeIcon icon={faSun} size="2x" className="nav-link align-middle"/>
+				<FontAwesomeIcon icon={faSun} size="1x" className="nav-link align-middle theme-icon"/>
 			) : (
-				<FontAwesomeIcon icon={faMoon} size="2x" className="nav-link align-middle"/>
+				<FontAwesomeIcon icon={faMoon} size="1x" className="nav-link align-middle theme-icon"/>
 			)}
 		</button>
 	);
@@ -33,5 +37,3 @@ const ThemeToggler = () => {
 export default ThemeToggler;
 
 // TODO: Deployed toggle does not change icon properly on start
-// TODO: Center it vertically
-// TODO: Decide if it is shown in mobile if navbar is aligned in the center

@@ -14,3 +14,5 @@ const SearchResult = ({page}) => {
 }
 
 export default SearchResult
+
+// TODO: Convert to dropdown

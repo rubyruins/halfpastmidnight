@@ -11,7 +11,7 @@ const AllReviewsPage = ({ data }) => {
   return (
 	<Layout pageTitle="All Reviews">
 		<Header/>
-		<div className="container">
+		<div className="content">
 			<div className="row">
 				<Content>
 					<SortButton/>

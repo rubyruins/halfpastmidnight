@@ -1,3 +1,6 @@
 node_modules/
 .cache/
 public
+global2.css
+old.css
+misc.txt
