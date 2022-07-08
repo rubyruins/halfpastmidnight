@@ -44,6 +44,11 @@ query {
 				part
 				author
 				rating
+				cover_image {
+					childImageSharp {
+						gatsbyImageData
+					}
+				}
 			}
 			fields {
 				articleTitle

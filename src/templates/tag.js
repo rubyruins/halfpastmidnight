@@ -20,9 +20,9 @@ const Tags = ({ pageContext, data }) => {
 		<div className="content">
 			<div className="row">
 				<Content>
-					<SortButton/>
 					<h1>{tagHeader}</h1>
-					<div className="sort-container">
+					<SortButton/>
+					<div className="sort-container row">
 					{
 						edges.map(node => (
 						<PostListing node={node.node} />
@@ -57,6 +57,11 @@ export const pageQuery = graphql`
 					author
 					date
 					rating
+					cover_image {
+						childImageSharp {
+							gatsbyImageData
+						}
+					}
 				}
 				fields {
 					articleTitle

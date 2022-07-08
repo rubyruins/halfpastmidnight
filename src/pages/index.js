@@ -4,22 +4,28 @@ import Layout from '../components/layout'
 import Content from '../components/middle/content'
 import Sidebar from '../components/side/sidebar'
 import Header from '../components/top/header'
-import FeaturedPost from '../components/middle/featuredpost'
+import PostListing from '../components/middle/postlisting'
+import SortButton from '../components/middle/sortbutton'
 
 const IndexPage = ({data}) => {
+
+	var tagHeader= "Hi people"
+
 	return (
 		<Layout pageTitle="Home">
 			<Header/>
 			<div className="content">
 				<div className="row">
 					<Content>
-						<h1>Hi people</h1>
-						<p>Welcome to your new Gatsby blog with Markdown pages.</p>
+						<h1>{tagHeader}</h1>
+						<SortButton/>
+						<div className="sort-container row">
 						{
 							data.allMarkdownRemark.nodes.map(node => (
-							<FeaturedPost node={node}/>
+							<PostListing node={node} />
 							))
 						}
+						</div>
 					</Content>
 					<Sidebar/>
 				</div>
