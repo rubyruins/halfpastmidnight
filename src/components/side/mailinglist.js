@@ -5,7 +5,8 @@ const MailingList = () => {
 
 	return (
 		<Card>
-			<p>Subscribe to my mailing list!</p>
+		<h3>Follow Half Past Midnight via Email!</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dolor eros, condimentum ut ipsum eget, finibus vehicula velit. Aenean non fermentum magna. </p>
 		</Card>
 	)
 }

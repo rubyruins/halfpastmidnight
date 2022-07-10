@@ -8,7 +8,7 @@ const Sidebar = ({children}) => {
 		<div className="col-lg-3 py-5">
 			{children}
 			<SearchBar/>
-			{/* <MailingList/> */}
+			<MailingList/>
 		</div>
 	)
 }

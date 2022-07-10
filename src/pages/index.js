@@ -6,10 +6,9 @@ import Sidebar from '../components/side/sidebar'
 import Header from '../components/top/header'
 import PostListing from '../components/middle/postlisting'
 import SortButton from '../components/middle/sortbutton'
+import About from '../components/side/about'
 
 const IndexPage = ({data}) => {
-
-	var tagHeader= "Hi people"
 
 	return (
 		<Layout pageTitle="Home">
@@ -17,7 +16,6 @@ const IndexPage = ({data}) => {
 			<div className="content">
 				<div className="row">
 					<Content>
-						<h1>{tagHeader}</h1>
 						<SortButton/>
 						<div className="sort-container row">
 						{
@@ -27,7 +25,9 @@ const IndexPage = ({data}) => {
 						}
 						</div>
 					</Content>
-					<Sidebar/>
+					<Sidebar>
+						<About/>
+					</Sidebar>
 				</div>
 			</div>
 		</Layout>
@@ -37,7 +37,7 @@ const IndexPage = ({data}) => {
 export const query = graphql`
 query {
 	allMarkdownRemark(
-		sort: {fields: frontmatter___date, order: DESC}, limit: 5
+		sort: {fields: frontmatter___date, order: DESC}, limit:20
 		filter: {fields: {collection: {eq: "reviews"}}}
 		) {
 		nodes {
@@ -49,6 +49,7 @@ query {
 				part
 				date
 				tags
+				rating
 				cover_image {
 					childImageSharp {
 						gatsbyImageData
