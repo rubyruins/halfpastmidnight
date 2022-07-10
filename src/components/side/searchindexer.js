@@ -35,10 +35,14 @@ class SearchIndexer extends Component {
 	render() {
 		return (
 		<div>
-			<div className="search-container">
+		<div class="input-group search-container">
+			<span class="input-group-text search-icon" id="basic-addon1"><FontAwesomeIcon icon={faSearch} size="1x" className="px-2"/></span>
+			<input type="text" value={this.state.query} onChange={this.search} className="form-control search-bar" placeholder="Search for something" aria-label="Username" aria-describedby="basic-addon1"/>
+		</div>
+			{/* <div className="search-container">
 				<FontAwesomeIcon icon={faSearch} size="1x" className="px-2"/>
 				<input type="text" value={this.state.query} onChange={this.search} placeholder='Search for something' className="search-bar"/>
-			</div>
+			</div> */}
 			{showSuggestions(this.state.results)}
 		</div>
 		)

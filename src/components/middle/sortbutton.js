@@ -3,8 +3,8 @@ import React from "react"
 
 const SortButton = () => {
 	const isotope = React.useRef()
-	const [sortKey, setSortKey] = React.useState('*')
-	console.log("Sort key: " + sortKey);
+	const [sortKey, setSortKey] = React.useState('title')
+	// console.log("Sort key: " + sortKey);
   
 	React.useEffect(() => {
 	  	isotope.current = new Isotope('.sort-container', {
@@ -24,19 +24,28 @@ const SortButton = () => {
 	}, [])
   
 	React.useEffect(() => {
-		if ((sortKey === "*") || (sortKey === "title")) {
-			isotope.current.arrange({sortBy: 'title', sortAscending: true})
-		} else {
-			isotope.current.arrange({sortBy: sortKey, sortAscending: false})
-	}}, [sortKey])
+
+		console.log(sortKey);
+		isotope.current.arrange({sortBy: sortKey, sortAscending: false})
+
+		if (document !== undefined) {
+			var allButtons = document.querySelectorAll(".sort-button");
+			[].forEach.call(allButtons, function(button) {
+				button.classList.remove("sort-button-clicked");
+			});
+
+			var clickedButton = document.querySelector(".sort-" + sortKey);
+			clickedButton.classList.add("sort-button-clicked");
+		}
+	}, [sortKey])
   
 	const handleSortKeyChange = key => () => setSortKey(key)
   
 	return (
 		<ul className="sort-button-group p-0">
-			<button onClick={handleSortKeyChange('title')} title="Sort by title" aria-label="Sort by title" className="sort-button">Title</button>
-			<button onClick={handleSortKeyChange('date')} title="Sort by date" aria-label="Sort by date" className="sort-button">Date</button>
-			<button onClick={handleSortKeyChange('rating')} title="Sort by rating" aria-label="Sort by rating" className="sort-button">Rating</button>
+			<button onClick={handleSortKeyChange('title')} title="Sort by title" aria-label="Sort by title" className="sort-button sort-title">Title</button>
+			<button onClick={handleSortKeyChange('date')} title="Sort by date" aria-label="Sort by date" className="sort-button sort-date">Date</button>
+			<button onClick={handleSortKeyChange('rating')} title="Sort by rating" aria-label="Sort by rating" className="sort-button sort-rating">Rating</button>
 		</ul>
 	)
 }

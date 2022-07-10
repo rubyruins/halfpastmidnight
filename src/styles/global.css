@@ -71,6 +71,35 @@ body {
 	}
 }
 
+h1 {
+	color: red;
+}
+
+h2 {
+	color: orange;
+}
+
+h3 {
+	color: yellow;
+}
+
+h4 {
+	color: green;
+}
+
+h5 {
+	color: blue;
+}
+
+h6 {
+	color: purple;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 /*************** TOP ***************/
 
 /* Navbar */
@@ -99,7 +128,7 @@ nav a:hover {
 	color: var(--font-primary);
 }
 
-.navbar-toggler-icon-custom, .theme-icon:hover {
+.navbar-toggler-icon-custom:hover, .theme-icon:hover {
 	color: var(--color-one) !important;
 }
 
@@ -177,30 +206,34 @@ nav a:hover {
 	padding: 1rem;
 }
 
-/* Featured Posts */
+/* Isotope Sort Button */
 
-.featured-container {
-	/* background-color: yellow; */
-	/* height: 20rem; */
-	/* display: flex; */
-	/* justify-content: center; */
-	/* align-items: center; */
+.sort-button {
+	background-color: var(--background-primary);
+	border: none;
+	border-radius: 5px;
+	margin: 0.75rem;
+	margin-left: 0;
+	padding: 0.25rem 0.75rem;
+	border-radius: 50px;
+	font-size: 0.85rem;
+	display: inline-block;
+	box-shadow: 0.5px 0.5px 5px var(--background-secondary);
+	color: var(--font-primary) !important;
 }
 
-.featured-img-container {
-	/* background-color: red; */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	padding: 0;
+.sort-button:hover {
+	color: var(--color-one) !important;
 }
 
-.featured-text-container {
-	/* background-color: blue; */
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
+.sort-button-clicked {
+	color: var(--background-primary) !important;
+	background-color: var(--color-one);
+}
+
+.sort-button-clicked:hover {
+	color: var(--background-primary) !important;
+	box-shadow: 2.5px 2.5px 7.5px var(--background-secondary) !important;
 }
 
 /* Reviews */
@@ -227,17 +260,26 @@ nav a:hover {
 	min-width: 15rem;
 }
 
-.search-bar {
-	border: none;
-	background-color: transparent;
-	caret-color: var(--font-primary);
+.search-icon {
+	border: 0 transparent;
+	background: transparent;
+	padding-right: 0;
+	padding-left: 0.5rem;
 	color: var(--font-primary);
 }
 
+.search-bar {
+	border: none;
+	background: transparent;
+	caret-color: var(--font-primary);
+	color: var(--font-primary);
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .search-bar:focus {
-	border-top: none;
-	border-left: none;
-	border-right: none;
+	border: none;
+	background: transparent;
 	outline: none;
 	box-shadow: none;
 	caret-color: var(--font-primary);
@@ -280,7 +322,7 @@ nav a:hover {
 	background-color: var(--background-primary);
 	border: none;
 	border-radius: 5px;
-	margin: 0.4rem;
+	margin: 0.75rem;
 	margin-left: 0;
 	padding: 0.25rem 0.75rem;
 	border-radius: 50px;
