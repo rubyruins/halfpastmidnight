@@ -8,7 +8,7 @@ const AboutPage = () => {
 	return (
 		<Layout pageTitle="About">
 			<Header/>
-				<div className="layout">
+				<div className="container layout-container">
 					<div className="row">
 						<Content>
 							<p>Hi there! I'm the proud creator of this site, which I built with Gatsby.</p>

@@ -17,7 +17,7 @@ const Tags = ({ pageContext, data }) => {
   return (
 	<Layout pageTitle={`${tag}`}>
 		<Header/>
-		<div className="layout">
+		<div className="container layout-container">
 			<div className="row">
 				<Content>
 					<h1>{tagHeader}</h1>

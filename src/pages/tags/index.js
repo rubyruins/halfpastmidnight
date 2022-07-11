@@ -11,7 +11,7 @@ const AllTagsPage = ({ data }) => {
   return (
 	<Layout pageTitle="All Tags">
 		<Header/>
-		<div className="layout">
+		<div className="container layout-container">
 			<div className="row">
 				<Content>
 				{

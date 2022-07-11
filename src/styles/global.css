@@ -4,7 +4,8 @@
 
 :root {
 	--background-primary: #ffffff;
-	--background-secondary: #c9c9c9;
+	/* --background-secondary: #c9c9c9; */
+	--background-secondary: #F5F4F4;
 	--background-tertiary:#F2F2F2;
 	--font-primary:#181818;
 	--font-secondary: #555555;
@@ -26,61 +27,73 @@
 /*************** BASIC LAYOUT + THEMING ***************/
 
 body {
-	background-color: var(--background-primary);
+	background-color: var(--background-secondary);
 	font-family: var(--paragraph-font);
 	color: var(--font-primary);
 }
 
-.layout {
-	margin: 2rem 5rem 0 5rem;	
-	padding-left: 5rem;
-	padding-right: 5rem;
-	background-color: var(--background-primary);
-	/* background-color: red !important; */
+.layout-container {
+	/* margin: 2rem 5rem 0 5rem;	 */
+	/* padding-left: 5rem; */
+	/* padding-right: 5rem; */
+	/* background-color: var(--background-primary); */
+	/* background-color: green; */
 }
 
 @media only screen and (max-width: 1200px) {
-	.layout {
-		margin: 2rem 4rem 0 4rem;	
+	.layout-container {
+		/* margin: 2rem 4rem 0 4rem;	
 		padding-left: 4rem;
-		padding-right: 4rem;
+		padding-right: 4rem; */
+		/* background-color: purple; */
 	}
 }
 
 @media only screen and (max-width: 992px) {
-	.layout {
-		margin: 2rem 4rem 0 4rem;	
+	.layout-container {
+		/* margin: 2rem 4rem 0 4rem;	
 		padding-left: 4rem;
-		padding-right: 4rem;
+		padding-right: 4rem; */
+		/* background-color: orange; */
 	}
 }
 
 @media only screen and (max-width: 768px) {
-	.layout {
-		margin: 1rem 3rem 0 3rem;	
+	.layout-container {
+		/* margin: 1rem 3rem 0 3rem;	
 		padding-left: 3rem;
-		padding-right: 3rem;
-	}
-}
-
-@media only screen and (max-width: 600px) {
-	.layout {
-		margin: 1rem 3rem 0 3rem;	
-		padding-left: 1.5rem;
-		padding-right: 1.5rem;
+		padding-right: 3rem; */
+		/* background-color: pink; */
 	}
 }
 
 .content {
-	background-color: red;
-	padding-left: 2rem !important;
-	padding-right: 2rem !important;
+	/* background-color: red; */
+	padding-left: 1rem !important;
+	padding-right: 1rem !important;
 }
 
 .sidebar {
-	background-color: blue;
+	/* background-color: blue; */
 	padding-left: 1rem !important;
 	padding-right: 1rem !important;
+}
+
+@media only screen and (max-width: 576px) {
+	.layout-container {
+		/* background-color: lightblue; */
+	}
+	.content {
+		/* background-color: red; */
+		padding-left: 3.5rem !important;
+		padding-right: 3.5rem !important;
+	}
+	
+	.sidebar {
+		/* background-color: blue; */
+		padding-left: 3.5rem !important;
+		padding-right: 3.5rem !important;
+	}
 }
 
 h1 {
@@ -218,9 +231,9 @@ nav a:hover {
 }
 
 .element-item-content {
-	/* background-color: blue; */
-	border: grey solid 1px;
-	margin: 0.5rem;
+	background-color: var(--background-primary);
+	/* border: grey solid 1px; */
+	margin: 1rem;
 }
 
 .element-item-text {
@@ -271,6 +284,8 @@ nav a:hover {
 .card {
 	background-color: var(--background-primary) !important;
 	border: none !important;
+	padding: 1rem;
+	margin-bottom: 2rem !important;
 }
 
 /* Searchbar */
@@ -278,7 +293,7 @@ nav a:hover {
 .search-container {
 	border: 2.5px solid var(--font-primary) !important;
 	border-radius: 20px;
-	min-width: 15rem;
+	/* min-width: 15rem; */
 }
 
 .search-icon {
@@ -296,6 +311,7 @@ nav a:hover {
 	color: var(--font-primary);
 	padding-left: 0;
 	padding-right: 0;
+	overflow: hidden;
 }
 
 .search-bar:focus {
@@ -358,3 +374,5 @@ nav a:hover {
 ::-webkit-scrollbar-thumb:hover {
 	background-color: var(--color-one);
 }
+
+/* TODO: Remove layout-container media queries when done */
