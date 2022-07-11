@@ -22,7 +22,7 @@ export default function Template({data}) {
 
 	return (
 	<Layout pageTitle={frontmatter.title}>
-		<div className="content">
+		<div className="layout">
 			<div className="row">
 				<Content>
 					<h1>{frontmatter.title}</h1>

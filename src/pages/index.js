@@ -13,7 +13,7 @@ const IndexPage = ({data}) => {
 	return (
 		<Layout pageTitle="Home">
 			<Header/>
-			<div className="content">
+			<div className="layout">
 				<div className="row">
 					<Content>
 						<SortButton/>

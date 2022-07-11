@@ -9,7 +9,7 @@ const PostListing = ({node}) => {
 
 	return (
 		<div>
-			<article key={node.id} className="element-item col-xl-4 col-lg-6 col-md-6 col-sm-6">
+			<article key={node.id} className="element-item col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-6">
 			<div className='element-item-content'>
 				<div className='element-item-img'>
 					<GatsbyImage image={image}/>

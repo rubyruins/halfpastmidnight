@@ -28,7 +28,7 @@ function renderSuggestions(booksInSeries, booksByAuthor, bookTitle) {
 	} else {
 		return (
 			<Card>
-			<h4>Suggested Reads</h4>
+			<h3>Suggested Reads</h3>
 			{
 				suggestions.map(suggestion => (
 					<SuggestedRead suggestion={suggestion}/>

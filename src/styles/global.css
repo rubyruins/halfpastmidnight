@@ -31,7 +31,7 @@ body {
 	color: var(--font-primary);
 }
 
-.content {
+.layout {
 	margin: 2rem 5rem 0 5rem;	
 	padding-left: 5rem;
 	padding-right: 5rem;
@@ -40,15 +40,15 @@ body {
 }
 
 @media only screen and (max-width: 1200px) {
-	.content {
-		margin: 2rem 5rem 0 5rem;	
-		padding-left: 5rem;
-		padding-right: 5rem;
+	.layout {
+		margin: 2rem 4rem 0 4rem;	
+		padding-left: 4rem;
+		padding-right: 4rem;
 	}
 }
 
 @media only screen and (max-width: 992px) {
-	.content {
+	.layout {
 		margin: 2rem 4rem 0 4rem;	
 		padding-left: 4rem;
 		padding-right: 4rem;
@@ -56,7 +56,7 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-	.content {
+	.layout {
 		margin: 1rem 3rem 0 3rem;	
 		padding-left: 3rem;
 		padding-right: 3rem;
@@ -64,11 +64,23 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-	.content {
+	.layout {
 		margin: 1rem 3rem 0 3rem;	
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;
 	}
+}
+
+.content {
+	background-color: red;
+	padding-left: 2rem !important;
+	padding-right: 2rem !important;
+}
+
+.sidebar {
+	background-color: blue;
+	padding-left: 1rem !important;
+	padding-right: 1rem !important;
 }
 
 h1 {
@@ -199,7 +211,7 @@ nav a:hover {
 .element-item-content {
 	/* background-color: blue; */
 	border: grey solid 1px;
-	margin: 1rem;
+	margin: 0.5rem;
 }
 
 .element-item-text {
@@ -286,29 +298,9 @@ nav a:hover {
 	color: var(--font-primary);
 }
 
-/* Suggested Read */
-
-.suggested-img-container {
-	/* background-color: blue; */
-	width: auto;
-	margin-right: 1rem;
-}
-
-.suggested-img {
-	object-fit: cover;
-	width: 50px !important;
-	height: auto;
-}
-
-.suggested-text-container {
-	/* background-color: red; */
-	display: table; 
-	width: auto;
-}
-
-.suggested-text {
-	display: table-cell; 
-	vertical-align: middle
+.search-result-container {
+	/* border-top: 1px solid black; */
+	border-bottom: 1px solid var(--font-primary);
 }
 
 
