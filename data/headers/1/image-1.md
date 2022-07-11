@@ -1,5 +1,5 @@
 ---
-name: "Harvest Fields in Westerham, Kent, 1880-1910 by Helen Allingham"
-contributor: "Birmingham Museums Trust"
+name: "Title: Landscape with Cattle. Date: 1804. Institution:Rijksmuseum. Provider: Rijksmuseum. Providing Country: Netherlands. Public Domain"
+contributor: "Europeana"
 cover_image: "./1.jpg"
 ---
