@@ -24,7 +24,7 @@ const ThemeToggler = () => {
 	};
 
 	return (
-		<button className="btn nav-item ml-auto theme-toggler" onClick={ThemeToggle} onKeyDown={ThemeToggle}>
+		<button className="btn nav-item ml-auto theme-toggler ps-1 pe-1" onClick={ThemeToggle} onKeyDown={ThemeToggle}>
 			{theme === 'dark' ? (
 				<FontAwesomeIcon icon={faSun} size="1x" className="nav-link align-middle theme-icon"/>
 			) : (

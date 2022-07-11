@@ -10,8 +10,8 @@
 	--font-secondary: #555555;
 	--color-one: #6814ce;
 
-	--headings-font: 'Poppins', sans-serif;
-	--paragraph-font: 'Roboto', sans-serif;
+	--headings-font: 'Libre Baskerville', serif;
+	--paragraph-font: 'Source Sans Pro', sans-serif;
 }
 
 :root.dark {
@@ -120,6 +120,11 @@ nav {
 	background-color: var(--background-primary);
 	z-index: 100;
 	font-family: var(--paragraph-font);
+	height: 5rem;
+}
+
+nav .container {
+	background-color: gray;
 }
 
 nav a:hover {
@@ -127,16 +132,24 @@ nav a:hover {
 }
 
 .navbar-brand {
-	padding-left: 2rem;
-	text-transform: uppercase;
-	font-size: 1rem;
+	/* padding-left: 2rem; */
+	/* text-transform: uppercase; */
+	font-size: 1.25rem;
 	cursor: pointer;
 	color: var(--font-primary);
+	font-family: var(--headings-font);
+	font-weight: 700;
 }
 
 .nav-link {
-	font-size: 0.85rem;
+	font-size: 0.95rem;
 	cursor: pointer;
+	color: var(--font-primary);
+	font-family: var(--paragraph-font);
+	font-weight: 400;
+}
+
+.navbar-toggler {
 	color: var(--font-primary);
 }
 
@@ -144,41 +157,37 @@ nav a:hover {
 	color: var(--color-one) !important;
 }
 
-.navbar-toggler:focus, .theme-toggler:focus {
+.navbar-toggler:focus, .theme-toggler:focus, .theme-toggler::after {
 	outline: 0 !important;
 	border: none !important;
 	box-shadow: 0 0 0 0 !important;
 }
 
-.theme-toggler {
-	padding-right: 1rem;
-}
-
 @media screen and (max-width: 768px) {
-	
+
 	.navbar-collapse {
 		position: absolute;
-		top: 40px;
+		top: 60px;
 		left: -100%;
 		width: 25%;
 		transition: all 0.1s ease;
 		display: block;
 		height: 100vh;
 		background-color: var(--background-primary);
-		padding: 2rem;
+		padding: 1.25rem;
 	}
 
 	.navbar-brand {
 		position: absolute;
 		transform: translateX(-50%);
 		left: 50%;
-		padding-left: 0;
+		/* padding-left: 0; */
 	}
 	
 	.navbar-collapse.collapsing {
 		height: 100vh;
 		left: -100%;
-		margin-left: 1px;
+		/* margin-left: 1px; */
 		transition: all 0.2s ease;
 	}
 	
@@ -188,7 +197,7 @@ nav a:hover {
 	}
 	
 	.navbar-toggler {
-		padding-left: 2rem;
+		/* padding-left: 2rem; */
 	}
 }
 
