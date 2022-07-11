@@ -2,6 +2,12 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faClock } from '@fortawesome/free-solid-svg-icons';
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+
+config.autoAddCss = false
 
 const PostListing = ({node}) => {
 
@@ -9,20 +15,30 @@ const PostListing = ({node}) => {
 
 	return (
 		<div>
-			<article key={node.id} className="element-item col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-6">
-			<div className='element-item-content'>
-				<div className='element-item-img'>
+			<article key={node.id} className="post-item col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			<div className='post-item-content'>
+				<div className='post-item-img'>
 					<GatsbyImage image={image}/>
 				</div>
-				<div className='element-item-text'>
+				<div className='post-item-text'>
 					<h2 className='title'>
-					<Link to={`/reviews/${kebabCase(node.frontmatter.title)}`}>
-						{node.fields.articleTitle}
-					</Link>
+						<Link to={`/reviews/${kebabCase(node.frontmatter.title)}`}>
+							{node.fields.articleTitle}
+						</Link>
 					</h2>
-					<p className='date'>Posted: {node.frontmatter.date}</p>
-					<p className='author'>By: {node.frontmatter.author}</p>
-					<p className='rating'>Rating: {node.frontmatter.rating}</p>
+					<p className='author mb-0'>{node.frontmatter.author}</p>
+					<span className='excerpt'>{node.excerpt}</span>
+					<div className='post-item-bottom-container'>
+						<span className='date'>
+							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2"/>{node.frontmatter.date}
+						</span>
+						<span className='rating hide-element'>
+							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2"/>{node.frontmatter.rating}
+						</span>
+						<span className='rating-show-element'>
+							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2"/>{parseFloat(node.frontmatter.rating)}
+						</span>
+					</div>
 				</div>
 			</div>
 			</article>

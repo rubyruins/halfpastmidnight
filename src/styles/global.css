@@ -8,8 +8,9 @@
 	--background-secondary: #F5F4F4;
 	--background-tertiary:#F2F2F2;
 	--font-primary:#181818;
-	--font-secondary: #555555;
+	--font-secondary: #6b6b6b;
 	--color-one: #6814ce;
+	--box-shadow: #eeeeee;
 
 	--headings-font: 'Libre Baskerville', serif;
 	--paragraph-font: 'Source Sans Pro', sans-serif;
@@ -22,6 +23,7 @@
 	--font-primary: #e0e8ff;
 	--font-secondary: #C5D4FF;
 	--color-one: #be0085;
+	--box-shadow: #1e1e1e;
 }
 
 /*************** BASIC LAYOUT + THEMING ***************/
@@ -101,7 +103,9 @@ h1 {
 }
 
 h2 {
-	color: orange;
+	/* color: orange; */
+	font-family: var(--headings-font);
+	font-size: 1.25rem;
 }
 
 h3 {
@@ -226,18 +230,39 @@ nav a:hover {
 
 /* Isotope Cards */
 
-.element-item {
+.post-item{
 	/* background-color: red; */
 }
 
-.element-item-content {
+.post-item-content {
 	background-color: var(--background-primary);
-	/* border: grey solid 1px; */
+	box-shadow: 5px 5px 5px var(--box-shadow);
 	margin: 1rem;
 }
 
-.element-item-text {
+.post-item-text {
 	padding: 1rem;
+}
+
+.post-item .excerpt {
+	font-style: italic;
+}
+
+.post-item .author {
+	text-transform: uppercase;
+	color: var(--font-secondary);
+	font-size: 1.1rem;
+}
+
+.post-item-bottom-container {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 0.3rem;
+	font-size: 0.9rem;
+}
+
+.post-item-bottom-container .hide-element {
+	display: none !important;
 }
 
 /* Isotope Sort Button */
@@ -376,3 +401,4 @@ nav a:hover {
 }
 
 /* TODO: Remove layout-container media queries when done */
+/* TODO: Decide whether to keep dark mode */

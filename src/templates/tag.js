@@ -66,6 +66,7 @@ export const pageQuery = graphql`
 				fields {
 					articleTitle
 				}
+				excerpt(format: PLAIN, pruneLength: 100, truncate: false)
 			}
 		}
 	}
