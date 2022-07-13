@@ -39,7 +39,7 @@ export default function Template({data}) {
 				</Content>
 				<Sidebar>
 					<CoverImage frontmatter={frontmatter}/>
-					<SuggestedReads booksInSeries={data.booksInSeries.edges} booksByAuthor={data.booksByAuthor.edges} bookTitle={frontmatter.title} bookCover={frontmatter.cover_image}></SuggestedReads>
+					<SuggestedReads otherBooksInSeriesByAuthor={data.otherBooksInSeriesByAuthor.edges} bookTitle={frontmatter.title} bookCover={frontmatter.cover_image}></SuggestedReads>
 				</Sidebar>
 			</div>
 		</div>
@@ -72,39 +72,17 @@ query($title: String!, $author: String!, $series: String!) {
 			articleTitle
 		}
 	}
-	booksInSeries: allMarkdownRemark(
+	otherBooksInSeriesByAuthor: allMarkdownRemark(
 		filter: {
 			frontmatter: {
 				series: {
 					eq: $series
 				}
-			}
-		}
-	) {
-		edges {
-			node {
-				frontmatter {
-					title
-					author
-					series
-					part
-					cover_image {
-						childImageSharp {
-							gatsbyImageData
-						}
-					}
-				}
-				fields {
-					articleTitle
-				}
-			}
-		}
-	}
-	booksByAuthor: allMarkdownRemark(
-		filter: {
-			frontmatter: {
 				author: {
 					eq: $author
+				}
+				title: { 
+					ne: $title 
 				}
 			}
 		}

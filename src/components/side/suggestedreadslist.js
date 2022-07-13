@@ -4,33 +4,20 @@ import { Link } from 'gatsby'
 import Card from './card';
 import SuggestedRead from './suggestedread';
 
-// Find intersection of all books by the author and in the series
+// Fetch intersection of all books by the author and in the series
 // If the original book is in a series, this returns books in other series
 // If the original book is a standalones, this returns other standalones
 // Remove the original book from list of suggestions
 
-function findSuggestions(booksInSeries, booksByAuthor, bookTitle) {
-	var suggestions = booksInSeries.filter(function(n) {
-		for (var i = 0; i < booksByAuthor.length; i++) {
-			if ((n.node === booksByAuthor[i].node) || (n.node.frontmatter.title === bookTitle)) {
-				return false;
-			}
-		}
-		return true;
-	});
-	return suggestions;
-}
-
-function renderSuggestions(booksInSeries, booksByAuthor, bookTitle) {
-	var suggestions = findSuggestions(booksInSeries, booksByAuthor, bookTitle);
-	if (!suggestions.length) {
+function renderSuggestions(otherBooksInSeriesByAuthor) {
+	if (!otherBooksInSeriesByAuthor.length) {
 		return <></>;
 	} else {
 		return (
 			<Card>
 			<h3>Suggested Reads</h3>
 			{
-				suggestions.map(suggestion => (
+				otherBooksInSeriesByAuthor.map(suggestion => (
 					<SuggestedRead suggestion={suggestion}/>
 				))
 			}
@@ -39,10 +26,10 @@ function renderSuggestions(booksInSeries, booksByAuthor, bookTitle) {
 	}
 }
 
-const SuggestedReadsList = ({booksInSeries, booksByAuthor, bookTitle}) => {
+const SuggestedReadsList = ({otherBooksInSeriesByAuthor}) => {
 	return (
 		<>
-			{renderSuggestions(booksInSeries, booksByAuthor, bookTitle)}
+			{renderSuggestions(otherBooksInSeriesByAuthor)}
 		</>
 	)
 }
