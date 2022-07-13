@@ -5,8 +5,10 @@ series: "Shadow and Bone"
 part: 1
 rating: "02.5"
 date: "2021-07-26"
-cover_image: "./5.jpg"
+cover_image: "./cover.jpg"
 tags: [value5,value6,value7,value8,value9]
+blurb: "Lorem Ipsum\nLorem Ipsum"
+goodreads: "https://www.goodreads.com/"
 ---
 
 Surrounded by enemies, the once-great nation of Ravka has been torn in two by the Shadow Fold, a swath of near impenetrable darkness crawling with monsters who feast on human flesh. Now its fate may rest on the shoulders of one lonely refugee.

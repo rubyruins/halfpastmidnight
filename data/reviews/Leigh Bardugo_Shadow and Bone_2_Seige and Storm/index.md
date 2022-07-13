@@ -5,8 +5,10 @@ series: "Shadow and Bone"
 part: 2
 rating: "05.0"
 date: "2021-07-26"
-cover_image: "./6.jpg"
+cover_image: "./cover.jpg"
 tags: [value6,value7,value8,value9,value10]
+blurb: "Lorem Ipsum\nLorem Ipsum"
+goodreads: "https://www.goodreads.com/"
 ---
 
 Darkness never dies.

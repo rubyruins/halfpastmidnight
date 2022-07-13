@@ -4,8 +4,10 @@ author: "Leigh Bardugo"
 series: "Standalone"
 rating: "10.0"
 date: "2021-07-25"
-cover_image: "./3.jpg"
+cover_image: "./cover.jpg"
 tags: [value3,value4,value5,value6,value7]
+blurb: "Lorem Ipsum\nLorem Ipsum"
+goodreads: "https://www.goodreads.com/"
 ---
 
 The dashing young king, Nikolai Lantsov, has always had a gift for the impossible. No one knows what he endured in his country's bloody civil war--and he intends to keep it that way. Now, as enemies gather at his weakened borders, Nikolai must find a way to refill Ravka's coffers, forge new alliances, and stop a rising threat to the once-great Grisha Army.

@@ -27,6 +27,8 @@ export default function Template({data}) {
 				<Content>
 					<h1>{frontmatter.title}</h1>
 					<h2>{frontmatter.date}</h2>
+					<p className="blurb">{frontmatter.blurb}</p>
+					<a href={frontmatter.goodreads}>Goodreads</a>
 					<h3>{timeToRead} minute read</h3>
 					<TagGroup tags={frontmatter.tags}/>
 					<div
@@ -58,6 +60,8 @@ query($title: String!, $author: String!, $series: String!) {
 			series
 			part
 			title
+			blurb
+			goodreads
 			cover_image {
 				childImageSharp {
 					gatsbyImageData

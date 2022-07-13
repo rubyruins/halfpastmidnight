@@ -5,8 +5,10 @@ series: "Shadow and Bone"
 part: 3
 rating: "07.5"
 date: "2021-07-27"
-cover_image: "./7.jpg"
+cover_image: "./cover.jpg"
 tags: [value7,value8,value9,value10,value11]
+blurb: "Lorem Ipsum\nLorem Ipsum"
+goodreads: "https://www.goodreads.com/"
 ---
 
 The capital has fallen.

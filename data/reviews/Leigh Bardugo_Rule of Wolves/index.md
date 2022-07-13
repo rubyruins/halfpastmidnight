@@ -4,8 +4,10 @@ author: "Leigh Bardugo"
 series: "Standalone"
 rating: "10.0"
 date: "2021-07-25"
-cover_image: "./4.jpg"
+cover_image: "./cover.jpg"
 tags: [value4,value5,value6,value7,value8]
+blurb: "Lorem Ipsum\nLorem Ipsum"
+goodreads: "https://www.goodreads.com/"
 ---
 
 The wolves are circling and a young king will face his greatest challenge in the explosive finale of the instant #1 New York Times-bestselling King of Scars Duology.

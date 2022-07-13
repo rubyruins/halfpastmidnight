@@ -302,6 +302,14 @@ nav a:hover {
 	height: auto !important;
 }
 
+.blurb {
+	white-space: pre-line
+}
+
+blockquote {
+	font-style: italic;
+}
+
 /*************** SIDE ***************/
 
 /* Card */
@@ -352,7 +360,6 @@ nav a:hover {
 	/* border-top: 1px solid black; */
 	border-bottom: 1px solid var(--font-primary);
 }
-
 
 /* Tags */
 
