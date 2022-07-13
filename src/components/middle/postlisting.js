@@ -9,6 +9,10 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 
 config.autoAddCss = false
 
+function roundHalf(num) {
+    return Math.round(parseFloat(num) * 2) / 2;
+}
+
 const PostListing = ({node}) => {
 
 	const image = getImage(node.frontmatter.cover_image)
@@ -36,7 +40,7 @@ const PostListing = ({node}) => {
 							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2"/>{node.frontmatter.rating}
 						</span>
 						<span className='rating-show-element'>
-							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2"/>{parseFloat(node.frontmatter.rating)}
+							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2"/>{roundHalf(node.frontmatter.rating)}
 						</span>
 					</div>
 				</div>

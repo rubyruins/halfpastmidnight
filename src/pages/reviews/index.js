@@ -39,10 +39,10 @@ query {
 		nodes {
 			frontmatter {
 				title
-				date
+				author
 				series
 				part
-				author
+				date
 				rating
 				cover_image {
 					childImageSharp {
@@ -54,6 +54,7 @@ query {
 				articleTitle
 			}
 			id
+			excerpt(format: PLAIN, pruneLength: 100, truncate: false)
 		}
 	}
 }

@@ -2,7 +2,7 @@
 title: "The Water Cure"
 author: "Sophie Mackintosh"
 series: "Standalone"
-rating: "06.2"
+rating: "06.0"
 date: "2021-07-25"
 cover_image: "./cover.jpeg"
 tags: [value3,value4,value5,value6,value7]

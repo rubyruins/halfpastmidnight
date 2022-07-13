@@ -75,7 +75,7 @@ body {
 	padding-right: 1rem !important;
 }
 
-.sidebar {
+.right-sidebar {
 	/* background-color: blue; */
 	padding-left: 1rem !important;
 	padding-right: 1rem !important;
@@ -91,7 +91,7 @@ body {
 		padding-right: 3.5rem !important;
 	}
 	
-	.sidebar {
+	.right-sidebar {
 		/* background-color: blue; */
 		padding-left: 3.5rem !important;
 		padding-right: 3.5rem !important;
