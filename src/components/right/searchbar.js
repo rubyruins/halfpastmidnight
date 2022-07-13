@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Card from './card'
 import { useStaticQuery, graphql } from 'gatsby'
-import SearchIndexer from '../side/searchindexer'
+import SearchIndexer from './searchindexer'
 
 const SearchBar = () => {
 

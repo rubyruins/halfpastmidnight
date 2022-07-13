@@ -5,7 +5,7 @@
 :root {
 	--background-primary: #ffffff;
 	/* --background-secondary: #c9c9c9; */
-	--background-secondary: #F5F4F4;
+	--background-secondary: #F8F8F8;
 	--background-tertiary:#F2F2F2;
 	--font-primary:#181818;
 	--font-secondary: #6b6b6b;
@@ -228,6 +228,25 @@ nav a:hover {
 
 /*************** MIDDLE ***************/
 
+.content-card {
+	box-shadow: 5px 5px 5px var(--box-shadow);
+	background-color: var(--background-primary);
+	padding: 5rem;
+}
+
+@media only screen and (max-width: 1200px) {
+	.content-card {
+		padding: 3rem;
+	}
+}
+
+
+@media only screen and (max-width: 992px) {
+	.content-card {
+		padding: 2rem;
+	}
+}
+
 /* Isotope Cards */
 
 .post-item{
@@ -319,6 +338,10 @@ blockquote {
 	border: none !important;
 	padding: 1rem;
 	margin-bottom: 2rem !important;
+}
+
+.card-body {
+	padding: 0 !important;
 }
 
 /* Searchbar */

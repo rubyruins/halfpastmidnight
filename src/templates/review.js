@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from '../components/layout'
-import Content from '../components/middle/content'
-import Sidebar from '../components/side/sidebar'
+import ContentWide from '../components/middle/contentwide'
+import RightSidebar from '../components/right/rightsidebar'
 import TagGroup from "../components/middle/taggroup"
-import SuggestedReads from "../components/side/suggestedreadslist"
-import CoverImage from "../components/side/coverimage"
+import SuggestedReads from "../components/right/suggestedreadslist"
+import CoverImage from "../components/right/coverimage"
 
 function renderSeries(frontmatter) {
 
@@ -24,23 +24,25 @@ export default function Template({data}) {
 	<Layout pageTitle={frontmatter.title}>
 		<div className="container layout-container">
 			<div className="row">
-				<Content>
-					<h1>{frontmatter.title}</h1>
-					<h2>{frontmatter.date}</h2>
-					<p className="blurb">{frontmatter.blurb}</p>
-					<a href={frontmatter.goodreads}>Goodreads</a>
-					<h3>{timeToRead} minute read</h3>
-					<TagGroup tags={frontmatter.tags}/>
-					<div
-						className="blog-post-content"
-						dangerouslySetInnerHTML={{ __html: html }}
-					/>
-					{renderSeries(frontmatter)}
-				</Content>
-				<Sidebar>
+				<ContentWide>
+					<div className="content-card">
+						<h1>{frontmatter.title}</h1>
+						<h2>{frontmatter.date}</h2>
+						<p className="blurb">{frontmatter.blurb}</p>
+						<a href={frontmatter.goodreads}>Goodreads</a>
+						<h3>{timeToRead} minute read</h3>
+						<TagGroup tags={frontmatter.tags}/>
+						<div
+							className="blog-post-content"
+							dangerouslySetInnerHTML={{ __html: html }}
+						/>
+						{renderSeries(frontmatter)}
+					</div>
+				</ContentWide>
+				<RightSidebar>
 					<CoverImage frontmatter={frontmatter}/>
 					<SuggestedReads otherBooksInSeriesByAuthor={data.otherBooksInSeriesByAuthor.edges} bookTitle={frontmatter.title} bookCover={frontmatter.cover_image}></SuggestedReads>
-				</Sidebar>
+				</RightSidebar>
 			</div>
 		</div>
 	</Layout>

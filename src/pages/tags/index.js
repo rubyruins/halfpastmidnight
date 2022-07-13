@@ -2,8 +2,8 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
 import Layout from '../../components/layout'
-import Content from '../../components/middle/content'
-import Sidebar from '../../components/side/sidebar'
+import ContentWide from '../../components/middle/contentwide'
+import RightSidebar from '../../components/right/rightsidebar'
 import Header from '../../components/top/header'
 
 const AllTagsPage = ({ data }) => {
@@ -13,7 +13,7 @@ const AllTagsPage = ({ data }) => {
 		<Header/>
 		<div className="container layout-container">
 			<div className="row">
-				<Content>
+				<ContentWide>
 				{
 					data.allMarkdownRemark.group.map(node => (
 					<article key={node.id}>
@@ -21,8 +21,8 @@ const AllTagsPage = ({ data }) => {
 					</article>
 					))
 				}
-				</Content>
-				<Sidebar/>
+				</ContentWide>
+				<RightSidebar/>
 			</div>
 		</div>
 	</Layout>

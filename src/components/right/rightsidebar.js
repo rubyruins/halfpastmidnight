@@ -2,7 +2,7 @@ import * as React from 'react'
 import SearchBar from './searchbar'
 import MailingList from './mailinglist'
 
-const Sidebar = ({children}) => {
+const RightSidebar = ({children}) => {
 
 	return (
 		<div className="col-xl-3 col-lg-4 col-md-4 py-5 right-sidebar">
@@ -13,4 +13,4 @@ const Sidebar = ({children}) => {
 	)
 }
 
-export default Sidebar
+export default RightSidebar
