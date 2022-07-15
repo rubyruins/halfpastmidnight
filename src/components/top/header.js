@@ -39,7 +39,7 @@ const Header = React.memo(() => {
 
 	return (
 		<div>
-			<GatsbyImage image={renderedImage} className="randomHeader" alt={imageInfo} title={imageInfo}/>
+			<GatsbyImage image={renderedImage} className="header-image" alt={imageInfo} title={imageInfo}/>
 		</div>
 	)
 })

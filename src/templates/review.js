@@ -1,13 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from '../components/layout'
-import ContentWide from '../components/middle/contentwide'
-import RightSidebar from '../components/right/rightsidebar'
+import Content from '../components/middle/content'
+import Sidebar from '../components/right/sidebar'
 import TagGroup from "../components/middle/taggroup"
 import SuggestedReads from "../components/right/suggestedreadslist"
 import CoverImage from "../components/right/coverimage"
 
-function renderSeries(frontmatter) {
+function renderSeriesInfo(frontmatter) {
 
 	if (frontmatter.part) {
 		return (
@@ -24,25 +24,22 @@ export default function Template({data}) {
 	<Layout pageTitle={frontmatter.title}>
 		<div className="container layout-container">
 			<div className="row">
-				<ContentWide>
-					<div className="content-card">
+				<Content>
+					<div className="review-card">
+						<p>{frontmatter.date} • {timeToRead} minute read</p>
 						<h1>{frontmatter.title}</h1>
-						<h2>{frontmatter.date}</h2>
-						<p className="blurb">{frontmatter.blurb}</p>
+						<p className="review-author pb-0">{frontmatter.author}</p>
 						<a href={frontmatter.goodreads}>Goodreads</a>
-						<h3>{timeToRead} minute read</h3>
+						{renderSeriesInfo(frontmatter)}
 						<TagGroup tags={frontmatter.tags}/>
-						<div
-							className="blog-post-content"
-							dangerouslySetInnerHTML={{ __html: html }}
-						/>
-						{renderSeries(frontmatter)}
+						<hr className="my-3"/>
+						<div dangerouslySetInnerHTML={{ __html: html }} />
 					</div>
-				</ContentWide>
-				<RightSidebar>
+				</Content>
+				<Sidebar>
 					<CoverImage frontmatter={frontmatter}/>
 					<SuggestedReads otherBooksInSeriesByAuthor={data.otherBooksInSeriesByAuthor.edges} bookTitle={frontmatter.title} bookCover={frontmatter.cover_image}></SuggestedReads>
-				</RightSidebar>
+				</Sidebar>
 			</div>
 		</div>
 	</Layout>
@@ -58,6 +55,7 @@ query($title: String!, $author: String!, $series: String!) {
 		timeToRead
 		frontmatter {
 			date(formatString: "MMMM DD, YYYY")
+			author
 			tags
 			series
 			part

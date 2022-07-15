@@ -8,7 +8,7 @@ const SortButton = () => {
   
 	React.useEffect(() => {
 	  	isotope.current = new Isotope('.sort-container', {
-			itemSelector: '.post-item',
+			itemSelector: '.postlisting',
 			masonry: {
 				// columnWidth: 100,
 				horizontalOrder: true

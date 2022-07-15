@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 import PostListing from "../components/middle/postlisting"
 import Layout from '../components/layout'
 import Header from '../components/top/header'
-import ContentWide from '../components/middle/contentwide'
-import RightSidebar from '../components/right/rightsidebar'
+import Content from '../components/middle/content'
+import Sidebar from '../components/right/sidebar'
 import SortButton from "../components/middle/sortbutton"
 
 const Tags = ({ pageContext, data }) => {
@@ -19,7 +19,7 @@ const Tags = ({ pageContext, data }) => {
 		<Header/>
 		<div className="container layout-container">
 			<div className="row">
-				<ContentWide>
+				<Content>
 					<h1>{tagHeader}</h1>
 					<SortButton/>
 					<div className="sort-container row">
@@ -29,8 +29,8 @@ const Tags = ({ pageContext, data }) => {
 						))
 					}
 					</div>
-				</ContentWide>
-				<RightSidebar/>
+				</Content>
+				<Sidebar/>
 			</div>
 		</div>
 	</Layout>

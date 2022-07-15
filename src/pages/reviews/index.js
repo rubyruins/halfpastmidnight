@@ -2,8 +2,8 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import PostListing from '../../components/middle/postlisting'
 import Layout from '../../components/layout'
-import ContentWide from '../../components/middle/contentwide'
-import RightSidebar from '../../components/right/rightsidebar'
+import Content from '../../components/middle/content'
+import Sidebar from '../../components/right/sidebar'
 import Header from '../../components/top/header'
 import SortButton from '../../components/middle/sortbutton'
 
@@ -13,17 +13,17 @@ const AllReviewsPage = ({ data }) => {
 		<Header/>
 		<div className="container layout-container">
 			<div className="row">
-				<ContentWide>
+				<Content>
 					<SortButton/>
-					<div className="sort-container">
+					<div className="sort-container row">
 					{
 						data.allMarkdownRemark.nodes.map(node => (
 						<PostListing node={node} />
 						))
 					}
 					</div>
-				</ContentWide>
-				<RightSidebar/>
+				</Content>
+				<Sidebar/>
 			</div>
 		</div>
 	</Layout>

@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import ContentWide from '../components/middle/contentwide'
-import RightSidebar from '../components/right/rightsidebar'
+import Content from '../components/middle/content'
+import Sidebar from '../components/right/sidebar'
 import Header from '../components/top/header'
 import PostListing from '../components/middle/postlisting'
 import SortButton from '../components/middle/sortbutton'
@@ -15,7 +15,7 @@ const IndexPage = ({data}) => {
 			<Header/>
 			<div className="container layout-container">
 				<div className="row">
-					<ContentWide>
+					<Content>
 						<SortButton/>
 						<div className="sort-container row">
 						{
@@ -24,10 +24,10 @@ const IndexPage = ({data}) => {
 							))
 						}
 						</div>
-					</ContentWide>
-					<RightSidebar>
+					</Content>
+					<Sidebar>
 						<About/>
-					</RightSidebar>
+					</Sidebar>
 				</div>
 			</div>
 		</Layout>
