@@ -38,14 +38,14 @@ body {
 	/* background-color: red; */
 	/* padding-left: 0.5rem !important; */
 	/* padding-right: 0.5rem !important; */
-	padding-top: 2rem !important;
+	margin: 2rem 0 !important;
 }
 
 .sidebar {
 	/* background-color: blue; */
 	padding-left: 1rem !important;
 	padding-right: 1rem !important;
-	padding-top: 2rem !important;
+	margin: 2rem 0 !important;
 }
 
 @media only screen and (max-width: 576px) {
@@ -65,20 +65,22 @@ body {
 /*************** BASIC FONTS ***************/
 
 h1 {
-	/* color: red; */
+	color: red;
 	font-family: var(--headings-font);
 	font-size: 2rem;
 	font-style: bold;
 }
 
 h2 {
-	/* color: orange; */
+	color: orange;
 	font-family: var(--headings-font);
 	font-size: 1.25rem;
 }
 
 h3 {
-	color: yellow;
+	color: purple;
+	font-family: var(--headings-font);
+	font-size: 1.1rem;
 }
 
 h4 {
@@ -214,7 +216,7 @@ nav a:hover {
 	text-transform: uppercase;
 	color: var(--font-secondary);
 	font-size: 1.1rem;
-	padding-bottom: 0.5rem;
+	padding: 0.25rem 0;
 }
 
 .postlisting-bottom-container {
@@ -266,7 +268,7 @@ nav a:hover {
 	padding: 4rem;
 	line-break: 2.5rem;
 	margin: 0 0.3rem;
-	margin-bottom: 2rem;
+	/* margin-bottom: 2rem; */
 	/* background-color: yellow; */
 }
 
@@ -283,6 +285,23 @@ nav a:hover {
 	}
 }
 
+.review-author {
+	text-transform: uppercase;
+	color: var(--font-secondary);
+	font-size: 1.1rem;
+	/* padding-bottom: 0.5rem; */
+	margin-bottom: 0.5rem;
+}
+
+.review-icon {
+	font-size: 0.75rem !important;
+}
+
+.review-img-container {
+	background-color: var(--background-secondary) !important;
+	align-items: center;
+}
+
 .review-img {
 	max-width:100% !important;
 	height: auto !important;
@@ -292,19 +311,20 @@ nav a:hover {
 	white-space: pre-line
 }
 
-.review-author {
-	text-transform: uppercase;
-	color: var(--font-secondary);
-	font-size: 1.1rem;
-	padding-bottom: 0.5rem;
-}
-
-.review-card h1, .review-card h2 {
+.review-content h2, .review-content h3 {
 	padding: 0.5rem 0;
 }
 
 .review-card blockquote {
+	font-size: 1rem;
+	font-family: var(--headings-font);
 	font-style: italic;
+	padding: 1rem 1.5rem;
+	border-left: 0.25rem solid var(--font-secondary) ;
+	position: relative;
+}
+
+.review-card blockquote p {
 	margin-bottom: 0 !important;
 }
 
@@ -313,7 +333,7 @@ nav a:hover {
 /* Card */
 
 .card {
-	background-color: var(--background-primary) !important;
+	background-color: var(--background-primary);
 	border: none !important;
 	padding: 1rem;
 	margin-bottom: 2rem !important;
@@ -380,7 +400,7 @@ nav a:hover {
 	border-radius: 50px;
 	font-size: 0.85rem;
 	display: inline-block;
-	box-shadow: 5px 5px 15px var(--background-tertiary);
+	box-shadow: 5px 5px 15px var(--box-shadow);
 }
 
 .tag span {

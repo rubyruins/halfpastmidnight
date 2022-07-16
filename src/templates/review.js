@@ -6,12 +6,18 @@ import Sidebar from '../components/right/sidebar'
 import TagGroup from "../components/middle/taggroup"
 import SuggestedReads from "../components/right/suggestedreadslist"
 import CoverImage from "../components/right/coverimage"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock, faStar } from '@fortawesome/free-solid-svg-icons';
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+
+config.autoAddCss = false
 
 function renderSeriesInfo(frontmatter) {
 
 	if (frontmatter.part) {
 		return (
-			<p>{frontmatter.series} part {frontmatter.part}</p>
+			<h3>{frontmatter.series}, #{frontmatter.part}</h3>
 		)
 	}
 }
@@ -26,14 +32,20 @@ export default function Template({data}) {
 			<div className="row">
 				<Content>
 					<div className="review-card">
-						<p>{frontmatter.date} • {timeToRead} minute read</p>
-						<h1>{frontmatter.title}</h1>
 						<p className="review-author pb-0">{frontmatter.author}</p>
-						<a href={frontmatter.goodreads}>Goodreads</a>
+						<h1>{frontmatter.title}</h1>
 						{renderSeriesInfo(frontmatter)}
-						<TagGroup tags={frontmatter.tags}/>
+						<p>
+							{timeToRead} minute read
+							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2 ps-2 review-icon"/>
+							{frontmatter.date}
+							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2 ps-2 review-icon"/>
+							{frontmatter.rating}
+						</p>
+						{/* <a href={frontmatter.goodreads}>Goodreads</a> */}
+						{/* <TagGroup tags={frontmatter.tags}/> */}
 						<hr className="my-3"/>
-						<div dangerouslySetInnerHTML={{ __html: html }} />
+						<div className="review-content" dangerouslySetInnerHTML={{ __html: html }} />
 					</div>
 				</Content>
 				<Sidebar>
@@ -60,6 +72,7 @@ query($title: String!, $author: String!, $series: String!) {
 			series
 			part
 			title
+			rating
 			blurb
 			goodreads
 			cover_image {

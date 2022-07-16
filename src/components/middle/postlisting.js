@@ -25,7 +25,7 @@ const PostListing = ({node}) => {
 					<GatsbyImage image={image}/>
 				</div>
 				<div className='postlisting-text'>
-					<h2 className='title'>
+					<h2 className='title mb-0'>
 						<Link to={`/reviews/${kebabCase(node.frontmatter.title)}`}>
 							{node.fields.articleTitle}
 						</Link>

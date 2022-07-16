@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Card from './card'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const CoverImage = ({frontmatter}) => {
@@ -7,9 +6,11 @@ const CoverImage = ({frontmatter}) => {
 	const image = getImage(frontmatter.cover_image)
 
 	return (
-		<Card>
+		<div className="card mb-4 mx-0 p-0 review-img-container">
+			<div className="card-body p-0 mx-0">
 			<GatsbyImage image={image} className="review-img"/>
-		</Card>
+			</div>
+		</div>
 	)
 }
 
