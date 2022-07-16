@@ -337,11 +337,35 @@ nav a:hover {
 	background-color: var(--background-primary);
 	border: none !important;
 	padding: 1rem;
+	/* box-shadow: 15px 15px 15px var(--box-shadow); */
 	margin-bottom: 2rem !important;
+
 }
 
 .card-body {
 	padding: 0 !important;
+}
+
+.card-container {
+	padding: 1.25rem !important;
+}
+
+/* Suggestions */
+
+.suggested-read-container {
+	padding: 0.5rem 0 0.5rem 0 !important;
+}
+
+.suggested-read-title {
+	font-family: var(--headings-font);
+	font-size: 0.85rem;
+	padding-top: 1rem !important;
+}
+
+.suggested-read-author {
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	color: var(--font-secondary);
 }
 
 /* Searchbar */
@@ -386,7 +410,7 @@ nav a:hover {
 }
 
 .search-result-container {
-	padding: 1rem 1rem 0 1rem !important;
+	padding: 1.25rem 1.25rem 0 1.25rem !important;
 	/* border-bottom: 1px solid var(--font-secondary); */
 }
 

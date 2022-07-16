@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import Content from '../components/middle/content'
 import Sidebar from '../components/right/sidebar'
 import TagGroup from "../components/middle/taggroup"
-import SuggestedReads from "../components/right/suggestedreadslist"
+import SuggestedReadsList from "../components/right/suggestedreadslist"
 import CoverImage from "../components/right/coverimage"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faStar } from '@fortawesome/free-solid-svg-icons';
@@ -50,7 +50,7 @@ export default function Template({data}) {
 				</Content>
 				<Sidebar>
 					<CoverImage frontmatter={frontmatter}/>
-					<SuggestedReads otherBooksInSeriesByAuthor={data.otherBooksInSeriesByAuthor.edges} bookTitle={frontmatter.title} bookCover={frontmatter.cover_image}></SuggestedReads>
+					<SuggestedReadsList otherBooksInSeriesByAuthor={data.otherBooksInSeriesByAuthor.edges} bookCover={frontmatter.cover_image}></SuggestedReadsList>
 				</Sidebar>
 			</div>
 		</div>
