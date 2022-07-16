@@ -16,7 +16,7 @@ function showSuggestions(results) {
 			// <select size="13">
 			<>
 			{
-				results.map(page => (
+				results.slice(0, 5).map(page => (
 					<SearchResult page={page} />
 				))
 			}

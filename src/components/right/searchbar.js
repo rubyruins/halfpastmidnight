@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Card from './card'
 import { useStaticQuery, graphql } from 'gatsby'
 import SearchIndexer from './searchindexer'
 
@@ -14,9 +13,11 @@ const SearchBar = () => {
 	`)
 
 	return (
-		<Card>
-			<SearchIndexer searchIndex={data.siteSearchIndex.index}/>
-		</Card>
+		<div className="card mb-4 mx-0 p-0">
+			<div className="card-body p-0 mx-0 searchbar-card-body">
+				<SearchIndexer searchIndex={data.siteSearchIndex.index}/>
+			</div>
+		</div>
 	)
 }
 

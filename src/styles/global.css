@@ -305,6 +305,7 @@ nav a:hover {
 .review-img {
 	max-width:100% !important;
 	height: auto !important;
+	box-shadow: 5px 5px 5px var(--box-shadow);
 }
 
 .review-blurb {
@@ -345,9 +346,15 @@ nav a:hover {
 
 /* Searchbar */
 
+.searchbar-card-body {
+	background-color: var(--background-secondary) !important ;
+}
+
 .search-container {
 	border: 2.5px solid var(--font-primary) !important;
 	border-radius: 20px;
+	background-color: var(--background-primary);
+	/* box-shadow: 15px 15px 15px var(--box-shadow); */
 	/* min-width: 15rem; */
 }
 
@@ -379,8 +386,20 @@ nav a:hover {
 }
 
 .search-result-container {
-	/* border-top: 1px solid black; */
-	border-bottom: 1px solid var(--font-primary);
+	padding: 1rem 1rem 0 1rem !important;
+	/* border-bottom: 1px solid var(--font-secondary); */
+}
+
+.search-result-title {
+	font-family: var(--headings-font);
+	font-size: 0.95rem;
+}
+
+.search-result-author {
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	color: var(--font-secondary);
+	/* padding: 0.25rem 0; */
 }
 
 /* Tags */
