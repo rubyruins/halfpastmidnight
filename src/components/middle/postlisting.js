@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faClock } from '@fortawesome/free-regular-svg-icons';
+import { faStar, faClock } from '@fortawesome/free-solid-svg-icons';
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 

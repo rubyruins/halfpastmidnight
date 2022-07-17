@@ -378,8 +378,6 @@ nav a:hover {
 	border: 2.5px solid var(--font-primary) !important;
 	border-radius: 20px;
 	background-color: var(--background-primary);
-	/* box-shadow: 15px 15px 15px var(--box-shadow); */
-	/* min-width: 15rem; */
 }
 
 .search-icon {
@@ -431,28 +429,28 @@ nav a:hover {
 .tags-list {
 	padding-left: 0 !important;
 	margin: 0 !important;
-	/* background-color: red; */
-	/* margin-bottom: 1.25rem !important; */
+	padding-top: 0 !important;
+	width: auto;
+	display: inline-block;
+}
+
+.tags-list p {
+	color: var(--font-primary) !important
 }
 
 .tag {
-	background-color: var(--background-primary);
-	border: none;
-	border-radius: 5px;
-	margin: 0.75rem 0.75rem 0 0 !important;
-	/* margin-left: 0 !important; */
-	padding: 0.25rem 0.75rem;
-	border-radius: 50px;
 	font-size: 0.85rem;
-	display: inline-block;
-	box-shadow: 5px 5px 15px var(--box-shadow);
+	text-transform: uppercase;
+	display: inline-block !important;
+	margin-top: 0rem !important;
+	padding: 0 !important;
 }
 
-.tag span {
+.tag p {
 	color: var(--font-primary) !important;
 }
 
-.tag span:hover {
+.tag p:hover {
 	color: var(--color-one) !important;
 }
 
