@@ -41,9 +41,9 @@ export default function Template({data}) {
 							{frontmatter.date}
 							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2 ps-2 review-icon"/>
 							{frontmatter.rating}
+					<TagGroup tags={frontmatter.tags}/>
 						</p>
 						{/* <a href={frontmatter.goodreads}>Goodreads</a> */}
-						{/* <TagGroup tags={frontmatter.tags}/> */}
 						<hr className="my-3"/>
 						<div className="review-content" dangerouslySetInnerHTML={{ __html: html }} />
 					</div>
