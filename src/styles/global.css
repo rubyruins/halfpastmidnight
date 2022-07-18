@@ -232,32 +232,52 @@ nav a:hover {
 
 /* Isotope Sort Button */
 
-.sort-button {
-	background-color: var(--background-primary);
-	border: none;
-	border-radius: 5px;
-	margin: 0;
-	margin-right: 1rem;
-	padding: 0.25rem 0.75rem;
+.custom-button {
 	border-radius: 50px;
 	font-size: 0.85rem;
 	display: inline-block;
-	box-shadow: 0.5px 0.5px 5px var(--background-secondary);
+	box-shadow: 15px 15px 10px var(--box-shadow);
 	color: var(--font-primary) !important;
+	background-color: var(--background-primary);
+	border: none;
+	border-radius: 15px;
+	margin: 0;
+	padding: 0.25rem 0.75rem;
 }
 
-.sort-button:hover {
+.custom-button:hover {
 	color: var(--color-one) !important;
 }
 
-.sort-button-clicked {
+.custom-button-clicked {
 	color: var(--background-primary) !important;
 	background-color: var(--color-one);
 }
 
-.sort-button-clicked:hover {
+.custom-button-clicked:hover {
 	color: var(--background-primary) !important;
-	box-shadow: 2.5px 2.5px 7.5px var(--background-secondary) !important;
+	/* box-shadow: 2.5px 2.5px 7.5px var(--background-secondary) !important; */
+}
+
+.custom-button-group {
+	display: flex;
+	flex: 1;
+}
+
+.view-button-group {
+    justify-content: flex-start;
+}
+
+.view-button {
+	margin-right: 1rem;
+}
+
+.sort-button-group {
+    justify-content: flex-end;
+}
+
+.sort-button {
+	margin-left: 1rem;
 }
 
 .sort-button-icon-hide {
