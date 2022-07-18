@@ -5,7 +5,7 @@ import kebabCase from "lodash/kebabCase"
 const TagGroup = ({tags}) => {
 
 	return (
-		<ul className='flex flex-row tags-list'>
+		<ul className='tags-list'>
 		{
 			tags.slice(0, -1).map(tag => (
 				<>

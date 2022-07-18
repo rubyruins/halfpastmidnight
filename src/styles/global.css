@@ -22,7 +22,7 @@
 	--background-tertiary: #000925;
 	--font-primary: #e0e8ff;
 	--font-secondary: #C5D4FF;
-	--color-one: #be0085;
+	--color-one: #81a1b7;
 	--box-shadow: #000000;
 }
 
@@ -48,17 +48,24 @@ body {
 	margin: 2rem 0 !important;
 }
 
+@media screen and (max-width: 768px) {
+	/* At 768px, review-img-large is hidden, review-img-small is visible and excess space in between is removed from top of sidebar */
+	.sidebar {
+		margin-top: 0 !important;
+	}
+}
+
 @media only screen and (max-width: 576px) {
 	.content {
 		/* background-color: red; */
-		padding-left: 3.5rem !important;
-		padding-right: 3.5rem !important;
+		padding-left: 2rem !important;
+		padding-right: 2rem !important;
 	}
 	
 	.sidebar {
 		/* background-color: blue; */
-		padding-left: 3.5rem !important;
-		padding-right: 3.5rem !important;
+		padding-left: 2rem !important;
+		padding-right: 2rem !important;
 	}
 }
 
@@ -201,7 +208,8 @@ nav a:hover {
 .postlisting-content {
 	background-color: var(--background-primary);
 	box-shadow: 5px 5px 5px var(--box-shadow);
-	margin: 1rem;
+	/* margin: 1rem; */
+	margin: 0 1rem 1rem 1rem;
 }
 
 .postlisting-text {
@@ -232,6 +240,10 @@ nav a:hover {
 
 /* Isotope Sort Button */
 
+.home-page-all-buttons-group {
+	display: none;
+}
+
 .custom-button {
 	border-radius: 50px;
 	font-size: 0.85rem;
@@ -252,6 +264,7 @@ nav a:hover {
 .custom-button-clicked {
 	color: var(--background-primary) !important;
 	background-color: var(--color-one);
+	font-weight: bold;
 }
 
 .custom-button-clicked:hover {
@@ -262,10 +275,11 @@ nav a:hover {
 .custom-button-group {
 	display: flex;
 	flex: 1;
+	margin-bottom: 2rem !important;
 }
 
 .view-button-group {
-    justify-content: flex-start;
+	justify-content: flex-start;
 }
 
 .view-button {
@@ -273,7 +287,24 @@ nav a:hover {
 }
 
 .sort-button-group {
-    justify-content: flex-end;
+	justify-content: flex-end;
+}
+
+@media screen and (max-width: 576px) {
+	.custom-button-group {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	.view-button-group {
+		/* flex-basis: 100% !important; */
+		display: none;
+	}
+	
+	.sort-button-group {
+		/* flex-basis: 100% !important; */
+		/* display: none; */
+	}
 }
 
 .sort-button {
@@ -287,7 +318,7 @@ nav a:hover {
 /* Reviews */
 
 .review-card {
-	box-shadow: 5px 5px 5px var(--box-shadow);
+	/* box-shadow: 5px 5px 5px var(--box-shadow); */
 	background-color: var(--background-primary);
 	padding: 4rem;
 	line-break: 2.5rem;
@@ -302,10 +333,15 @@ nav a:hover {
 	}
 }
 
-
 @media only screen and (max-width: 992px) {
 	.review-card {
 		padding: 2rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.review-card {
+		margin: 0 !important;
 	}
 }
 
@@ -330,6 +366,19 @@ nav a:hover {
 	max-width:100% !important;
 	height: auto !important;
 	box-shadow: 5px 5px 5px var(--box-shadow);
+}
+
+.review-img-visible-small {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	.review-img-visible-small {
+		display: block;
+	}
+	.review-img-visible-large {
+		display: none;
+	}
 }
 
 .review-blurb {
@@ -372,6 +421,20 @@ nav a:hover {
 
 .card-container {
 	padding: 1.25rem !important;
+}
+
+.about-card-visible-small {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+	.about-card-visible-small {
+		display: block;
+		margin-bottom: 2rem !important;
+	}
+	.about-card-visible-large {
+		display: none;
+	}
 }
 
 /* Suggestions */
@@ -455,7 +518,7 @@ nav a:hover {
 	margin: 0 !important;
 	padding-top: 0 !important;
 	width: auto;
-	display: inline-block;
+	display: inline;
 }
 
 .tags-list p {

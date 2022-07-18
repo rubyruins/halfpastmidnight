@@ -31,6 +31,7 @@ export default function Template({data}) {
 		<div className="container layout-container">
 			<div className="row">
 				<Content>
+					<CoverImage frontmatter={frontmatter} className="review-img-visible-small"/>
 					<div className="review-card">
 						<p className="review-author pb-0">{frontmatter.author}</p>
 						<h1>{frontmatter.title}</h1>
@@ -38,7 +39,7 @@ export default function Template({data}) {
 						{/* {timeToRead} minute read */}
 						<p>
 							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2 review-icon"/>
-							Published {frontmatter.date}
+							{frontmatter.date}
 							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2 ps-2 review-icon"/>
 							{frontmatter.rating}
 							<br/>
@@ -51,7 +52,7 @@ export default function Template({data}) {
 					</div>
 				</Content>
 				<Sidebar>
-					<CoverImage frontmatter={frontmatter}/>
+					<CoverImage frontmatter={frontmatter} className="review-img-visible-large"/>
 					<SuggestedReadsList otherBooksInSeriesByAuthor={data.otherBooksInSeriesByAuthor.edges} bookCover={frontmatter.cover_image}></SuggestedReadsList>
 				</Sidebar>
 			</div>

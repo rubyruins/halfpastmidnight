@@ -16,7 +16,8 @@ const IndexPage = ({data}) => {
 			<div className="container layout-container">
 				<div className="row">
 					<Content>
-						<SortButton/>
+						<About className="about-card-visible-small"/>
+						<SortButton className="home-page-all-buttons-group"/>
 						<div className="sort-container row">
 						{
 							data.allMarkdownRemark.nodes.map(node => (
@@ -26,7 +27,7 @@ const IndexPage = ({data}) => {
 						</div>
 					</Content>
 					<Sidebar>
-						<About/>
+					<About className="about-card-visible-large"/>
 					</Sidebar>
 				</div>
 			</div>

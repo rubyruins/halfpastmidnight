@@ -7,11 +7,11 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 
 config.autoAddCss = false
 
-const SortButton = () => {
+const SortButton = ({className}) => {
 	const isotope = React.useRef();
-	const [sortKey, setSortKey] = React.useState('title');
-	const [prevSortKey, setPrevSortKey] = React.useState('title');
-	const [sortOrder, setSortOrder] = React.useState(true);
+	const [sortKey, setSortKey] = React.useState('date');
+	const [prevSortKey, setPrevSortKey] = React.useState('date');
+	const [sortOrder, setSortOrder] = React.useState(false);
   
 	React.useEffect(() => {
 	  	isotope.current = new Isotope('.sort-container', {
@@ -58,15 +58,15 @@ const SortButton = () => {
 	}
   
 	return (
-		<div className="row mx-0">
-		<ul className="custom-button-group view-button-group p-0">
-			<button className="custom-button view-button custom-button-clicked">
-				<FontAwesomeIcon icon={faColumns} size="1x" className="view-button-icon"/>
-			</button>
-			<button className="custom-button view-button">
-				<FontAwesomeIcon icon={faList} size="1x" className="view-button-icon"/>
-			</button>
-		</ul>
+		<div className={`row mx-0 all-buttons-group ${className}`}>
+			<ul className="custom-button-group view-button-group p-0">
+				<button className="custom-button view-button custom-button-clicked">
+					<FontAwesomeIcon icon={faColumns} size="1x" className="view-button-icon"/>
+				</button>
+				<button className="custom-button view-button">
+					<FontAwesomeIcon icon={faList} size="1x" className="view-button-icon"/>
+				</button>
+			</ul>
 			<ul className="custom-button-group sort-button-group p-0">
 				<button onClick={() => handleSortKeyChange('title')} title="Sort by title" aria-label="Sort by title" className="custom-button sort-button sort-title">
 					Title
@@ -89,5 +89,3 @@ const SortButton = () => {
 }
 
 export default SortButton
-
-// TODO: Add handler for ascending / descending options: either as 2 seperate buttons or click again on the same button to reverse order
