@@ -3,46 +3,51 @@
 /*************** THEME ***************/
 
 :root {
-	--background-primary: #ffffff;
-	/* --background-secondary: #c9c9c9; */
-	--background-secondary: #F8F8F8;
-	--background-tertiary:#F2F2F2;
-	--font-primary:#181818;
+	--background-main: #F8F8F8;
+	--background-accent: #ffffff;
+	--font-primary:#000000;
 	--font-secondary: #6b6b6b;
 	--color-one: #6814ce;
 	--box-shadow: #eeeeee;
+	--box-shadow-thick: 10px 10px 10px var(--box-shadow);
+
+	/* --background-primary: #ffffff; */
+	/* --background-secondary: #c9c9c9; */
+	/* --background-secondary: #F8F8F8; */
+	/* --background-tertiary:#F2F2F2; */
 
 	--headings-font: 'Libre Baskerville', serif;
 	--paragraph-font: 'Source Sans Pro', sans-serif;
 }
 
 :root.dark {
-	--background-primary: #1c1c1c;
-	--background-secondary:#000000;
-	--background-tertiary: #000925;
-	--font-primary: #e0e8ff;
+
+	--background-main: #222222;
+	--background-accent: #2f2f2f;
+	--font-primary: #ffffff;
 	--font-secondary: #C5D4FF;
 	--color-one: #81a1b7;
 	--box-shadow: #000000;
+	--box-shadow-thick: 10px 10px 25px var(--box-shadow);
+
+	/* --background-primary: #1c1c1c; */
+	/* --background-secondary:#000000; */
+	/* --background-tertiary: #000925; */
 }
 
 /*************** BASIC LAYOUT + THEMING ***************/
 
 body {
-	background-color: var(--background-secondary);
+	background-color: var(--background-main);
 	font-family: var(--paragraph-font);
 	color: var(--font-primary);
 }
 
 .content {
-	/* background-color: red; */
-	/* padding-left: 0.5rem !important; */
-	/* padding-right: 0.5rem !important; */
 	margin: 2rem 0 !important;
 }
 
 .sidebar {
-	/* background-color: blue; */
 	padding-left: 1rem !important;
 	padding-right: 1rem !important;
 	margin: 2rem 0 !important;
@@ -57,13 +62,11 @@ body {
 
 @media only screen and (max-width: 576px) {
 	.content {
-		/* background-color: red; */
 		padding-left: 2rem !important;
 		padding-right: 2rem !important;
 	}
 	
 	.sidebar {
-		/* background-color: blue; */
 		padding-left: 2rem !important;
 		padding-right: 2rem !important;
 	}
@@ -112,7 +115,7 @@ a {
 /* Navbar */
 
 nav {
-	background-color: var(--background-primary);
+	background-color: var(--background-accent);
 	z-index: 100;
 	font-family: var(--paragraph-font);
 	height: 5rem;
@@ -127,8 +130,6 @@ nav a:hover {
 }
 
 .navbar-brand {
-	/* padding-left: 2rem; */
-	/* text-transform: uppercase; */
 	font-size: 1.25rem;
 	cursor: pointer;
 	color: var(--font-primary);
@@ -168,7 +169,7 @@ nav a:hover {
 		transition: all 0.1s ease;
 		display: block;
 		height: 100vh;
-		background-color: var(--background-primary);
+		background-color: var(--background-accent);
 		padding: 1.25rem;
 	}
 
@@ -176,13 +177,11 @@ nav a:hover {
 		position: absolute;
 		transform: translateX(-50%);
 		left: 50%;
-		/* padding-left: 0; */
 	}
 	
 	.navbar-collapse.collapsing {
 		height: 100vh;
 		left: -100%;
-		/* margin-left: 1px; */
 		transition: all 0.2s ease;
 	}
 	
@@ -206,10 +205,9 @@ nav a:hover {
 /* Postlisting */
 
 .postlisting-content {
-	background-color: var(--background-primary);
-	box-shadow: 5px 5px 5px var(--box-shadow);
-	/* margin: 1rem; */
-	margin: 0 1rem 1rem 1rem;
+	background-color: var(--background-accent);
+	box-shadow: var(--box-shadow-thick);
+	margin: 0 1rem 2rem 1rem;
 }
 
 .postlisting-text {
@@ -248,9 +246,9 @@ nav a:hover {
 	border-radius: 50px;
 	font-size: 0.85rem;
 	display: inline-block;
-	box-shadow: 15px 15px 10px var(--box-shadow);
+	box-shadow: var(--box-shadow-thick);
 	color: var(--font-primary) !important;
-	background-color: var(--background-primary);
+	background-color: var(--background-accent);
 	border: none;
 	border-radius: 15px;
 	margin: 0;
@@ -262,14 +260,13 @@ nav a:hover {
 }
 
 .custom-button-clicked {
-	color: var(--background-primary) !important;
+	color: var(--background-accent) !important;
 	background-color: var(--color-one);
 	font-weight: bold;
 }
 
 .custom-button-clicked:hover {
-	color: var(--background-primary) !important;
-	/* box-shadow: 2.5px 2.5px 7.5px var(--background-secondary) !important; */
+	color: var(--background-accent) !important;
 }
 
 .custom-button-group {
@@ -318,13 +315,11 @@ nav a:hover {
 /* Reviews */
 
 .review-card {
-	/* box-shadow: 5px 5px 5px var(--box-shadow); */
-	background-color: var(--background-primary);
+	box-shadow: var(--box-shadow-thick);
+	background-color: var(--background-accent);
 	padding: 4rem;
 	line-break: 2.5rem;
 	margin: 0 0.3rem;
-	/* margin-bottom: 2rem; */
-	/* background-color: yellow; */
 }
 
 @media only screen and (max-width: 1200px) {
@@ -349,7 +344,6 @@ nav a:hover {
 	text-transform: uppercase;
 	color: var(--font-secondary);
 	font-size: 1.1rem;
-	/* padding-bottom: 0.5rem; */
 	margin-bottom: 0.5rem;
 }
 
@@ -358,14 +352,14 @@ nav a:hover {
 }
 
 .review-img-container {
-	background-color: var(--background-secondary) !important;
+	background-color: var(--background-main) !important;
 	align-items: center;
 }
 
 .review-img {
 	max-width:100% !important;
 	height: auto !important;
-	box-shadow: 5px 5px 5px var(--box-shadow);
+	box-shadow: var(--box-shadow-thick);
 }
 
 .review-img-visible-small {
@@ -407,10 +401,9 @@ nav a:hover {
 /* Card */
 
 .card {
-	background-color: var(--background-primary);
+	background-color: var(--background-accent);
 	border: none !important;
 	padding: 1rem;
-	/* box-shadow: 15px 15px 15px var(--box-shadow); */
 	margin-bottom: 2rem !important;
 
 }
@@ -458,13 +451,13 @@ nav a:hover {
 /* Searchbar */
 
 .searchbar-card-body {
-	background-color: var(--background-secondary) !important ;
+	background-color: var(--background-main) !important ;
 }
 
 .search-container {
 	border: 2.5px solid var(--font-primary) !important;
 	border-radius: 20px;
-	background-color: var(--background-primary);
+	background-color: var(--background-main);
 }
 
 .search-icon {
@@ -496,7 +489,6 @@ nav a:hover {
 
 .search-result-container {
 	padding: 1.25rem 1.25rem 0 1.25rem !important;
-	/* border-bottom: 1px solid var(--font-secondary); */
 }
 
 .search-result-title {
@@ -508,7 +500,6 @@ nav a:hover {
 	font-size: 0.9rem;
 	text-transform: uppercase;
 	color: var(--font-secondary);
-	/* padding: 0.25rem 0; */
 }
 
 /* Tags */
@@ -541,6 +532,11 @@ nav a:hover {
 	color: var(--color-one) !important;
 }
 
+footer {
+	background-color: var(--background-accent);
+	color: var(--font-primary);
+}
+
 /* Scrollbar */
 
 ::-webkit-scrollbar {
@@ -548,7 +544,7 @@ nav a:hover {
 }
 
 ::-webkit-scrollbar-track {
-	background-color: var(--background-primary);
+	background-color: var(--background-accent);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -559,6 +555,3 @@ nav a:hover {
 ::-webkit-scrollbar-thumb:hover {
 	background-color: var(--color-one);
 }
-
-/* TODO: Remove layout-container media queries when done */
-/* TODO: Decide whether to keep dark mode */
