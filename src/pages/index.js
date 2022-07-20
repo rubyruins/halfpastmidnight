@@ -59,6 +59,7 @@ query {
 			}
 			fields {
 				articleTitle
+				roundRating
 			}
 			excerpt(format: PLAIN, pruneLength: 100, truncate: false)
 		}

@@ -9,10 +9,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 
 config.autoAddCss = false
 
-function roundHalf(num) {
-    return Math.round(parseFloat(num) * 2) / 2;
-}
-
 const PostListing = ({node}) => {
 
 	const image = getImage(node.frontmatter.cover_image)
@@ -25,11 +21,11 @@ const PostListing = ({node}) => {
 					<GatsbyImage image={image}/>
 				</div>
 				<div className='postlisting-text'>
-					<h2 className='title mb-0'>
+					<h3 className='title mb-0'>
 						<Link to={`/reviews/${kebabCase(node.frontmatter.title)}`}>
 							{node.fields.articleTitle}
 						</Link>
-					</h2>
+					</h3>
 					<p className='postlisting-author mb-0'>{node.frontmatter.author}</p>
 					<span className='postlisting-excerpt'>{node.excerpt}</span>
 					<div className='postlisting-bottom-container'>
@@ -40,7 +36,7 @@ const PostListing = ({node}) => {
 							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2"/>{node.frontmatter.rating}
 						</span>
 						<span className='rating-show-element'>
-							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2"/>{roundHalf(node.frontmatter.rating)}
+							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2"/>{node.fields.roundRating}
 						</span>
 					</div>
 				</div>

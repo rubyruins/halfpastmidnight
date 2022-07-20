@@ -24,7 +24,7 @@ function renderSeriesInfo(frontmatter) {
 
 export default function Template({data}) {
 
-	const { frontmatter, html, timeToRead } = data.bookData 
+	const { frontmatter, fields, html, timeToRead } = data.bookData 
 
 	return (
 	<Layout pageTitle={frontmatter.title}>
@@ -41,7 +41,7 @@ export default function Template({data}) {
 							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2 review-icon"/>
 							{frontmatter.date}
 							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2 ps-2 review-icon"/>
-							{frontmatter.rating}
+							{fields.roundRating}
 							<br/>
 							<FontAwesomeIcon icon={faTag} size="1x" className="pe-2 review-icon"/>
 							<TagGroup tags={frontmatter.tags}/>
@@ -86,6 +86,7 @@ query($title: String!, $author: String!, $series: String!) {
 		}
 		fields {
 			articleTitle
+			roundRating
 		}
 	}
 	otherBooksInSeriesByAuthor: allMarkdownRemark(

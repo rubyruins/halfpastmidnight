@@ -9,6 +9,10 @@ function makeTitle(node) {
 	}
 }
 
+function roundOffRating(node) {
+    return Math.round(parseFloat(node.frontmatter.rating) * 2) / 2;
+}
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
 	const { createNodeField } = actions
 	if (node.internal.type === `MarkdownRemark` || node.internal.type === `Mdx`) {
@@ -22,6 +26,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 				name: `articleTitle`,
 				node,
 				value: makeTitle(node)
+			});
+			createNodeField({
+				name: `roundRating`,
+				node,
+				value: roundOffRating(node)
 			});
 		}
 	}

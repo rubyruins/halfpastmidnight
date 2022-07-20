@@ -7,12 +7,21 @@ import Content from '../components/middle/content'
 import Sidebar from '../components/right/sidebar'
 import SortButton from "../components/middle/sortbutton"
 
+function makeHeader(totalCount, tag) {
+	return (
+		<>
+			<h3 className="pb-3">
+				{`${totalCount} post${totalCount === 1 ? "" : "s" } tagged `}
+				<strong>{`${tag}`}</strong>
+			</h3>
+		</>
+	)
+}
+
 const Tags = ({ pageContext, data }) => {
-  const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-	totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+
+	const { tag } = pageContext
+	const { edges, totalCount } = data.allMarkdownRemark
 
   return (
 	<Layout pageTitle={`${tag}`}>
@@ -20,7 +29,7 @@ const Tags = ({ pageContext, data }) => {
 		<div className="container layout-container">
 			<div className="row">
 				<Content>
-					<h1>{tagHeader}</h1>
+					{makeHeader(totalCount, tag)}
 					<SortButton/>
 					<div className="sort-container row">
 					{
