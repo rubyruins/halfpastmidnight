@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import PostColumn from '../../components/middle/postcolumn'
+import PostListing from '../../components/middle/postlisting'
 import Layout from '../../components/layout'
 import Content from '../../components/middle/content'
 import Sidebar from '../../components/right/sidebar'
@@ -18,7 +18,7 @@ const AllReviewsPage = ({ data }) => {
 					<div className="sort-container row">
 					{
 						data.allMarkdownRemark.nodes.map(node => (
-						<PostColumn node={node} />
+						<PostListing node={node} />
 						))
 					}
 					</div>

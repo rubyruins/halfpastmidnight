@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import Content from '../components/middle/content'
 import Sidebar from '../components/right/sidebar'
 import Header from '../components/top/header'
-import PostColumn from '../components/middle/postcolumn'
+import PostListing from '../components/middle/postlisting'
 import SortButton from '../components/middle/sortbutton'
 import About from '../components/right/about'
 
@@ -21,7 +21,7 @@ const IndexPage = ({data}) => {
 						<div className="sort-container row">
 						{
 							data.allMarkdownRemark.nodes.map(node => (
-							<PostColumn node={node} />
+							<PostListing node={node} />
 							))
 						}
 						</div>

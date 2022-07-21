@@ -9,26 +9,26 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 
 config.autoAddCss = false
 
-const PostRow = ({node}) => {
+const PostListing = ({node}) => {
 
 	const image = getImage(node.frontmatter.cover_image)
 
 	return (
 		<div>
-			<article key={node.id} className="postitem postrow col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<div className='postrow-content'>
-				<div className='postrow-img'>
+			<article key={node.id} className="postlisting col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			<div className='postlisting-content'>
+				<div className='postlisting-img'>
 					<GatsbyImage image={image}/>
 				</div>
-				<div className='postrow-text'>
+				<div className='postlisting-text'>
 					<h3 className='title mb-0'>
 						<Link to={`/reviews/${kebabCase(node.frontmatter.title)}`}>
 							{node.fields.articleTitle}
 						</Link>
 					</h3>
-					<p className='postrow-author mb-0'>{node.frontmatter.author}</p>
-					<span className='postrow-excerpt'>{node.excerpt}</span>
-					<div className='postrow-bottom-container'>
+					<p className='postlisting-author mb-0'>{node.frontmatter.author}</p>
+					<span className='postlisting-excerpt'>{node.excerpt}</span>
+					<div className='postlisting-bottom-container'>
 						<span className='date'>
 							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2"/>{node.frontmatter.date}
 						</span>
@@ -46,4 +46,4 @@ const PostRow = ({node}) => {
 	)
 }
 
-export default PostRow
+export default PostListing

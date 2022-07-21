@@ -206,49 +206,37 @@ nav a:hover {
 
 /*************** MIDDLE ***************/
 
-/* Posts */
+/* Postlisting */
 
-.postcolumn {
-	background-color: red;
-}
-
-.postrow {
-	background-color: yellow;
-}
-
-.hide-postitem {
-	display: none;
-}
-
-.show-postitem {
-	display: block;
-}
-
-.postcolumn-content {
+.postlisting-content {
 	background-color: var(--background-accent);
 	box-shadow: var(--box-shadow-thick);
 	margin: 0 1rem 2rem 1rem;
 }
 
-.postcolumn-text {
+.postlisting-text {
 	padding: 1rem;
 }
 
-.postcolumn-author {
+.postlisting-excerpt {
+/* font-style: italic; */
+}
+
+.postlisting-author {
 	text-transform: uppercase;
 	color: var(--font-secondary);
 	font-size: 1.1rem;
 	padding: 0.25rem 0;
 }
 
-.postcolumn-bottom-container {
+.postlisting-bottom-container {
 	display: flex;
 	justify-content: space-between;
 	padding-top: 0.5rem;
 	font-size: 0.9rem;
 }
 
-.postcolumn-bottom-container .hide-element {
+.postlisting-bottom-container .hide-element {
 	display: none !important;
 }
 

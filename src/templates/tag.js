@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import PostColumn from "../components/middle/postcolumn"
+import PostListing from "../components/middle/postlisting"
 import Layout from '../components/layout'
 import Header from '../components/top/header'
 import Content from '../components/middle/content'
@@ -34,7 +34,7 @@ const Tags = ({ pageContext, data }) => {
 					<div className="sort-container row">
 					{
 						edges.map(node => (
-						<PostColumn node={node.node} />
+						<PostListing node={node.node} />
 						))
 					}
 					</div>
