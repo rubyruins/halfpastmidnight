@@ -275,7 +275,7 @@ nav a:hover {
 	margin-bottom: 2rem !important;
 }
 
-.home-page-all-buttons-group {
+.hide-all-buttons-group {
 	display: none;
 }
 
@@ -585,4 +585,12 @@ footer {
 
 ::-webkit-scrollbar-thumb:hover {
 	background-color: var(--color-one);
+}
+
+.post-column {
+	background-color: blue;
+}
+
+.post-row {
+	background-color: yellow;
 }

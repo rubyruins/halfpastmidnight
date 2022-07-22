@@ -1,11 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-import PostListing from "../components/middle/postlisting"
 import Layout from '../components/layout'
 import Header from '../components/top/header'
 import Content from '../components/middle/content'
 import Sidebar from '../components/right/sidebar'
-import SortButton from "../components/middle/sortbutton"
+import IsotopeGrid from "../components/middle/isotopegrid"
 
 function makeHeader(totalCount, tag) {
 	return (
@@ -30,14 +29,7 @@ const Tags = ({ pageContext, data }) => {
 			<div className="row">
 				<Content>
 					{makeHeader(totalCount, tag)}
-					<SortButton/>
-					<div className="sort-container row">
-					{
-						edges.map(node => (
-						<PostListing node={node.node} />
-						))
-					}
-					</div>
+					<IsotopeGrid nodes={edges.map(node => node.node)} prefSortOrder={true}/>
 				</Content>
 				<Sidebar/>
 			</div>
@@ -74,6 +66,7 @@ export const pageQuery = graphql`
 				}
 				fields {
 					articleTitle
+					roundRating
 				}
 				excerpt(format: PLAIN, pruneLength: 100, truncate: false)
 			}

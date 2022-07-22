@@ -1,11 +1,10 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import PostListing from '../../components/middle/postlisting'
 import Layout from '../../components/layout'
 import Content from '../../components/middle/content'
 import Sidebar from '../../components/right/sidebar'
 import Header from '../../components/top/header'
-import SortButton from '../../components/middle/sortbutton'
+import IsotopeGrid from '../../components/middle/isotopegrid'
 
 const AllReviewsPage = ({ data }) => {
   return (
@@ -14,14 +13,7 @@ const AllReviewsPage = ({ data }) => {
 		<div className="container layout-container">
 			<div className="row">
 				<Content>
-					<SortButton/>
-					<div className="sort-container row">
-					{
-						data.allMarkdownRemark.nodes.map(node => (
-						<PostListing node={node} />
-						))
-					}
-					</div>
+					<IsotopeGrid nodes={data.allMarkdownRemark.nodes} prefSortOrder={true}/>
 				</Content>
 				<Sidebar/>
 			</div>

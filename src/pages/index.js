@@ -4,9 +4,8 @@ import Layout from '../components/layout'
 import Content from '../components/middle/content'
 import Sidebar from '../components/right/sidebar'
 import Header from '../components/top/header'
-import PostListing from '../components/middle/postlisting'
-import SortButton from '../components/middle/sortbutton'
 import About from '../components/right/about'
+import IsotopeGrid from '../components/middle/isotopegrid'
 
 const IndexPage = ({data}) => {
 
@@ -17,14 +16,7 @@ const IndexPage = ({data}) => {
 				<div className="row">
 					<Content>
 						<About className="about-card-visible-small"/>
-						<SortButton className="home-page-all-buttons-group"/>
-						<div className="sort-container row">
-						{
-							data.allMarkdownRemark.nodes.map(node => (
-							<PostListing node={node} />
-							))
-						}
-						</div>
+						<IsotopeGrid nodes={data.allMarkdownRemark.nodes} prefSortKey='date' prefSortOrder={false} prefLayout='column' prefHideButtons={true}/>
 					</Content>
 					<Sidebar>
 					<About className="about-card-visible-large"/>

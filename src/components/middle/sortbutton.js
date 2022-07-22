@@ -1,4 +1,3 @@
-import Isotope from "isotope-layout"
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faArrowDown, faList, faColumns } from '@fortawesome/free-solid-svg-icons';
@@ -7,63 +6,15 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 
 config.autoAddCss = false
 
-const SortButton = ({className}) => {
-	const isotope = React.useRef();
-	const [sortKey, setSortKey] = React.useState('date');
-	const [prevSortKey, setPrevSortKey] = React.useState('date');
-	const [sortOrder, setSortOrder] = React.useState(false);
-  
-	React.useEffect(() => {
-	  	isotope.current = new Isotope('.sort-container', {
-			itemSelector: '.postlisting',
-			masonry: {
-				horizontalOrder: true
-			},
-			getSortData: {
-				rating: '.rating',
-				title: '.title',
-				date: '.date',
-			}
-		})
-		return () => isotope.current.destroy();
-	}, [])
-  
-	React.useEffect(() => {
-
-		isotope.current.arrange({sortBy: sortKey, sortAscending: sortOrder})
-		if (document !== undefined) {
-			var allButtons = document.querySelectorAll(".sort-button");
-			[].forEach.call(allButtons, function(button) {
-				button.classList.remove("custom-button-clicked");
-				var allIcons = button.querySelectorAll(".sort-button-icon");
-				[].forEach.call(allIcons, function(icon) {
-					icon.classList.add("sort-button-icon-hide");
-				});
-			});
-			var clickedButton = document.querySelector(".sort-" + sortKey);
-			clickedButton.classList.add("custom-button-clicked");
-			clickedButton.querySelector('.sort-order-' + sortOrder.toString()).classList.remove('sort-button-icon-hide');
-		}
-	}, [sortKey, sortOrder]);
-  
-	function handleSortKeyChange(key) {
-		console.log(key, "clicked");
-		if (prevSortKey === key) {
-			setSortOrder(!sortOrder);
-		} else {
-			setSortOrder(true);
-			setSortKey(key);
-		}
-		setPrevSortKey(key);
-	}
+const SortButton = ({className, handleSortKeyChange, handleLayoutKeyChange}) => {
   
 	return (
 		<div className={`row mx-0 all-buttons-group ${className}`}>
 			<ul className="custom-button-group view-button-group p-0">
-				<button className="custom-button view-button custom-button-clicked">
+				<button onClick={() => handleLayoutKeyChange('column')} title="View as columns" aria-label="View as columns" className="custom-button view-button custom-button-clicked layout-column">
 					<FontAwesomeIcon icon={faColumns} size="1x" className="view-button-icon"/>
 				</button>
-				<button className="custom-button view-button">
+				<button onClick={() => handleLayoutKeyChange('row')} title="View as rows" aria-label="View as rows" className="custom-button view-button layout-row">
 					<FontAwesomeIcon icon={faList} size="1x" className="view-button-icon"/>
 				</button>
 			</ul>
