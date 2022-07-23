@@ -15,20 +15,20 @@ const PostListing = ({node}) => {
 
 	return (
 		<div>
-			<article key={node.id} className="postlisting col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			<div className='postlisting-content'>
-				<div className='postlisting-img'>
+			<article key={node.id} className="postitem col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			<div className='postitem-content'>
+				<div className='postitem-img'>
 					<GatsbyImage image={image}/>
 				</div>
-				<div className='postlisting-text'>
+				<div className='postitem-text'>
 					<h3 className='title mb-0'>
 						<Link to={`/reviews/${kebabCase(node.frontmatter.title)}`}>
 							{node.fields.articleTitle}
 						</Link>
 					</h3>
-					<p className='postlisting-author mb-0'>{node.frontmatter.author}</p>
-					<span className='postlisting-excerpt'>{node.excerpt}</span>
-					<div className='postlisting-bottom-container'>
+					<p className='postitem-author mb-0'>{node.frontmatter.author}</p>
+					<span className='postitem-excerpt'>{node.excerpt}</span>
+					<div className='postitem-bottom-container'>
 						<span className='date'>
 							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2"/>{node.frontmatter.date}
 						</span>

@@ -25,7 +25,7 @@ const IsotopeGrid = ({nodes, prefSortKey, prefSortOrder, prefLayout, prefHideBut
 		}
 
 		isotope.current = new Isotope('.sort-container', {
-			itemSelector: '.postlisting',
+			itemSelector: '.postitem',
 			masonry: {
 				horizontalOrder: true
 			},
