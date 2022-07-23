@@ -93,18 +93,6 @@ h3 {
 	font-size: 1.25rem;
 }
 
-h4 {
-	color: green;
-}
-
-h5 {
-	color: blue;
-}
-
-h6 {
-	color: purple;
-}
-
 a {
 	text-decoration: none;
 	color: inherit;
@@ -379,12 +367,33 @@ nav a:hover {
 	}
 }
 
+.review-publish-info {
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	display: inline-block !important;
+	margin-top: 0rem !important;
+	padding: 0 !important;
+}
+
 .review-blurb {
 	white-space: pre-line
 }
 
 .review-content h2, .review-content h3 {
 	padding: 0.5rem 0;
+}
+
+.review-content p {
+	font-size: 1.15rem;
+}
+
+.review-content a {
+	color: var(--color-one);
+}
+
+.review-card a:hover {
+	color: var(--font-primary) !important;
+	border-bottom: 1px solid var(--color-one);
 }
 
 .review-card blockquote {
@@ -547,20 +556,16 @@ nav a:hover {
 	color: var(--font-primary) !important
 }
 
-.tag {
-	font-size: 0.85rem;
-	text-transform: uppercase;
-	display: inline-block !important;
-	margin-top: 0rem !important;
-	padding: 0 !important;
-}
-
-.tag p {
+.review-publish-info p {
 	color: var(--font-primary) !important;
 }
 
-.tag p:hover {
+.review-publish-info p:hover {
 	color: var(--color-one) !important;
+}
+
+.review-publish-info a:hover {
+	border: none;
 }
 
 footer {

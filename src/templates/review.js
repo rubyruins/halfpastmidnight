@@ -37,7 +37,7 @@ export default function Template({data}) {
 						<h1>{frontmatter.title}</h1>
 						{renderSeriesInfo(frontmatter)}
 						{/* {timeToRead} minute read */}
-						<p>
+						<p className="review-publish-info">
 							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2 review-icon"/>
 							{frontmatter.date}
 							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2 ps-2 review-icon"/>
