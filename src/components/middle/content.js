@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-const Content = ({children}) => {
+const Content = ({className, children}) => {
 	return (
-		<div className="col-xl-9 col-lg-8 col-md-8 content">
+		<div className={`col-xl-9 col-lg-8 col-md-8 content ${className}`}>
 			{children}
 		</div>
 	)

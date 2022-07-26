@@ -14,13 +14,19 @@ const AllTagsPage = ({ data }) => {
 		<div className="container layout-container">
 			<div className="row">
 				<Content>
-				{
-					data.allMarkdownRemark.group.map(node => (
-					<article key={node.id}>
-						<Link to={`/tags/${kebabCase(node.tag)}`}>{node.tag} ({node.totalCount})</Link>
-					</article>
-					))
-				}
+					<div className="review-card">
+					<h1>All Tags</h1>
+					<hr className="my-4"/>
+					{
+						data.allMarkdownRemark.group.map(node => (
+						<h4>
+						<article key={node.id}>
+							<Link to={`/tags/${kebabCase(node.tag)}`}>{node.tag} ({node.totalCount})</Link>
+						</article>
+						</h4>
+						))
+					}
+					</div>
 				</Content>
 				<Sidebar/>
 			</div>

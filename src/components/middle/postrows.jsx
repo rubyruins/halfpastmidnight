@@ -3,7 +3,8 @@ import { Link } from 'gatsby'
 import kebabCase from "lodash/kebabCase"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faClock } from '@fortawesome/free-solid-svg-icons';
+// import { faStar, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faClock } from '@fortawesome/free-regular-svg-icons';
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 
@@ -24,13 +25,13 @@ function renderPostRow(node) {
 					<span className='postitem-excerpt'>{node.excerpt}</span>
 					<div className='postitem-bottom-container'>
 						<span className='date'>
-							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2"/>{node.frontmatter.date}
+							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2 postitem-icon"/>{node.frontmatter.date}
 						</span>
 						<span className='rating hide-element'>
-							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2"/>{node.frontmatter.rating}
+							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2 postitem-icon"/>{node.frontmatter.rating}
 						</span>
 						<span className='rating-show-element'>
-							<FontAwesomeIcon icon={faStar} size="1x" className="ps-2 pe-2"/>{node.fields.roundRating}
+							<FontAwesomeIcon icon={faStar} size="1x" className="ps-2 postitem-icon pe-2"/>{node.fields.roundRating}
 						</span>
 					</div>
 				</div>

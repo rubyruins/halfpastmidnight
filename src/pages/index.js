@@ -14,7 +14,7 @@ const IndexPage = ({data}) => {
 			<Header/>
 			<div className="container layout-container">
 				<div className="row">
-					<Content>
+					<Content className='index-content'>
 						<About className="about-card-visible-small"/>
 						<IsotopeGrid nodes={data.allMarkdownRemark.nodes} prefSortKey='date' prefSortOrder={false} prefLayout='column' prefHideButtons={true}/>
 					</Content>
@@ -53,7 +53,7 @@ query {
 				articleTitle
 				roundRating
 			}
-			excerpt(format: PLAIN, pruneLength: 100, truncate: false)
+			excerpt(format: PLAIN, pruneLength: 150, truncate: false)
 		}
 	}
 }

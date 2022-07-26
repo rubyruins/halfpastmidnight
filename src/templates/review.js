@@ -7,7 +7,8 @@ import TagGroup from "../components/middle/taggroup"
 import SuggestedReadsList from "../components/right/suggestedreadslist"
 import CoverImage from "../components/right/coverimage"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faStar, faTag } from '@fortawesome/free-solid-svg-icons';
+// import { faClock, faStar, faTag } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faStar, faBookmark } from '@fortawesome/free-regular-svg-icons';
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 
@@ -43,7 +44,7 @@ export default function Template({data}) {
 							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2 ps-2 review-icon"/>
 							{fields.roundRating}
 							<br/>
-							<FontAwesomeIcon icon={faTag} size="1x" className="pe-2 review-icon"/>
+							<FontAwesomeIcon icon={faBookmark} size="1x" className="pe-2 review-icon"/>
 							<TagGroup tags={frontmatter.tags}/>
 						</p>
 						{/* <a href={frontmatter.goodreads}>Goodreads</a> */}
