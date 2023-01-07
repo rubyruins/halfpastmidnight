@@ -3,11 +3,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 function getRandomImage(data) {
-	var allImages = data.allMarkdownRemark.nodes
-	var totalImages = allImages.length;
-	var randomImageIndex = Math.floor(Math.random() * totalImages);
+	let allImages = data.allMarkdownRemark.nodes
+	let totalImages = allImages.length;
+	let randomImageIndex = Math.floor(Math.random() * totalImages);
 	console.log("Header index: " + randomImageIndex);
-	var randomImage = allImages[randomImageIndex];
+	let randomImage = allImages[randomImageIndex];
 	return randomImage;
 }
 
@@ -33,9 +33,9 @@ const Header = React.memo(() => {
 		}
 		`)
 		
-		var selectedImage = getRandomImage(data);
-		var renderedImage = getImage(selectedImage.frontmatter.cover_image);
-		var imageInfo = selectedImage.frontmatter.name + "\n" + selectedImage.frontmatter.contributor + " on Unsplash";
+		let selectedImage = getRandomImage(data);
+		let renderedImage = getImage(selectedImage.frontmatter.cover_image);
+		let imageInfo = selectedImage.frontmatter.name + "\n" + selectedImage.frontmatter.contributor + " on Unsplash";
 
 	return (
 		<div>

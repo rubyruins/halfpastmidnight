@@ -16,7 +16,7 @@ function renderSuggestions(bookAuthor, otherBooksInSeriesByAuthor) {
 			<Card title="Suggested Reads">
 			{
 				otherBooksInSeriesByAuthor.map(suggestion => (
-					<div className='row mx-0'>
+					<div className='row mx-0' key={suggestion.node.fields.articleTitle}>
 						<div className='p-0 suggested-read-container'>
 							<Link to={`/reviews/${kebabCase(suggestion.node.frontmatter.title)}`} className='suggested-read-title'> 
 								{suggestion.node.fields.articleTitle}

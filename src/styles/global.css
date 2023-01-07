@@ -218,9 +218,9 @@ nav a:hover {
 	padding: 1rem;
 }
 
-.postcolumn .postitem-excerpt {
-/* font-style: italic; */
-}
+/* .postcolumn .postitem-excerpt {
+	font-style: italic;
+} */
 
 .postcolumn .postitem-author {
 	text-transform: uppercase;
@@ -240,13 +240,13 @@ nav a:hover {
 	display: none !important;
 }
 
-.postcolumn {
-	/* background-color: blue; */
-}
+/* .postcolumn {
+	background-color: blue;
+} */
 
-.postrow {
-	/* background-color: yellow; */
-}
+/* .postrow {
+	background-color: yellow;
+} */
 
 .postrow .postitem-content {
 	padding: 1.5rem 0;
@@ -254,9 +254,9 @@ nav a:hover {
 	/* background-color: green; */
 }
 
-.postrow .postitem-excerpt {
-	/* font-style: italic; */
-}
+/* .postrow .postitem-excerpt {
+	font-style: italic;
+} */
 	
 .postrow .postitem-author {
 	text-transform: uppercase;
@@ -279,7 +279,7 @@ nav a:hover {
 /* Isotope Sort Button */
 
 .custom-button {
-	border-radius: 50px;
+	/* border-radius: 50px; */
 	font-size: 0.85rem;
 	display: inline-block;
 	box-shadow: var(--box-shadow-thick);
@@ -338,10 +338,10 @@ nav a:hover {
 		display: none;
 	}
 	
-	.sort-button-group {
-		/* flex-basis: 100% !important; */
-		/* display: none; */
-	}
+	/* .sort-button-group {
+		flex-basis: 100% !important;
+		display: none;
+	} */
 }
 
 .sort-button {

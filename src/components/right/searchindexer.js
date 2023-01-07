@@ -17,7 +17,7 @@ function showSuggestions(results) {
 			<>
 			{
 				results.slice(0, 5).map(page => (
-					<SearchResult page={page} />
+					<SearchResult page={page} key={page}/>
 				))
 			}
 			</>

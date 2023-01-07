@@ -7,7 +7,6 @@ import TagGroup from "../components/middle/taggroup"
 import SuggestedReadsList from "../components/right/suggestedreadslist"
 import CoverImage from "../components/right/coverimage"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faClock, faStar, faTag } from '@fortawesome/free-solid-svg-icons';
 import { faClock, faStar, faBookmark } from '@fortawesome/free-regular-svg-icons';
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
@@ -25,7 +24,9 @@ function renderSeriesInfo(frontmatter) {
 
 export default function Template({data}) {
 
-	const { frontmatter, fields, html, timeToRead } = data.bookData 
+	const { frontmatter, fields, html } = data.bookData 
+	// const { frontmatter, fields, html } = data.bookData 
+
 
 	return (
 	<Layout pageTitle={frontmatter.title}>

@@ -16,11 +16,11 @@ const IsotopeGrid = ({nodes, prefSortKey, prefSortOrder, prefLayout, prefHideBut
 	React.useEffect(() => {
 
 		if (document !== undefined) {
-			var allButtons = document.querySelectorAll(".view-button");
+			let allButtons = document.querySelectorAll(".view-button");
 			[].forEach.call(allButtons, function(button) {
 				button.classList.remove("custom-button-clicked");
 			});
-			var clickedButton = document.querySelector(".layout-" + layout);
+			let clickedButton = document.querySelector(".layout-" + layout);
 			clickedButton.classList.add("custom-button-clicked");
 		}
 
@@ -45,15 +45,15 @@ const IsotopeGrid = ({nodes, prefSortKey, prefSortOrder, prefLayout, prefHideBut
 		isotope.current.arrange({sortBy: sortKey, sortAscending: sortOrder})
 		
 		if (document !== undefined) {
-			var allButtons = document.querySelectorAll(".sort-button");
+			let allButtons = document.querySelectorAll(".sort-button");
 			[].forEach.call(allButtons, function(button) {
 				button.classList.remove("custom-button-clicked");
-				var allIcons = button.querySelectorAll(".sort-button-icon");
+				let allIcons = button.querySelectorAll(".sort-button-icon");
 				[].forEach.call(allIcons, function(icon) {
 					icon.classList.add("sort-button-icon-hide");
 				});
 			});
-			var clickedButton = document.querySelector(".sort-" + sortKey);
+			let clickedButton = document.querySelector(".sort-" + sortKey);
 			clickedButton.classList.add("custom-button-clicked");
 			clickedButton.querySelector('.sort-order-' + sortOrder.toString()).classList.remove('sort-button-icon-hide');
 		}

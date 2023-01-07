@@ -1,9 +1,7 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
-import kebabCase from "lodash/kebabCase"
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import * as React from 'react';
+import { Link } from 'gatsby';
+import kebabCase from "lodash/kebabCase";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faStar, faClock } from '@fortawesome/free-solid-svg-icons';
 import { faStar, faClock } from '@fortawesome/free-regular-svg-icons';
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
@@ -11,7 +9,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 config.autoAddCss = false
 
 function renderPostRow(node) {
-	const image = getImage(node.frontmatter.cover_image)
 	return (
 		<div className='row'>
 			<article key={node.id} className="postitem postrow">

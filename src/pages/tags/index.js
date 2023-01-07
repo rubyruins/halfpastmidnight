@@ -19,10 +19,10 @@ const AllTagsPage = ({ data }) => {
 					<hr className="my-4"/>
 					{
 						data.allMarkdownRemark.group.map(node => (
-						<h4>
-						<article key={node.id}>
-							<Link to={`/tags/${kebabCase(node.tag)}`}>{node.tag} ({node.totalCount})</Link>
-						</article>
+						<h4 key={node.id}>
+							<article>
+								<Link to={`/tags/${kebabCase(node.tag)}`}>{node.tag} ({node.totalCount})</Link>
+							</article>
 						</h4>
 						))
 					}
