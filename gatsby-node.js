@@ -45,7 +45,7 @@ exports.createPages = ({ actions, graphql }) => {
 		{
 			allPosts: allMarkdownRemark(
 				filter: {fields: {collection: {eq: "reviews"}}}
-				sort: { order: DESC, fields: [frontmatter___date] }
+				sort: {frontmatter: {date: DESC}}
 				limit: 1000
 			) {
 				edges {
@@ -63,7 +63,7 @@ exports.createPages = ({ actions, graphql }) => {
 				limit: 2000
 				filter: {fields: {collection: {eq: "reviews"}}}
 				) {
-				group(field: frontmatter___tags) {
+					group(field: {frontmatter: {tags: SELECT}}) {
 					fieldValue
 				}
 			}

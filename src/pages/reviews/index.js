@@ -26,7 +26,7 @@ export const query = graphql`
 query {
 	allMarkdownRemark (
 		filter: {fields: {collection: {eq: "reviews"}}}
-		sort: {fields: frontmatter___title, order: ASC}
+		sort: {frontmatter: {title: ASC}}
 	) {
 		nodes {
 			frontmatter {

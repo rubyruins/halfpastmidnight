@@ -40,7 +40,7 @@ query {
 	allMarkdownRemark (
 		filter: {fields: {collection: {eq: "reviews"}}}
 	) {
-	  group(field: frontmatter___tags) {
+		group(field: {frontmatter: {tags: SELECT}}) {
 		tag: fieldValue
 		totalCount
 	  	}
