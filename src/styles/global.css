@@ -514,29 +514,128 @@ nav a:hover {
 
 /* Ṃailing List */
 
-.mailinglist-email-entry-container {
-	padding-top: 0.5rem;
+.sib-form {
+	background-attachment: unset !important;
+	font-size: unset !important;
+	font-family: unset !important;
+	padding: unset !important;
+	margin: unset !important;
+}
+
+.sib-form-block {
+	padding: unset !important;
+	word-wrap: unset !important;
+	outline: unset !important;
+}
+
+.sib-form .entry__field:focus-within {
+	border: none !important;
+	background: transparent !important;
+	outline: none !important;
+	box-shadow: none !important;
+	caret-color: var(--font-primary) !important;
+	color: var(--font-primary) !important;
+}
+
+#sib-form {
+    text-align: unset !important;
+}
+
+
+#sib-container {
+	background: unset !important;
+	margin: unset !important;
+	padding: unset !important;
+	display: unset !important;
+	width: unset !important;
+}
+
+.sib-form .input {
+	box-shadow: unset !important;
+	min-width: unset !important;
+	padding: unset !important;
+}
+
+.sib-form input {
 	border-bottom: 2px solid var(--font-primary) !important;
-	background-color: var(--background-accent);
 }
 
-.mailinglist-email-entry {
-	border: none;
-	background: transparent;
-	caret-color: var(--font-primary);
-	color: var(--font-primary);
-	padding-left: 0;
-	padding-right: 0;
-	overflow: hidden;
+.sib-form input:focus {
+	border-bottom: 2px solid var(--font-primary) !important;
 }
 
-.mailinglist-email-entry:focus {
-	border: none;
-	background: transparent;
-	outline: none;
-	box-shadow: none;
-	caret-color: var(--font-primary);
-	color: var(--font-primary);
+.sib-form .input:focus {
+	box-shadow: unset !important;
+	min-width: unset !important;
+	padding: unset !important;
+}
+
+
+.sib form input::placeholder {
+	color: var(--font-secondary) !important;
+}
+
+.sib-form .form__entry {
+    border: unset !important;
+    margin: unset !important;
+    padding: unset !important;
+    position: unset !important;
+}
+
+.sib-form .entry__field {
+	-webkit-align-items: unset !important;
+	align-items: unset !important;
+	background: unset !important;
+	border: unset !important;
+	border-radius: unset !important;
+	display: unset !important;
+	display: unset !important;
+	margin: unset !important;
+	max-width: unset !important;
+}
+
+.form__label-row {
+	display: unset !important;
+	flex-direction: unset !important;
+	justify-content: unset !important;
+}
+
+#error-message {
+	display: none !important;
+}
+
+.sib-form .entry__error {
+    color: var(--font-secondary) !important;
+    font-size: 0.85rem !important;
+    line-height: unset !important;
+	display: block !important;
+}
+
+.sib-form-block__button-with-loader {
+    min-height: unset !important;
+    line-height: unset !important;
+}
+.sib-form-block__button {
+    display: unset !important;
+	padding: 0.25rem 0.75rem !important;
+    border: unset !important;
+    overflow-wrap: unset !important;
+    max-width: unset !important;
+    cursor: pointer !important;
+}
+
+.sib-form .clickable__icon {
+    vertical-align: middle !important;
+}
+
+.sib-form .progress-indicator__icon {
+	fill: white !important;
+	height: 1rem !important;
+	width: 1rem !important;
+}
+
+.sib-form-block__button-disabled{
+	opacity: 1 !important;
 }
 
 /* Searchbar */

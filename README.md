@@ -9,3 +9,9 @@
 ## Tech Debt
 
 - 5 Sonar issues in `isotopegrid.jsx`
+- Spinning loader in mailing list component is slightly off in vertical alignment
+
+## Notes
+
+- Send In Blue (sib) styles are imported in `head.js` to apply to mailing list component
+- A backup of these is in the `sib-styles.css` folder in case the external styles change
