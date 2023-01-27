@@ -21,7 +21,7 @@ const MailingList = () => {
 					</div>
 					<div></div>
 					<div id='sib-container' className='sib-container--large sib-container--vertical'>
-						<form id='sib-form' method='POST' action='https://09138b7a.sibforms.com/serve/MUIEAPSGPS85lcVr_-qDOzQMHaK4yoHxNOxK5M2JJtMdRLxkzUekvyk-4Ucijz6wp4VRlLp9AsF-Y1wIFDPl752yTIGkdMgcwo9WHiAmM6J2DH_pck85cGqmGZVxneH036DmfPGYY8E5m8B5XuCeYrPF3cFP0fkO5RnG6IVRFKin3cC4rI43ZI3eutD2WQLOVhA-JUDawTkEtQYY' data-type='subScription' target='_blank'>
+						<form id='sib-form' method='POST' action={process.env.REACT_APP_MAILING_LIST_SUBSCRIBE_FORM} data-type='subScription' target='_blank'>
 							<div>
 								<div className='sib-form-block'>
 									<div className='sib-text-form-block'>
@@ -34,11 +34,10 @@ const MailingList = () => {
 									<div className='form__entry entry_block'>
 										<div className='form__label-row form-group'>
 											<div className='entry__field input-group'>
-												<input className='input' type='text' id='EMAIL' name='EMAIL' autocomplete='off' placeholder='Enter your email address.' data-required='true' required />
+												<input className='input' type='text' id='EMAIL' name='EMAIL' placeholder='Enter your email address.' data-required='true' required />
 											</div>
 										</div>
-
-										<label className='entry__error entry__error--primary mt-3 mb-3'>
+										<label className='entry__error entry__error--primary mt-3 mb-3' control htmlFor='EMAIL'>
 										</label>
 									</div>
 								</div>

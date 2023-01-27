@@ -10,6 +10,7 @@
 
 - 5 Sonar issues in `isotopegrid.jsx`
 - Spinning loader in mailing list component is slightly off in vertical alignment
+- Susbcribe form has autocomplete off, find a way to autocomplete with no autofill (light blue) background
 
 ## Notes
 
