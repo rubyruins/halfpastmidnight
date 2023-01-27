@@ -4,17 +4,17 @@ import Content from '../components/middle/content'
 import Sidebar from '../components/right/sidebar'
 import Header from '../components/top/header'
 
-const AboutPage = () => {
+const SubscribedPage = () => {
 	return (
-		<Layout pageTitle="About">
+		<Layout pageTitle="Subscription Successful">
 			<Header/>
 			<div className="container layout-container">
 				<div className="row">
 					<Content>
 						<div className="review-card">
-							<h1>Hi there!</h1>
+							<h1>Subscription Successful!</h1>
 							<hr className="my-4"/>
-							<p>I'm the proud creator of this site, which I built with Gatsby.</p>
+							<p>Thanks for subscribing to our newsletter. We're thrilled to have you on board. Get ready to discover new worlds and captivating stories. You'll be updated whenever a new review is published on Half Past Midnight!</p>
 						</div>
 					</Content>
 					<Sidebar/>
@@ -24,4 +24,4 @@ const AboutPage = () => {
 	)
 }
 
-export default AboutPage
+export default SubscribedPage
