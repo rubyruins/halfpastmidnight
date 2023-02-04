@@ -16,3 +16,4 @@
 
 - Send In Blue (sib) styles are imported in `head.js` to apply to mailing list component
 - A backup of these is in the `sib-styles.css` folder in case the external styles change
+- Search indexing will not work for newly added articles unless `npm run build` is used once

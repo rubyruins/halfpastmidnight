@@ -9,7 +9,7 @@ const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-md">
 			<div className='container-md'>
-				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" name="Toggle navigation">
 					<FontAwesomeIcon icon={faBars} size="1x" className="navbar-toggler-icon-custom"></FontAwesomeIcon>
 				</button>
 				<Link className="navbar-brand me-auto" to="/">

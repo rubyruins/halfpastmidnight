@@ -39,7 +39,7 @@ export default function Template({data}) {
 						<h1>{frontmatter.title}</h1>
 						{renderSeriesInfo(frontmatter)}
 						{/* {timeToRead} minute read */}
-						<p className="review-publish-info">
+						<span className="review-publish-info">
 							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2 review-icon"/>
 							{frontmatter.date}
 							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2 ps-2 review-icon"/>
@@ -47,7 +47,7 @@ export default function Template({data}) {
 							<br/>
 							<FontAwesomeIcon icon={faBookmark} size="1x" className="pe-2 review-icon"/>
 							<TagGroup tags={frontmatter.tags}/>
-						</p>
+						</span>
 						{/* <a href={frontmatter.goodreads}>Goodreads</a> */}
 						<hr className="my-4"/>
 						<div className="review-content" dangerouslySetInnerHTML={{ __html: html }} />

@@ -50,6 +50,7 @@ query {
 					}
 				}
 			}
+			id
 			fields {
 				articleTitle
 				roundRating

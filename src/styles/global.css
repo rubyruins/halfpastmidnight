@@ -147,6 +147,7 @@ nav a:hover {
 
 .navbar-toggler {
 	color: var(--font-primary);
+	border: none;
 }
 
 .navbar-toggler-icon-custom:hover, .theme-icon:hover {
@@ -589,7 +590,6 @@ nav a:hover {
 	border: unset !important;
 	border-radius: unset !important;
 	display: unset !important;
-	display: unset !important;
 	margin: unset !important;
 	max-width: unset !important;
 }
@@ -615,6 +615,7 @@ nav a:hover {
     min-height: unset !important;
     line-height: unset !important;
 }
+
 .sib-form-block__button {
     display: unset !important;
 	padding: 0.25rem 0.75rem !important;

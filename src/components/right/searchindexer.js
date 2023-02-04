@@ -17,7 +17,7 @@ function showSuggestions(results) {
 			<>
 			{
 				results.slice(0, 5).map(page => (
-					<SearchResult page={page} key={page}/>
+					<SearchResult page={page} key={page.id}/>
 				))
 			}
 			</>
@@ -35,8 +35,8 @@ class SearchIndexer extends Component {
 	render() {
 		return (
 		<div>
-			<div class="input-group search-container">
-				<span class="input-group-text search-icon" id="basic-addon1"><FontAwesomeIcon icon={faSearch} size="1x" className="px-2"/></span>
+			<div className="input-group search-container">
+				<span className="input-group-text search-icon" id="basic-addon1"><FontAwesomeIcon icon={faSearch} size="1x" className="px-2"/></span>
 				<input type="text" value={this.state.query} onChange={this.search} className="form-control search-bar" placeholder="Find something!" aria-label="Search for titles" aria-describedby="basic-addon1"/>
 			</div>
 			{showSuggestions(this.state.results)}

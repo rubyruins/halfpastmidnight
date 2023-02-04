@@ -64,6 +64,7 @@ export const pageQuery = graphql`
 						}
 					}
 				}
+				id
 				fields {
 					articleTitle
 					roundRating

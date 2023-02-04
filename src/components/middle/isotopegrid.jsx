@@ -11,7 +11,6 @@ const IsotopeGrid = ({nodes, prefSortKey, prefSortOrder, prefLayout, prefHideBut
 	const [prevSortKey, setPrevSortKey] = React.useState(prefSortKey || 'title');
 	const [sortOrder, setSortOrder] = React.useState(prefSortOrder && true);
 	const [layout, setLayout] = React.useState(prefLayout || 'row');
-	console.log(sortKey, sortOrder, prevSortKey, layout);
 
 	React.useEffect(() => {
 
@@ -39,7 +38,7 @@ const IsotopeGrid = ({nodes, prefSortKey, prefSortOrder, prefLayout, prefHideBut
 		isotope.current.arrange({sortBy: sortKey, sortAscending: sortOrder})
 
 		return () => isotope.current.destroy();
-	}, [layout])
+	}, [layout, sortKey, sortOrder])
 
 	React.useEffect(() => {
 		isotope.current.arrange({sortBy: sortKey, sortAscending: sortOrder})
@@ -67,7 +66,6 @@ const IsotopeGrid = ({nodes, prefSortKey, prefSortOrder, prefLayout, prefHideBut
 			setSortKey(key);
 		}
 		setPrevSortKey(key);
-		console.log(sortKey, prevSortKey, sortOrder, layout, "here");
 	}
 
 	function handleLayoutKeyChange(key) {

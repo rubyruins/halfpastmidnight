@@ -10,8 +10,8 @@ config.autoAddCss = false
 
 function renderPostRow(node) {
 	return (
-		<div className='row'>
-			<article key={node.id} className="postitem postrow">
+		<div className='row' key={node.id}>
+			<article className="postitem postrow">
 				<div className='postitem-content'>
 					<h3 className='title mb-0'>
 						<Link to={`/reviews/${kebabCase(node.frontmatter.title)}`}>

@@ -8,7 +8,7 @@ const CoverImage = ({className, frontmatter}) => {
 	return (
 		<div className={`card mb-4 mx-0 p-0 review-img-container ${className}`}>
 			<div className="card-body p-0 mx-0">
-			<GatsbyImage image={image} className="review-img"/>
+			<GatsbyImage image={image} className="review-img" alt={frontmatter.title}/>
 			</div>
 		</div>
 	)

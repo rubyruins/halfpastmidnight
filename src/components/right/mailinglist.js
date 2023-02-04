@@ -37,7 +37,7 @@ const MailingList = () => {
 												<input className='input' type='text' id='EMAIL' name='EMAIL' placeholder='Enter your email address.' data-required='true' required />
 											</div>
 										</div>
-										<label className='entry__error entry__error--primary mt-3 mb-3' control htmlFor='EMAIL'>
+										<label className='entry__error entry__error--primary mt-3 mb-3' control='true' htmlFor='EMAIL'>
 										</label>
 									</div>
 								</div>
@@ -54,7 +54,7 @@ const MailingList = () => {
 								</div>
 							</div>
 
-							<input type='text' name='email_address_check' value='' className='input--hidden' />
+							<input type='text' name='email_address_check' value='' className='input--hidden' readOnly/>
 							<input type='hidden' name='locale' value='en' />
 						</form>
 					</div>

@@ -12,11 +12,11 @@ config.autoAddCss = false
 function renderPostColumn(node) {
 	const image = getImage(node.frontmatter.cover_image)
 	return (
-		<div>
-			<article key={node.id} className="postitem postcolumn col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		<div key={node.id}>
+			<article className="postitem postcolumn col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-6">
 			<div className='postitem-content'>
 				<div className='postitem-img'>
-					<GatsbyImage image={image}/>
+					<GatsbyImage image={image} alt={node.frontmatter.title}/>
 				</div>
 				<div className='postitem-text'>
 					<h3 className='title mb-0'>

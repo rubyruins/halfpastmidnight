@@ -2,7 +2,7 @@ module.exports = {
 	siteMetadata: {
 		title: `Half Past Midnight`,
 		description: `Science Fiction and Fantasy reviews`,
-		author: `@rubyruins`,
+		author: `Soumya Parekh`,
 		siteUrl: `https://halfpastmidnight.me/`,
 	},
 	plugins: [

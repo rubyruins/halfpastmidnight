@@ -6,7 +6,6 @@ function getRandomImage(data) {
 	let allImages = data.allMarkdownRemark.nodes
 	let totalImages = allImages.length;
 	let randomImageIndex = Math.floor(Math.random() * totalImages);
-	console.log("Header index: " + randomImageIndex);
 	let randomImage = allImages[randomImageIndex];
 	return randomImage;
 }

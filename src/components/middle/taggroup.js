@@ -8,16 +8,13 @@ const TagGroup = ({tags}) => {
 		<ul className='tags-list'>
 		{
 			tags.slice(0, -1).map(tag => (
-				<>
-					<Link to={`/tags/${kebabCase(tag)}/`} className="tag">
-						<p className="d-inline-block text-primary mb-0">{tag}</p>
-					</Link>
-					<p className="d-inline-block text-primary mb-0">,&nbsp;&nbsp;</p>
-				</>
+				<Link to={`/tags/${kebabCase(tag)}/`} className="tag" key={tag}>
+					<p className="d-inline-block text-primary mb-0">{tag},&nbsp;&nbsp;</p>
+				</Link>
 			))
 		}
 		{
-			<Link to={`/tags/${kebabCase(tags.at(-1))}/`} className="tag">
+			<Link to={`/tags/${kebabCase(tags.at(-1))}/`} className="tag" key={tags.at(-1)}>
 				<p className="d-inline-block text-primary mb-0">{tags.at(-1)}</p>
 			</Link>
 		}

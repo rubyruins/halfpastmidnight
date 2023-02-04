@@ -3,3 +3,4 @@ node_modules/
 public
 data/
 temp.html
+**/.DS_Store

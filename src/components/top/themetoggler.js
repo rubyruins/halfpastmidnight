@@ -13,7 +13,6 @@ const ThemeToggler = () => {
 	}
 	useEffect(() => {
 		setTheme(window.__theme);
-		console.log("Theme: " + window.__theme);
 	}, []);
 
 	const [theme, setTheme] = useState(websiteTheme);
@@ -24,7 +23,7 @@ const ThemeToggler = () => {
 	};
 
 	return (
-		<button className="btn nav-item ml-auto theme-toggler ps-1 pe-1" onClick={ThemeToggle} onKeyDown={ThemeToggle}>
+		<button className="btn nav-item ml-auto theme-toggler ps-1 pe-1" onClick={ThemeToggle} onKeyDown={ThemeToggle} aria-label="Toggle theme" name="Toggle theme">
 			{theme === 'dark' ? (
 				<FontAwesomeIcon icon={faSun} size="1x" className="nav-link align-middle theme-icon"/>
 			) : (
