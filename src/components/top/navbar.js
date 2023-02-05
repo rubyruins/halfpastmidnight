@@ -14,7 +14,7 @@ const Navbar = () => {
 				</button>
 				<Link className="navbar-brand me-auto" to="/">
 					<span role="img" aria-label="home">
-						<strong>Half Past Midnight.</strong>
+						<strong>Half Past Midnight</strong>
 					</span>
 				</Link>
 				<div className="collapse navbar-collapse" id="navbarContent">

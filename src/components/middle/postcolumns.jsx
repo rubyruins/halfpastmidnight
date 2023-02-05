@@ -9,6 +9,14 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 
 config.autoAddCss = false
 
+function formatDate(date) {
+	date = new Date(date).toDateString().split(' ').slice(1).join(' ');
+	date = date.split(' ');
+	date[1] = date[1] + ',';
+	date = date.join(' ');
+	return date;
+}
+
 function renderPostColumn(node) {
 	const image = getImage(node.frontmatter.cover_image)
 	return (
@@ -24,11 +32,14 @@ function renderPostColumn(node) {
 							{node.fields.articleTitle}
 						</Link>
 					</h3>
-					<p className='postitem-author mb-0'>{node.frontmatter.author}</p>
+					{/* <p className='postitem-author mb-0'>{node.frontmatter.author}</p> */}
+					<Link to={`/tags/${kebabCase(node.frontmatter.author)}/`} className="tag" key={node.frontmatter.title}>
+						<p className="postitem-author mb-0">{node.frontmatter.author}</p>
+					</Link>
 					<span className='postitem-excerpt'>{node.excerpt}</span>
 					<div className='postitem-bottom-container'>
 						<span className='date'>
-							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2 postitem-icon"/>{node.frontmatter.date}
+							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2 postitem-icon"/>{formatDate(node.frontmatter.date)}
 						</span>
 						<span className='rating hide-element'>
 							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2 postitem-icon"/>{node.frontmatter.rating}

@@ -13,19 +13,29 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 
 config.autoAddCss = false
 
+function formatDate(date) {
+	date = new Date(date).toDateString().split(' ').slice(1).join(' ');
+	date = date.split(' ');
+	date[1] = date[1] + ',';
+	date = date.join(' ');
+	return date;
+}
+
 function renderSeriesInfo(frontmatter) {
 
 	if (frontmatter.part) {
 		return (
-			<h3>{frontmatter.series}, #{frontmatter.part}</h3>
+			<h3>{frontmatter.author} — {frontmatter.series}, #{frontmatter.part}</h3>
 		)
 	}
+	return (
+		<h3>{frontmatter.author}</h3>
+	)
 }
 
 export default function Template({data}) {
 
 	const { frontmatter, fields, html } = data.bookData 
-	// const { frontmatter, fields, html } = data.bookData 
 
 
 	return (
@@ -35,21 +45,23 @@ export default function Template({data}) {
 				<Content>
 					<CoverImage frontmatter={frontmatter} className="review-img-visible-small"/>
 					<div className="review-card">
-						<p className="review-author pb-0">{frontmatter.author}</p>
+						{/* <p className="review-author pb-0">{frontmatter.author}</p> */}
 						<h1>{frontmatter.title}</h1>
 						{renderSeriesInfo(frontmatter)}
 						{/* {timeToRead} minute read */}
-						<span className="review-publish-info">
-							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2 review-icon"/>
-							{frontmatter.date}
-							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2 ps-2 review-icon"/>
-							{fields.roundRating}
-							<br/>
+						<span className="review-publish-info mt-0">
 							<FontAwesomeIcon icon={faBookmark} size="1x" className="pe-2 review-icon"/>
 							<TagGroup tags={frontmatter.tags}/>
+							<br/>
+							<p className="mb-2"></p>
+							<FontAwesomeIcon icon={faClock} size="1x" className="pe-2 review-icon"/>
+							{formatDate(frontmatter.date)}
+							<FontAwesomeIcon icon={faStar} size="1x" className="pe-2 ps-2 review-icon"/>
+							{fields.roundRating}
 						</span>
 						{/* <a href={frontmatter.goodreads}>Goodreads</a> */}
 						<hr className="my-4"/>
+						{/* <div className="my-4 divider"></div> */}
 						<div className="review-content" dangerouslySetInnerHTML={{ __html: html }} />
 					</div>
 				</Content>

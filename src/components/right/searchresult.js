@@ -7,7 +7,8 @@ const SearchResult = ({page}) => {
 	return (
 		<p key={page.id} className="mx-0 px-0 my-0 py-2 search-result-container">
 			<Link to={"/reviews/" + kebabCase(page.title)} className='search-result-title'>{page.articleTitle}</Link>
-			<br/>
+			{/* <br/> */}
+			<p className='my-1'></p>
 			<span className='search-result-author'>
 				{page.author}
 			</span>
@@ -16,5 +17,3 @@ const SearchResult = ({page}) => {
 }
 
 export default SearchResult
-
-// TODO: Convert to dropdown

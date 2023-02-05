@@ -21,7 +21,7 @@ function renderSuggestions(bookAuthor, otherBooksInSeriesByAuthor) {
 							<Link to={`/reviews/${kebabCase(suggestion.node.frontmatter.title)}`} className='suggested-read-title'> 
 								{suggestion.node.fields.articleTitle}
 							</Link>
-							<p className='m-0 suggested-read-author'>{suggestion.node.frontmatter.author}</p>
+							<p className='m-0 suggested-read-author mt-2'>{suggestion.node.frontmatter.author}</p>
 						</div>
 					</div>
 				))

@@ -55,7 +55,7 @@ query {
 				articleTitle
 				roundRating
 			}
-			excerpt(format: PLAIN, pruneLength: 150, truncate: false)
+			excerpt(format: PLAIN, pruneLength: 100, truncate: false)
 		}
 	}
 }
