@@ -7,9 +7,9 @@ import Header from '../components/top/header'
 const NotFoundPage = () => {
 	return (
 		<Layout pageTitle="Not Found">
-			<Header/>
 			<div className="container layout-container">
 				<div className="row">
+					<Header/>
 					<Content>
 					<div className="review-card">
 						<h1>There isn't a page here.</h1>

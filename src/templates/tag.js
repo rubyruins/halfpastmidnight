@@ -24,9 +24,9 @@ const Tags = ({ pageContext, data }) => {
 
   return (
 	<Layout pageTitle={`${tag}`}>
-		<Header/>
 		<div className="container layout-container">
 			<div className="row">
+				<Header/>
 				<Content>
 					{makeHeader(totalCount, tag)}
 					<IsotopeGrid nodes={edges.map(node => node.node)} prefSortOrder={true}/>

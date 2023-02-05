@@ -7,9 +7,9 @@ import Header from '../components/top/header'
 const SubscribedPage = () => {
 	return (
 		<Layout pageTitle="Subscription Successful">
-			<Header/>
 			<div className="container layout-container">
 				<div className="row">
+					<Header/>
 					<Content>
 						<div className="review-card">
 							<h1>Subscription Successful!</h1>

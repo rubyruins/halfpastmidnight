@@ -7,9 +7,9 @@ import Header from '../components/top/header'
 const AboutPage = () => {
 	return (
 		<Layout pageTitle="About">
-			<Header/>
 			<div className="container layout-container">
 				<div className="row">
+					<Header/>
 					<Content>
 						<div className="review-card">
 							<h1>Hi there!</h1>

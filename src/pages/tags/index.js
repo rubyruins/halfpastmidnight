@@ -10,9 +10,9 @@ const AllTagsPage = ({ data }) => {
 	
   return (
 	<Layout pageTitle="All Tags">
-		<Header/>
 		<div className="container layout-container">
 			<div className="row">
+				<Header/>
 				<Content>
 					<div className="review-card">
 					<h1>All Tags</h1>

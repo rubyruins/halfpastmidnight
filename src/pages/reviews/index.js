@@ -9,9 +9,9 @@ import IsotopeGrid from '../../components/middle/isotopegrid'
 const AllReviewsPage = ({ data }) => {
   return (
 	<Layout pageTitle="All Reviews">
-		<Header/>
 		<div className="container layout-container">
 			<div className="row">
+				<Header/>
 				<Content>
 					<IsotopeGrid nodes={data.allMarkdownRemark.nodes} prefSortOrder={true}/>
 				</Content>

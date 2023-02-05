@@ -37,7 +37,7 @@ const Header = React.memo(() => {
 		let imageInfo = selectedImage.frontmatter.name + "\n" + selectedImage.frontmatter.contributor + " on Unsplash";
 
 	return (
-		<div>
+		<div className='header-container col-xl-12 col-lg-12 col-md-12 col-sm-12'>
 			<GatsbyImage image={renderedImage} className="header-image" alt={imageInfo} title={imageInfo}/>
 		</div>
 	)

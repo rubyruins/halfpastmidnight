@@ -11,9 +11,9 @@ const IndexPage = ({data}) => {
 
 	return (
 		<Layout pageTitle="Home">
-			<Header/>
 			<div className="container layout-container">
 				<div className="row">
+					<Header/>
 					<Content className='index-content'>
 						<About className="about-card-visible-small"/>
 						<IsotopeGrid nodes={data.allMarkdownRemark.nodes} prefSortKey='date' prefSortOrder={false} prefLayout='column' prefHideButtons={true}/>
