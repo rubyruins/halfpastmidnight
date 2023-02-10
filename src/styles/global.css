@@ -177,6 +177,10 @@ nav a:hover {
 	box-shadow: 0 0 0 0 !important;
 }
 
+.navbar-brand-text {
+	height: 50px !important;
+}
+
 @media screen and (max-width: 768px) {
 
 	.navbar-collapse {
@@ -195,6 +199,10 @@ nav a:hover {
 		position: absolute;
 		transform: translateX(-50%);
 		left: 50%;
+	}
+
+	.navbar-brand-img {
+		display: none !important;
 	}
 	
 	.navbar-collapse.collapsing {
@@ -215,8 +223,8 @@ nav a:hover {
 .header-image {
 	background-size: cover;
 	width: 100%;
-	/* height: auto; */
-	height: 15rem;
+	height: auto;
+	/* height: 15rem; */
 }
 
 /*************** MIDDLE ***************/

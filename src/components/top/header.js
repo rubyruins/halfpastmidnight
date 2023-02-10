@@ -34,7 +34,7 @@ const Header = React.memo(() => {
 		
 		let selectedImage = getRandomImage(data);
 		let renderedImage = getImage(selectedImage.frontmatter.cover_image);
-		let imageInfo = selectedImage.frontmatter.name + "\n" + selectedImage.frontmatter.contributor + " on Unsplash";
+		let imageInfo = selectedImage.frontmatter.name + "\n" + selectedImage.frontmatter.contributor;
 
 	return (
 		<div className='header-container col-xl-12 col-lg-12 col-md-12 col-sm-12'>
