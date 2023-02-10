@@ -63,11 +63,20 @@ body {
 	margin: 2rem 0 0.5rem 0 !important;
 }
 
+.content-no-margin {
+	margin-top: 0rem !important;
+}
+
 .sidebar {
 	padding-left: 1rem !important;
 	padding-right: 1rem !important;
 	margin: 2rem 0 !important;
 }
+
+.sidebar-no-margin {
+	margin-top: 0rem !important;
+}
+
 
 @media screen and (max-width: 768px) {
 	/* At 768px, review-img-large is hidden, review-img-small is visible and excess space in between is removed from top of sidebar */

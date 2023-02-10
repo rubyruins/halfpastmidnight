@@ -42,7 +42,7 @@ export default function Template({data}) {
 	<Layout pageTitle={frontmatter.title}>
 		<div className="container layout-container">
 			<div className="row">
-				<Content>
+				<Content className={"content-no-margin"}>
 					<CoverImage frontmatter={frontmatter} className="review-img-visible-small"/>
 					<div className="review-card">
 						{/* <p className="review-author pb-0">{frontmatter.author}</p> */}
@@ -65,7 +65,7 @@ export default function Template({data}) {
 						<div className="review-content" dangerouslySetInnerHTML={{ __html: html }} />
 					</div>
 				</Content>
-				<Sidebar>
+				<Sidebar className={"sidebar-no-margin"}>
 					<CoverImage frontmatter={frontmatter} className="review-img-visible-large"/>
 					<SuggestedReadsList otherBooksInSeriesByAuthor={data.otherBooksInSeriesByAuthor.edges} bookCover={frontmatter.cover_image}></SuggestedReadsList>
 				</Sidebar>
