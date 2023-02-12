@@ -1,6 +1,4 @@
 import * as React from 'react'
-import { faInstagram, faEmail } from '@fortawesome/free-regular-svg-icons';
-
 
 const Footer = ({ title }) => {
 	

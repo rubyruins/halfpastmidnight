@@ -145,7 +145,7 @@ nav {
 	background-color: var(--background-main);
 	z-index: 100;
 	font-family: var(--paragraph-font);
-	height: 5rem;
+	height: 7.5rem;
 }
 
 nav .container {

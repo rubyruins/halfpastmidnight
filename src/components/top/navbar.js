@@ -40,15 +40,15 @@ const Navbar = () => {
 				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" name="Toggle navigation">
 					<FontAwesomeIcon icon={faBars} size="1x" className="navbar-toggler-icon-custom"></FontAwesomeIcon>
 				</button>
-				{/* <a className="navbar-brand me-auto" href="/">
+				<a className="navbar-brand me-auto" href="/">
 					{renderLogo()}
 					<div height="50" className='d-inline-block navbar-brand-text py-2'>
 						<strong className="ps-3 my-auto" >Half Past Midnight</strong>
 					</div>
-				</a> */}
-				<a className="d-inline-block navbar-brand me-auto" href="/">
-					<strong className="my-auto" >Half Past Midnight</strong>
 				</a>
+				{/* <a className="d-inline-block navbar-brand me-auto" href="/">
+					<strong className="my-auto" >Half Past Midnight</strong>
+				</a> */}
 				<div className="collapse navbar-collapse" id="navbarContent">
 					<ul className="navbar-nav ms-auto ms-1 me-1">
 						<li className="nav-item">

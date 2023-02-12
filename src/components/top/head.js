@@ -12,7 +12,6 @@ const Head = ({ data, pageTitle }) => {
 		<meta charSet="utf-8" />
 		<meta name="description" content={data.site.siteMetadata.description} />
 		<meta name="author" content={data.site.siteMetadata.author} />
-		<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300;500&display=swap" rel="stylesheet"></link>
