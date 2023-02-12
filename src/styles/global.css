@@ -755,11 +755,21 @@ nav a:hover {
 	border: none;
 }
 
+/* Footer */
+
+.social-links {
+	font-size: 0.85rem;
+}
+
+.copyright-text {
+	font-size: 0.8rem;
+}
+
 footer {
+	font-family: var(--headings-font);
 	background-color: var(--background-accent);
 	color: var(--font-secondary);
 	text-transform: uppercase;
-	font-size: 0.8rem;
 }
 
 /* Scrollbar */
