@@ -21,7 +21,7 @@ const MailingList = () => {
 					</div>
 					<div></div>
 					<div id='sib-container' className='sib-container--large sib-container--vertical'>
-						<form id='sib-form' method='POST' action={process.env.REACT_APP_MAILING_LIST_SUBSCRIBE_FORM} data-type='subScription' target='_blank'>
+						<form id='sib-form' method='POST' action={process.env.GATSBY_MAILING_LIST_SUBSCRIBE_FORM} data-type='subScription' target='_blank'>
 							<div>
 								<div className='sib-form-block'>
 									<div className='sib-text-form-block'>
