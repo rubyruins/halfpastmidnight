@@ -53,7 +53,7 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
-			  icon: 'src/images/favicon-dark.png',
+			  icon: 'src/images/favicon-black-bg-grey-outline.png',
 			},
 		  },
 	],

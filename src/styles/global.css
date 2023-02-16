@@ -675,7 +675,7 @@ nav a:hover {
 }
 
 .search-container {
-	border: 1px solid var(--font-primary) !important;
+	border: 2px solid var(--font-primary) !important;
 	border-radius: 20px;
 	background-color: var(--background-main);
 }
