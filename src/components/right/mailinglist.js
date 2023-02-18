@@ -25,7 +25,7 @@ const MailingList = () => {
 							<div>
 								<div className='sib-form-block'>
 									<div className='sib-text-form-block'>
-										<p className='mb-0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dolor eros, condimentum ut ipsum eget, finibus vehicula velit. Aenean non fermentum magna. </p>
+										<p className='mb-0'>Subscribe to our newsletter to get the latest updates whenever a new review is published.</p>
 									</div>
 								</div>
 							</div>

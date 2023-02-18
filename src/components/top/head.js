@@ -5,7 +5,7 @@ import { Script } from 'gatsby'
 const Head = ({ data, pageTitle }) => {
 	return (
 		<>
-		<title>{data.site.siteMetadata.title} | {pageTitle}</title>
+		<title>{pageTitle} | {data.site.siteMetadata.title}</title>
 		<link rel="canonical" href={data.site.siteMetadata.siteUrl} />
 		<link rel='stylesheet' href='https://sibforms.com/forms/end-form/build/sib-styles.css' />
 		{/* <link rel="stylesheet" href="../../styles/sib-styles.css" crossOrigin="true"/> */}

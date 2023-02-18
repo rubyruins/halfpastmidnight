@@ -18,3 +18,4 @@
 - A backup of these is in the `sib-styles.css` folder in case the external styles change
 - Search indexing will not work for newly added articles unless `npm run build` is used once
 - All images have fixed width = 3000px and height = 1000px
+- Review ratings are always rounded to the closest 0.5

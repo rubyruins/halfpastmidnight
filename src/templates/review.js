@@ -90,7 +90,6 @@ query($title: String!, $author: String!, $series: String!) {
 			part
 			title
 			rating
-			blurb
 			goodreads
 			cover_image {
 				childImageSharp {

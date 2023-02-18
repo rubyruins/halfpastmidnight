@@ -5,7 +5,7 @@ const About = ({className}) => {
 
 	return (
 		<Card title="Hi there!" className={className}>
-			<p className='mb-0'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dolor eros, condimentum ut ipsum eget, finibus vehicula velit. Aenean non fermentum magna. Nam rhoncus urna sit amet malesuada lacinia. Sed ac auctor libero, non aliquet odio. Phasellus id bibendum mi. </p>
+			<p className='mb-0'>Welcome to Half Past Midnight, a blog dedicated to the surreal world of fantasy and science fiction.</p>
 		</Card>
 	)
 }
